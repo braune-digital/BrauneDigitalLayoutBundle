@@ -1,0 +1,108 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Social Share Buttons
+// ---------------------------------------------------------
+
+$share-button-size: 30px;
+$share-button-size-sm: 25px;
+
+
+.social {
+  margin-bottom: spacing(4);
+
+  h4 {
+    margin-bottom: spacing(2);
+  }
+
+  .social-share {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    a {
+      color: getColor(black);
+
+      @include hoverState {
+        color: getColor(black);
+      }
+    }
+
+    li {
+      margin: 0 spacing(2) 0 0;
+      padding: 0;
+    }
+
+    .social-share__btn {
+      position: relative;
+      transition: $base-animation;
+      color: getColor(black);
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include square($share-button-size);
+
+      font-size: getFontSize(lg);
+      line-height: 1;
+
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        transition: all $base-animation-duration cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: getColor(black);
+
+        &:before {
+          height: $btn-background-height;
+        }
+      }
+
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+      }
+
+      // Button colors
+      // ---------------------------------------------------------
+
+      @each $name, $color in $colors {
+        &.social-share__btn--#{$name} {
+          &:before {
+            background: $color;
+
+          }
+        }
+      }
+    }
+  }
+
+  &.social--small {
+    .social-share {
+
+      li {
+        margin-right: spacing();
+      }
+
+      .social-share__btn {
+        @include square($share-button-size-sm);
+        font-size: getFontSize(base);
+      }
+    }
+  }
+}

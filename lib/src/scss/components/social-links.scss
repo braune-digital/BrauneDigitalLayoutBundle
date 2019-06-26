@@ -1,0 +1,16 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Social Links
+// ---------------------------------------------------------
+
+$social-links-icon-width: 20px;
+
+.social-links {
+
+  @include fontAwesomeClass() {
+    width: $social-links-icon-width;
+  }
+}

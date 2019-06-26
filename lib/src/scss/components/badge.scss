@@ -1,0 +1,76 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Badge
+// ---------------------------------------------------------
+
+$badge-pill-size: 10px;
+$badge-padding-x: spacing(.7);
+$badge-padding-y: spacing(.3);
+
+$badge-padding-x-md: spacing(1);
+$badge-padding-y-md: spacing(.5);
+
+$badge-padding-x-lg: spacing(1.5);
+$badge-padding-y-lg: spacing(.75);
+.badge {
+  display: inline-block;
+  @include paddingHorizontal($badge-padding-x);
+  @include paddingVertical($badge-padding-y);
+  font-size: getFontSize(md);
+  font-weight: getFontWeight(medium);
+  border-radius: $base-border-radius;
+  //margin-right:$badge-padding-x;
+  //margin-bottom: $badge-padding-y;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &.badge--pill {
+    display: inline-block;
+    border-radius: 50%;
+    @include paddingHorizontal(0);
+    @include square($badge-pill-size);
+
+    span {
+      display: none;
+    }
+  }
+
+  &.badge--hover {
+    transition: $base-animation;
+
+    @include hoverState {
+      cursor: pointer;
+      opacity: .7;
+    }
+  }
+
+  &.badge--text {
+    padding: spacing(.5);
+  }
+
+  // Badge colors
+  // ---------------------------------------------------------
+
+  @each $name, $color in $colorsAndStates {
+    &.badge--#{$name} {
+      background: $color;
+      color: color-contrast($color);
+    }
+  }
+
+  // Badge Size
+  // ---------------------------------------------------------
+
+  &.badge--md {
+    @include paddingHorizontal($badge-padding-x-md);
+    @include paddingVertical($badge-padding-y-md);
+  }
+
+  &.badge--lg {
+    @include paddingHorizontal($badge-padding-x-lg);
+    @include paddingVertical($badge-padding-y-lg);
+  }
+}

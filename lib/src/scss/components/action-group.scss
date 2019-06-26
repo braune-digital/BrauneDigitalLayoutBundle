@@ -1,0 +1,86 @@
+/*!
+ * @author Felix Baltruschat <fb@braune-digital.com>
+ * @copyright 2/7/19 2:30 PM Braune Digital GmbH
+ */
+
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Action Group
+// ---------------------------------------------------------
+
+bd-action-group {
+  display: inline-flex;
+}
+
+.action-group {
+  display: inline-flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .action-group__item {
+    margin: 0 0 0 $action-group-item-spacing;
+    padding: 0;
+    flex: 1 1 0;
+    text-align: center;
+
+
+    &.action-group__item--icon{
+      width: $action-group-item-width;
+    }
+
+    // Styles
+    // ------------------------------------------------------
+
+    &.action-group__item--spacing-left {
+      margin-left: spacing(2);
+    }
+
+    &.action-group__item--spacing-right {
+      margin-right: spacing(2);
+    }
+
+    // Danger: For delete Buttons,
+    // adds red hover
+    // ---------------------------
+
+    &.action-group__item--danger {
+      a:hover {
+        color: getColor(secondary);
+      }
+    }
+
+    &.action-group__item--primary {
+      a {
+        color: getColor(secondary);
+      }
+    }
+
+    &.action-group__item--sort {
+      a {
+        color: getColor(teritary);
+      }
+    }
+
+
+    // Item Hover colors
+    // ---------------------------------------------------------
+
+    @each $name, $color in $colorsAndStates {
+      &.action-group__item--#{$name} {
+        a {
+          &:hover {
+            color: $color;
+            i {
+              color: $color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// alert
+// ---------------------------------------------------------
+
+$alert-padding-x: spacing(2);
+$alert-padding-y: spacing();
+$alert-font-weight: getFontWeight(medium);
+$alert-height: $tmpl-head-bottom-height-desktop;
+$alert-z-index: getZindex(alert);
+
+.alert {
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-padding-y;
+
+  .alert__title {
+    font-weight: getFontWeight(bold);
+    text-transform: uppercase;
+    opacity: .6;
+    font-size: getFontSize(md);
+  }
+
+  .alert__body {
+    font-weight: $alert-font-weight;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @each $name, $color in map-merge($colors, $states) {
+    &.alert--#{$name} {
+      background: $color;
+      color: color-contrast($color);
+
+      @if $color == 'success' {
+        @include textSelection(getColor(white), color-contrast($color));
+      } @else {
+        @include textSelection($color, color-contrast($color));
+      }
+    }
+  }
+}
+
+.flash {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: $alert-z-index;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.alert {
+    min-height: $alert-height;
+    line-height: 1;
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include paddingHorizontal($tmpl-aside-left-width-desktop);
+  }
+}

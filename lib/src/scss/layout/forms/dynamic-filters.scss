@@ -1,0 +1,164 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Dynamic Filters
+// ---------------------------------------------------------
+
+$dynamicfilter-border-radius: 5px;
+$dynamicfilter-dropdown-min-width: 220px !default;
+
+.dynamic-filter-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .dynamic-filter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: getZindex(popup);
+    font-size: getFontSize(md);
+    margin-right: spacing(1);
+    margin-bottom: spacing(1);
+    transition: $base-animation;
+
+    .dynamic-filter__filter {
+      background: getColor(grey-light);
+      padding: spacing(.5) spacing(1.5);
+      border-radius: $dynamicfilter-border-radius;
+      transition: $base-animation;
+      white-space: nowrap;
+
+      a {
+        i {
+          transition: transform $base-animation-easing $base-animation-duration;
+        }
+      }
+
+      @include hoverState {
+        background: getColor(grey-light-accent);
+        cursor: pointer;
+      }
+
+      .dynamic-filter__filter--title {
+        margin-left: spacing(1);
+      }
+    }
+
+    .dynamic-filter__dropdown {
+      background: getColor(grey-light);
+      min-width: $dynamicfilter-dropdown-min-width;
+      border-radius: $dynamicfilter-border-radius;
+      border-top-left-radius: 0;
+      @include paddingHorizontal(spacing(3));
+
+      // CSS for SlideIn Animation
+      transition: $base-animation;
+      position: absolute;
+      top: 100%;
+      @include paddingVertical(0);
+      visibility: hidden;
+      transform: scaleY(0);
+      transform-origin: top;
+      overflow-y: hidden;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        padding: 0;
+        margin: 0 0 spacing(1) 0;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      .form-group {
+        .label {
+          display: flex;
+          justify-content: space-between;
+
+          i {
+            transition: $base-animation;
+            color: getColor(grey-dark);
+            @include hoverState {
+              color: getColor(primary);
+              cursor: pointer;
+            }
+          }
+        }
+
+        .form-legend {
+          display: flex;
+          justify-content: space-between;
+
+          i {
+            transition: $base-animation;
+            color: getColor(grey-dark);
+            @include hoverState {
+              color: getColor(secondary);
+              cursor: pointer;
+            }
+          }
+        }
+
+        .form-control {
+          background: getColor(white);
+        }
+      }
+
+      .ng-select {
+        .ng-select-container {
+          background-color: getColor(white);
+        }
+      }
+
+      .dynamic-filter__dropdown__actions {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 0;
+      }
+    }
+
+    &.dynamic-filter__show--dropdown {
+      .dynamic-filter__filter {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: getColor(grey-light-accent-light);
+        transition: $base-animation;
+
+        a {
+          i {
+            transform: rotate(45deg);
+          }
+        }
+
+        @include hoverState {
+          background: getColor(grey-light);
+          a {
+            i {
+              color: getColor(secondary);
+            }
+          }
+        }
+
+
+      }
+
+      .dynamic-filter__dropdown {
+        visibility: visible;
+        transform: scaleY(1);
+        background-color: getColor(grey-light-accent-light);
+        @include paddingVertical(spacing(1));
+      }
+    }
+  }
+}
+

@@ -1,0 +1,13 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<ng-container *ngIf="members && members.length > 0">
+    <h3>{{ title | translate }}</h3>
+    <bd-grid layout="b">
+        <bd-col *ngFor="let member of members">
+            <bd-avatar [user]="member" size="md"></bd-avatar>
+        </bd-col>
+    </bd-grid>
+</ng-container>

@@ -1,0 +1,77 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Media: Images, Video, Iframe, Audio
+// ---------------------------------------------------------
+
+// Figure
+// ---------------------------------------------------------
+
+img {
+  max-width: 100%;
+}
+
+.img-placeholder {
+  width: 100%;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 75%;
+    background: getColor(grey-light);
+  }
+
+  &.img-placeholder--square {
+    &:before {
+      padding-bottom: 100%;
+    }
+  }
+}
+
+.figure {
+  display: block;
+  text-align: center;
+  margin-bottom: $paragraph-margin;
+
+  figure {
+    margin-bottom: 0;
+  }
+
+  .figure__media {
+    background: getColor(grey-light);
+
+    img {
+      width: auto;
+      max-width: 100%;
+      display: block;
+      max-height: 85vh;
+      margin: 0 auto;
+    }
+
+    audio {
+      vertical-align: middle;
+      width: 100%;
+    }
+  }
+
+  figcaption,
+  .figure__caption {
+    &:not(:empty) {
+      margin-top: spacing();
+      font-size: getFontSize(md);
+      color: getColor(grey-medium);
+      text-align: center;
+    }
+  }
+
+  &.figure--border {
+    @include leftBorderStripe();
+    @include colorizeBorderStripe();
+
+    &.figure--sm {
+      @include leftBorderStripeWidth($base-border-width);
+    }
+  }
+}

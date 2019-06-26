@@ -1,0 +1,22 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<div class="modal-header">
+    <h3>
+        {{ title | translate }}
+    </h3>
+
+    <a class="modal-close" aria-label="Close" (click)="modalRef.hide(); modalClosed.emit(true)">
+        <bd-icon icon="times-circle" font="far"></bd-icon>
+    </a>
+</div>
+
+<div class="modal-body">
+    <ng-content select="bd-content-modal-main"></ng-content>
+</div>
+
+<div class="modal-footer">
+  <ng-content select="bd-content-modal-footer"></ng-content>
+</div>

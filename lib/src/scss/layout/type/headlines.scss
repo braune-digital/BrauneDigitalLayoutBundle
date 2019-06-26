@@ -1,0 +1,75 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Typography: Headlines
+// ---------------------------------------------------------
+
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: getFontWeight(bold);
+  line-height: $headline-line-height;
+  letter-spacing: $headline-letter-spacing;
+
+  @include media-breakpoint-down(xs) {
+    word-wrap: break-word;
+    width: 90%;
+  }
+}
+
+h1, .h1{
+  @include fontSize(32px);
+  margin-bottom: spacing(3);
+
+  @include media-breakpoint-up(sm) {
+    @include fontSize(38px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include fontSize(46px);
+  }
+}
+
+h2, .h2 {
+  @include fontSize(28px);
+  margin-bottom: spacing(2);
+
+  @include media-breakpoint-up(sm) {
+    @include fontSize(32px);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include fontSize(36px);
+  }
+}
+
+h3, .h3 {
+  @include fontSize(24px);
+  margin-bottom: spacing(2);
+}
+
+h4, .h4 {
+  font-weight: getFontWeight(medium);
+  font-size: getFontSize(lg);
+  margin-bottom: spacing();
+}
+
+h5, .h5 {
+  font-size: getFontSize(base);
+  font-weight: getFontWeight(medium);
+  margin-bottom: spacing();
+}
+
+h6, .h6 {
+  font-size: getFontSize(base);
+  font-weight: getFontWeight(medium);
+  margin-bottom: spacing();
+}

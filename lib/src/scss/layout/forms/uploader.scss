@@ -1,0 +1,203 @@
+/*!
+ * @author Felix Baltruschat <fb@braune-digital.com>
+ * @copyright 2/7/19 2:30 PM Braune Digital GmbH
+ */
+
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Uploader
+// ---------------------------------------------------------
+
+$uploader-inner-spacing: spacing(2);
+$uploader-preview-size: 140px;
+$uploader-dropzone-height: 80px;
+
+$avatar-size: 44px;
+$base-radius: 2px;
+
+.uploader {
+  width: 100%;
+
+  .uploader__dropzone {
+
+    .uploader__dropzone__legend {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      min-height: $uploader-dropzone-height;
+      background: getColor(grey-light);
+      color: getColor(grey-medium);
+      font-size: getFontSize(md);
+      transition: $base-animation;
+
+      @include paddingVertical(spacing(1));
+      @include paddingHorizontal(spacing(2))
+
+      bd-icon {
+        font-size: 34px;
+        margin-right: $uploader-inner-spacing;
+      }
+
+      strong {
+        display: block;
+      }
+    }
+
+    &.uploader__dropzone--hover .uploader__dropzone__legend,
+    .uploader__dropzone__legend:hover {
+      cursor: pointer;
+      background: getColor(fourthly);
+      color: getColor(black);
+    }
+  }
+
+  .uploader__queue {
+    margin-top: $form-inner-margin;
+
+    .uploader__queue__item {
+
+      transition: $base-animation;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+      margin-right: spacing(1);
+      border-bottom: 1px solid getColor(grey-light);
+
+      .uploader__queue--content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: $form-help-color;
+        font-size: $form-help-size;
+        margin-bottom: $base-progress-bar-height;
+
+        .uploader__queue--img-placeholder {
+          display: block;
+          margin-right: spacing(2);
+          &:before {
+            display: block;
+            content: '';
+            background-color: getColor(grey-light);
+            @include square($avatar-size);
+            bottom: 0;
+            left: 0;
+          }
+        }
+
+        .uploader__queue--file-audio {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: $avatar-size * .7;
+          font-weight: getFontWeight(light);
+          margin-right: spacing(2);
+          background-color: getColor(grey-light);
+          @include square($avatar-size);
+
+          @each $name, $color in $fileTypes {
+            &.uploader__queue--file-audio--#{$name} {
+              background: $color;
+              color: color-contrast($color);
+            }
+          }
+        }
+
+        .uploader__queue--filetype {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: spacing(2);
+          font-size: $avatar-size * .3;
+          text-transform: uppercase;
+          background-color: getColor(grey-light);
+          @include square($avatar-size);
+
+          @each $name, $color in $fileTypes {
+            &.uploader__queue--filetype--#{$name} {
+              background: $color;
+              color: color-contrast($color);
+            }
+          }
+
+        }
+
+        .uploader__queue--text {
+          flex-direction: column;
+          color: getColor(grey-dark);
+          p {
+            margin: 0;
+            margin-bottom: spacing(.4);
+            line-height: getLineHeight(sm);
+
+            &:last-child {
+              margin: 0;
+            }
+          }
+
+          .uploader__queue--text--meta {
+            font-size: getFontSize(xs);
+            color: getColor(grey-medium);
+          }
+        }
+
+        img {
+          @include square($avatar-size);
+          margin-right: spacing(2);
+          object-fit: cover;
+          display: block;
+        }
+      }
+      .uploader__queue__item--progress {
+        position: absolute;
+        bottom: 0;
+        display: block;
+
+        .progress-bar {
+          margin: 0;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    //
+    //&.uploader__queue--1 {
+    //  .uploader__queue__item {
+    //    width: 100%;
+    //  }
+    //}
+  }
+
+  @include media-breakpoint-down(md) {
+
+    .uploader__queue {
+      &.uploader__queue--text {
+        @include paddingHorizontal(spacing(1));
+      }
+      &.uploader__actions {
+        flex-direction: column;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs){
+    .uploader__queue {
+      &.uploader__actions {
+        .action-group{
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

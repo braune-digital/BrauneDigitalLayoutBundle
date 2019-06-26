@@ -1,0 +1,78 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Order
+// ---------------------------------------------------------
+
+.order {
+  //position: relative;
+  //padding-right: spacing(2);
+  //display: inline-flex !important;
+  //
+  //.order-action {
+  //  position: absolute !important;
+  //  right: 0;
+  //  top: 2px;
+  //  color: $order-arrow-color !important;
+  //  border-left-color: $order-arrow-color !important;
+  //  border-top-width: 4px !important;
+  //  border-bottom-width: 4px !important;
+  //  border-left-width: 5px !important;
+  //
+  //
+  //  &.desc {
+  //    top: 12px;
+  //  }
+  //}
+
+  position: relative;
+  padding-right: 20px;
+
+
+  .order-action {
+    @include fa-icon();
+    @include fontAwesome();
+
+    text-indent: -999;
+    position: absolute;
+    right: 0;
+    line-height: 1 !important;
+    font-size: getFontSize(base) !important;
+    display: block !important;
+    transform: none !important;
+    border: none !important;
+    height: auto !important;
+    width: auto !important;
+
+    &.asc, &.desc{
+      margin: 0 !important;
+      left: 5px;
+      &:before{
+        position: absolute;
+      }
+      &.active{
+        &:before{
+          @include fontAwesome(900);
+        }
+      }
+    }
+
+    &.asc{
+      &:before{
+        top: 0;
+        content: fa-content($fa-var-sort-up);
+      }
+    }
+    &.desc{
+      &:before{
+        bottom: 1px;
+        content: fa-content($fa-var-sort-down);
+      }
+
+    }
+
+  }
+
+}

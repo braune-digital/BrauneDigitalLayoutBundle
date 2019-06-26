@@ -1,0 +1,418 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Button
+// ---------------------------------------------------------
+
+$btn-padding-x: 21px !default;
+$btn-padding-y: 5px !default;
+
+$btn-padding-x-md: 27px !default;
+$btn-padding-y-md: 7px !default;
+
+$btn-padding-x-lg: 35px !default;
+$btn-padding-y-lg: 8px !default;
+
+$btn-min-width: 160px !default;
+$btn-border-radius: 0 !default;
+
+$btn-outline-border-width: $base-border-width !default;
+$btn-outline-padding-x: $input-padding-x - $btn-outline-border-width !default;
+$btn-outline-padding-y: $input-padding-y - $btn-outline-border-width !default;
+$btn-outline-font-size: $input-font-size !default;
+$btn-outline-line-height: $input-line-height !default;
+
+$btn-background-height: 45% !default;
+$btn-background-animation: cubic-bezier(0.68, -0.55, 0.265, 1.55) !default;
+
+$btn-disabled-background: getColor(grey-light) !default;
+
+@mixin btnSize($padding-horizontal, $padding-vertical, $font-size: getFontSize(base), $line-height: 1) {
+  @include paddingHorizontal($padding-horizontal);
+  @include paddingVertical($padding-vertical);
+  height: calcHeight($padding-vertical, $padding-vertical, $font-size, $line-height);
+}
+
+@mixin btnBackgroundColor($color) {
+  &:before {
+    background: $color;
+  }
+}
+
+@mixin btnBackground() {
+  position: relative;
+  font-weight: getFontWeight(bold);
+  z-index: 1;
+  line-height: 1;
+  @include btnSize($btn-padding-x, $btn-padding-y);
+  transition: background-color .3s ease;
+  display: inline-block;
+  color: getColor(black);
+  border-radius: $btn-border-radius;
+  border: none;
+  outline: none;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+
+  background: transparent;
+  text-transform: $base-text-transform;
+  overflow: hidden;
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    //transition: all $base-animation-duration $btn-background-animation;
+    transition: $base-animation;
+    z-index: -1;
+    width: 100%;
+    height: $btn-background-height;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+
+// Button
+// ---------------------------------------------------------
+
+
+.btn {
+
+
+  @include btnBackground();
+
+  @include hoverState {
+    cursor: pointer;
+    color: getColor(black);
+
+    &:before {
+      opacity: .8;
+      height: 100%;
+    }
+  }
+
+
+  @include focusState() {
+    outline: none;
+    box-shadow: $base-box-shadow;
+  }
+
+  .btn__text,
+  .btn__loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: $base-animation;
+    white-space: nowrap;
+    //position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  // Button Icon
+  // ---------------------------------------------------------
+  .btn__text {
+    bd-icon + span {
+      @include paddingHorizontal($btn-padding-y, 0);
+    }
+    span + bd-icon {
+      @include paddingHorizontal(0, $btn-padding-y);
+    }
+  }
+
+  .btn__loader {
+    transform: translate(0, 100%);
+    opacity: 0;
+    position: absolute;
+  }
+
+
+  // Button Loading
+  // ---------------------------------------------------------
+
+
+  .btn--text,
+  .btn--loading,
+  .btn--success {
+    display: block;
+
+    transition: transform .2s ease-in-out, opacity .1s ease-in-out;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .btn--loading {
+    transform: translate(0, 100%);
+    opacity: 1;
+  }
+
+  &.btn--loading, &.btn-loading {
+
+    &:before {
+      height: 100%;
+    }
+
+    .btn__text {
+      transform: translate(0, -100%);
+      opacity: 0;
+      white-space: nowrap;
+    }
+
+    .btn__loader {
+      opacity: 1;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      line-height: $input-line-height;
+
+      span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: white;
+        margin: 0 3px;
+
+        animation: load .6s infinite;
+
+        &:nth-child(2) {
+          animation-delay: .1s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: .2s;
+        }
+      }
+    }
+  }
+
+  // Button inline
+  // ---------------------------------------------------------
+
+  &.btn--inline {
+    margin-right: spacing(2);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // Button block
+  // ---------------------------------------------------------
+
+  &.btn--block {
+    display: block;
+    width: 100%;
+  }
+
+  // Button Size
+  // ---------------------------------------------------------
+
+  &.btn--sm {
+    font-weight: getFontWeight(regular);
+    font-size: getFontSize(md);
+  }
+
+  &.btn--md {
+    @include btnSize($btn-padding-x-md, $btn-padding-y-md, getFontSize(lg));
+    font-size: getFontSize(lg);
+  }
+
+  &.btn--lg {
+    @include btnSize($btn-padding-x-lg, $btn-padding-y-lg, getFontSize(xl));
+    font-size: getFontSize(xl);
+  }
+
+  // Button Text
+  // ---------------------------------------------------------
+
+  &.btn--text {
+    background: none;
+    padding-left: 0;
+
+    .btn__text {
+      justify-content: left;
+    }
+
+    @include fontAwesomeClass {
+      margin-right: spacing();
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+  // Button Link
+  // ---------------------------------------------------------
+
+  &.btn--link {
+    background: none;
+
+    @include fontAwesomeClass {
+      margin-right: spacing();
+    }
+
+    &:before {
+      opacity: 0;
+    }
+
+    @include hoverState {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Button outline
+  // ---------------------------------------------------------
+
+  &.btn--outline {
+    border: $btn-outline-border-width solid transparent;
+    transition: $base-animation-duration;
+    background: none;
+    font-size: $btn-outline-font-size;
+    line-height: $btn-outline-line-height;
+    text-transform: none;
+    @include paddingHorizontal($btn-outline-padding-x);
+    @include paddingVertical($btn-outline-padding-y);
+    height: calcHeight($btn-outline-padding-y, $btn-outline-padding-y);
+
+    &:before {
+      display: none;
+    }
+
+    @include focusState() {
+      outline: none;
+      box-shadow: $base-box-shadow;
+    }
+  }
+
+  // Button colors
+  // ---------------------------------------------------------
+
+  @each $name, $color in $colorsAndStates {
+    &.btn--#{$name} {
+
+      &:before {
+        background: $color;
+      }
+
+      i {
+        color: color-contrast($color);
+      }
+
+
+      &.btn--text, .btn__text {
+        color: color-contrast($color);
+
+        .icon {
+          padding-right: spacing(1);
+        }
+
+        @include fontAwesomeClass {
+          color: color-contrast($color);
+        }
+
+        @include hoverState {
+          color: color-contrast($color);
+        }
+      }
+
+      &.btn--link, .btn__link {
+        color: $color;
+
+        i {
+          color: $color;
+        }
+
+        @include hoverState {
+          background: $color;
+          color: color-contrast($color);
+
+          i {
+            color: color-contrast($color);
+          }
+        }
+      }
+
+      &.btn--outline, .btn__outline {
+        border-color: $color;
+        color: $color;
+
+        @include hoverState {
+          box-shadow: 0 0 0 1px $color;
+        }
+      }
+    }
+  }
+
+
+  // Button Disabled
+  // ---------------------------------------------------------
+
+  @include disabledState {
+    pointer-events: none;
+
+    &.btn--text, .btn__text {
+      color: getColor(grey-dark) !important;
+    }
+
+    &:before {
+      background: $btn-disabled-background;
+      height: $btn-background-height;
+    }
+
+    &.btn--outline {
+      border-color: $btn-disabled-background;
+      color: $btn-disabled-background;
+      opacity: .3;
+
+      @include hoverState {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+
+@keyframes load {
+  from {
+    opacity: .6;
+    transform: scale(1)
+  }
+
+  30% {
+    opacity: .7;
+    transform: scale(1.1)
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4)
+  }
+
+  80% {
+    opacity: .7;
+    transform: scale(1.1)
+  }
+
+  to {
+    opacity: .6;
+    transform: scale(1)
+  }
+}

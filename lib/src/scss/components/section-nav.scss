@@ -1,0 +1,127 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Chapter List
+// ---------------------------------------------------------
+
+$section-nav-padding-x: spacing(1.5);
+$section-nav-padding-y: spacing(.8);
+$section-nav-spacing-bottom: spacing();
+$section-nav-item-spacing-bottom: 1px;
+
+.section-nav {
+  list-style: none;
+  margin: 0 0 spacing(4);
+  padding: 0;
+  line-height: getLineHeight(sm);
+
+  li {
+    margin: 0 0 $section-nav-spacing-bottom;
+    padding: 0;
+  }
+
+  // Chapter Item
+  // ---------------------------
+
+  .section-nav__item {
+    display: block;
+    @include leftBorderStripe($base-border-width);
+    @include leftBorderStripeColor(getColor(grey-light-accent));
+    padding: ($section-nav-padding-y * 2) $section-nav-padding-x;
+    margin-bottom: $section-nav-item-spacing-bottom;
+    color: getColor(black);
+
+    // Chapter Item Topline
+    // ---------------------------
+
+    .section-nav__item__topline {
+      color: getColor(grey-medium);
+      font-size: getFontSize(sm);
+      margin-bottom: $section-nav-padding-y / 2;
+    }
+
+    // Chapter Item Chapter Title
+    // ---------------------------
+
+    .section-nav__item__chapter {
+      font-weight: getFontWeight(bold);
+    }
+
+    // States
+    // ---------------------------
+
+    @include hoverState {
+      cursor: pointer;
+
+      @include leftBorderStripeColor(getColor(primary));
+
+      &:after {
+        width: $base-stripe-width;
+      }
+    }
+
+    @include activeState {
+      background: getColor(grey-light);
+
+      &:after {
+        @include leftBorderStripeColor(getColor(primary));
+      }
+    }
+
+    &.section-nav__item--error {
+      @include leftBorderStripeColor(getColor(error));
+    }
+  }
+
+  // Chapter Lections
+  // (Contains the default Chapter List with this overrides)
+  // ---------------------------
+
+  .section-nav__sub {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: getFontSize(sm);
+
+    li {
+      padding-left: 0;
+      margin-bottom: $section-nav-item-spacing-bottom;
+
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $section-nav-padding-y $section-nav-padding-x;
+        background: getColor(grey-light);
+        color: getColor(black);
+        @include leftBorderStripe($base-border-width, $color: getColor(primary));
+
+        &:after {
+          transition: $base-animation;
+        }
+
+        &.disabled {
+          cursor: unset;
+
+          @include hoverState {
+            @include leftBorderStripeWidth($base-border-width);
+          }
+        }
+
+        @include hoverState {
+          @include leftBorderStripeWidth($base-stripe-width);
+        }
+
+        @include activeState {
+          @include leftBorderStripeWidth($base-stripe-width);
+        }
+
+        &.error {
+          @include leftBorderStripeColor(getColor(error));
+        }
+      }
+    }
+  }
+}

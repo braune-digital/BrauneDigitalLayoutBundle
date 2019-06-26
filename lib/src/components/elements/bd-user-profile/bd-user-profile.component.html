@@ -1,0 +1,17 @@
+
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<div class="user-profile__image" *ngIf="user.avatar">
+    <img [src]="user.avatar.path" *ngIf="user.avatar" />
+</div>
+<div class="user-profile_content">
+    <div class="user-profile__name">
+        <h3>
+            {{ user.fullname }}
+        </h3>
+    </div>
+
+</div>

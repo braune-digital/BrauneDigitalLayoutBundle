@@ -1,0 +1,34 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Templates
+// ---------------------------------------------------------
+
+// Overlay
+// ---------------------------------------------------------
+
+&.tmpl--aside-in,
+&.tmpl--contact-in,
+&.tmpl--registration-in {
+  .tmpl__overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: $tmpl-overlay-background;
+    z-index: $tmpl-zindex-overlay;
+    transition: $base-animation;
+  }
+}
+
+// Events
+// ---------------------------------------------------------
+
+&.tmpl--no-overlay {
+  .tmpl__overlay {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<h3 *ngIf="title">{{ title | translate }}</h3>
+
+<div class="thumbnail-list__list">
+    <ng-content select="thumbnail-list-list"></ng-content>
+</div>
+
+<bd-button color="primary" type="text" *ngIf="!disableNextElementButton">
+    <bd-icon icon="chevron-circle-down" font="fas"></bd-icon>
+    {{ 'content.actions.create' | translate }}
+</bd-button>
+
+<ng-content select="thumbnail-list-action"></ng-content>

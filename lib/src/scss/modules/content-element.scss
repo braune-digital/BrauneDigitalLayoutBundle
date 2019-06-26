@@ -1,0 +1,115 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Content Element
+// ---------------------------------------------------------
+
+$content-element-border: $base-border-width;
+$content-element-disabled-opacity: .5;
+$content-element-img-width: 120px;
+$content-element-padding-y: spacing(1);
+$content-element-padding-x: spacing(3);
+
+//
+// "Frontend"
+// Used for displaying ce for user
+// ---------------------------------------------------------
+
+.ce {
+  display: block;
+  margin-bottom: spacing(2);
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: spacing(4);
+
+    &.ce--headline {
+      margin-bottom: spacing(2);
+    }
+  }
+}
+
+//
+// "Backend"
+// Used for displaying ce for editors
+// ---------------------------------------------------------
+
+.content-element {
+  display: flex;
+  flex-direction: row;
+  padding: $content-element-padding-y $content-element-padding-x;
+  margin-bottom: spacing(2);
+  background: getColor(grey-light);
+
+  @include leftBorderStripe($stripe: $base-border-width, $color: getColor(grey-medium));
+
+  .content-element__content {
+    flex: 2 1 auto;
+    width: 0;
+  }
+
+  .content-element__type {
+    color: getColor(grey-dark);
+    font-size: getFontSize(md);
+  }
+
+  .content-element__title {
+    font-size: getFontSize(lg);
+    font-weight: getFontWeight(bold);
+  }
+
+  .content-element__preview {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .content-element__preview--img {
+    max-width: $content-element-img-width;
+  }
+
+  .content-element__form {
+    @include marginVertical(spacing(2));
+
+    &.form--white {
+      @include inputColor(getColor(black), getColor(white));
+    }
+
+    .uploader{
+      .uploader__dropzone {
+        .uploader__dropzone__legend {
+          background: getColor(white);
+        }
+      }
+    }
+
+  }
+
+  .content-element__actions {
+    flex: 0 0 150px;
+    text-align: right;
+    @include paddingVertical(spacing());
+  }
+
+  @include inactiveState {
+    opacity: $content-element-disabled-opacity;
+  }
+
+  @include allActiveStates {
+    @include leftBorderStripeColor(getColor(primary));
+    @include leftBorderStripeWidth();
+  }
+
+  &.content-element--error {
+    box-shadow: 0 0 0 $base-border-width getColor(error);
+  }
+}
+
+.content-create {
+  margin-bottom: spacing(2);
+}
+
+.content-sort {
+  margin-bottom: spacing(2);
+}

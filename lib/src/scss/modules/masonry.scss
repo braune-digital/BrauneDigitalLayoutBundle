@@ -1,0 +1,80 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Masonry
+// ---------------------------------------------------------
+//
+//.masonry {
+//  position: relative;
+//  display: flex;
+//  flex-direction: column;
+//
+//  .grid-sizer,
+//  .masonry-item {
+//    flex: 0 0 100%;
+//  }
+//
+//  @include media-breakpoint-up(md) {
+//    flex-direction: row;
+//    @include marginHorizontal(-(getGridGutter(lg)));
+//
+//    .grid-sizer,
+//    .masonry-item {
+//      flex: 0 0 50%;
+//      width: 50%;
+//      @include paddingHorizontal(getGridGutter(lg));
+//
+//      &.masonry-item--highlight {
+//        flex: 0 0 100%;
+//        width: 100%;
+//      }
+//    }
+//  }
+//
+//
+//  @include media-breakpoint-up(xl) {
+//
+//    .grid-sizer,
+//    .masonry-item {
+//      flex: 0 0 33.333333%;
+//      width: 33.333333%;
+//
+//      &.masonry-item--highlight {
+//        flex: 0 0 66.666666%;
+//        width: 66.666666%;
+//      }
+//    }
+//  }
+//}
+
+
+.masonry {
+  display: grid;
+  grid-column-gap: 80px;
+  grid-row-gap: 40px;
+  grid-template-columns: 1fr;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .masonry__item {
+    //opacity: 0;
+    grid-column: auto / auto;
+    //grid-row-end: span 4;
+    grid-row-end: span 8;
+
+    @include media-breakpoint-up(md) {
+
+      &.masonry__item--highlight {
+        grid-column: span 2;
+      }
+    }
+  }
+}

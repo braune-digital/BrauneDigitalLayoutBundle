@@ -1,0 +1,93 @@
+/*!
+ * @author Felix Baltruschat <fb@braune-digital.com>
+ * @copyright 2/7/19 2:30 PM Braune Digital GmbH
+ */
+
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Variables: Colors
+// ---------------------------------------------------------
+
+// Braune-Digital 4 Main Colors
+// ----------------------------
+
+$bdColors: (
+  purple: #753E82,
+  yellow: #EB983C,
+  cyan: #5dbfbe,
+  green: #4CB180,
+  red: #DA3D3B,
+  primary: $color-green,
+  secondary: $color-red,
+  tertiary: $color-purple,
+  fourthly: $color-yellow,
+) !default;
+
+// Extend Braune-Digital Main Colors with more theme colors
+// ----------------------------
+
+$colors: map-merge(
+    (
+      black: #000,
+      white: #FFF,
+      grey-light: #F2F2F2,
+      grey-light-accent-light: #EFEFEF,
+      grey-light-accent: #DFDFDF,
+      grey-medium: #B0B0B0,
+      grey-dark: #7E7E7E,
+      dark: #2D2D2C,
+      purple-light: #CCC7D1,
+    ),
+    $bdColors
+);
+
+// State Colors
+// ----------------------------
+
+$states: (
+  error: #e64c44,
+  success: #5cb780,
+  info: #F1F1F1,
+  warning: #ffee00,
+  draft: #F4AB6F
+) !default;
+
+// More color operations
+// ----------------------------
+
+$colorsAndStates: map-merge($colors, $states);
+
+// File Type Colors
+// ----------------------------
+
+$fileTypes: (
+  doc: rgb(31, 62, 130),
+  docx: rgb(31, 62, 130),
+  xls: rgb(27, 96, 52),
+  xlsx: rgb(27, 96, 52),
+  pdf: rgb(162, 0, 9),
+  odt: rgb(19, 107, 169),
+  ods: rgb(19, 107, 169),
+  wave: rgb(48, 143, 238),
+  wav: rgb(48, 143, 238),
+  x-wav: rgb(48, 143, 238),
+  mpeg: rgb(84, 66, 154),
+) !default;
+
+$colorsAndStatesAndFileTypes: map-merge($colorsAndStates, $fileTypes);
+
+@function getColor($color) {
+  @return map_get($colorsAndStatesAndFileTypes, $color)
+}
+
+// Set css for Background Colors
+// ---------------------------
+
+@each $name, $color in $colorsAndStatesAndFileTypes {
+  .background--#{$name} {
+    background: $color !important;
+  }
+}

@@ -1,0 +1,12 @@
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+
+@function calcHeight($padding-top, $padding-bottom, $font-size: getFontSize(base), $line-height: getLineHeight(base)) {
+  @return $padding-top + $padding-bottom + ($font-size * strip-unit($line-height));
+}

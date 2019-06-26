@@ -1,0 +1,125 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Templates
+// ---------------------------------------------------------
+
+// Content
+// ---------------------------------------------------------
+
+.tmpl__content {
+  display: flex;
+  flex-direction: column;
+
+  .tmpl__content__main {
+    order: 2;
+    animation: fadeInContent $base-animation-duration;
+  }
+
+  .tmpl__content__aside {
+    order: 1;
+
+    .tmpl__content__aside__actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      .aside__actions_subactions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      dl {
+        flex-direction: row;
+        margin: 0 0 spacing(1);
+      }
+    }
+  }
+
+  // Responsive
+  // ---------------------------------------------------------
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: $tmpl-content-width-lg;
+
+    .tmpl__content__main,
+    .tmpl__content__aside {
+      min-height: calc(100vh - (#{$tmpl-nav-height-desktop} + #{$tmpl-head-bottom-height-desktop}));
+    }
+
+    &.tmpl__content--inline{
+      .tmpl__content__main,
+      .tmpl__content__aside {
+        min-height: 0;
+      }
+    }
+
+    .tmpl__content__main {
+      order: 1;
+      flex: 2 1 auto;
+    }
+
+    .tmpl__content__aside {
+      order: 2;
+      flex: 0 0 $tmpl-content-aside-width-md;
+      margin-left: $tmpl-content-aside-margin-md;
+
+      .tmpl__content__aside__actions {
+        justify-content: normal;
+
+        .aside__actions_subactions {
+          display: flex;
+          flex-direction: column;
+          justify-content: normal;
+        }
+
+        dl {
+          flex-direction: column;
+        }
+
+        hr {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+
+    .tmpl__content__aside {
+      flex-basis: $tmpl-content-aside-width-lg;
+      margin-left: $tmpl-content-aside-margin-lg;
+
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+
+    .tmpl__content__aside {
+      flex-basis: $tmpl-content-aside-width-xl;
+      margin-left: $tmpl-content-aside-margin-xl;
+    }
+  }
+}
+
+// Events
+// ---------------------------------------------------------
+
+
+// Fade-In Animation to hide moving elements an page load
+// ---------------------------------------------------------
+
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

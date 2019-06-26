@@ -1,0 +1,12 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<h3 *ngIf="headline">
+    {{ headline }}
+</h3>
+
+<p [innerHtml]="description" *ngIf="description"></p>
+
+<bd-divider size="sm"></bd-divider>

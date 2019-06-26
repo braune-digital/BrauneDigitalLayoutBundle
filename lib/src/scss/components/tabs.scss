@@ -1,0 +1,92 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Tabs
+// ---------------------------------------------------------
+
+$nav-tabs-border-width: $base-border-width;
+$nav-tabs-border-color: getColor(purple-light);
+
+
+.nav.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: spacing(4);
+
+  .nav-item {
+    padding-left: 1px;
+  }
+
+  .nav-link {
+    display: block;
+    padding: spacing() spacing();
+    position: relative;
+
+    @include btnBackground();
+    border-radius: 0;
+
+    text-transform: none;
+
+    &:before {
+      height: $nav-tabs-border-width;
+      background: $nav-tabs-border-color;
+    }
+
+    @include hover-focus {
+
+      text-decoration: none;
+      &:before {
+        background: getColor(primary);
+      }
+    }
+
+    &.disabled {
+      @include btnBackgroundColor(rgba($nav-tabs-border-color, .7));
+      color: $nav-tabs-border-color;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+
+    &:before {
+      height: $btn-background-height;
+      background: getColor(primary);
+    }
+  }
+
+  .dropdown-menu {
+    // Make dropdown border overlap tab border
+    margin-top: -$nav-tabs-border-width;
+  }
+}
+
+
+
+// Tabbable tabs
+//
+// Hide tabbable panes to start, show them when `.active`
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
+
+
+.tab-pane.active {
+  animation: fadeIn .5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

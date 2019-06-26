@@ -1,0 +1,18 @@
+
+<div class="tmpl__lock" *isNotAuthorized>
+    <div class="tmpl__lock__content">
+        <div class="tmpl__lock__text">
+            <p class="text--teaser">{{ text  | translate }}</p>
+        </div>
+
+        <div class="tmpl__lock__actions">
+            <ng-content select="content-lock-actions"></ng-content>
+        </div>
+    </div>
+</div>
+
+<ng-content select="content-lock-preview"></ng-content>
+
+<!--<ng-container *isAuthorized *isRobot>-->
+<ng-content *isAuthorized select="content-lock-content"></ng-content>
+

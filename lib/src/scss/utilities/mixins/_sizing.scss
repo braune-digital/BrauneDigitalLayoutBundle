@@ -1,0 +1,56 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Mixins: Sizing
+// ---------------------------------------------------------
+
+// Paddings
+// ---------------------------------------------------------
+
+@mixin paddingVertical($padding, $paddingBottom: $padding) {
+  padding-top: $padding;
+  padding-bottom: $paddingBottom;
+}
+
+@mixin paddingHorizontal($padding, $paddingRight: $padding) {
+  padding-left: $padding;
+  padding-right: $paddingRight;
+}
+
+// Margins
+// ---------------------------------------------------------
+
+@mixin marginVertical($margin, $marginBottom: $margin) {
+  margin-top: $margin;
+  margin-bottom: $marginBottom;
+}
+
+@mixin marginHorizontal($margin, $marginRight: $margin) {
+  margin-left: $margin;
+  margin-right: $marginRight;
+}
+
+// Sizes
+// ---------------------------------------------------------
+
+@mixin square($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin maxSquare($width, $height: $width) {
+  max-width: $width;
+  max-height: $height;
+}
+
+@mixin minSquare($width, $height: $width) {
+  min-width: $width;
+  min-height: $height;
+}
+
+@mixin arSquare($width, $ratio: 0.75) {
+  width: $width;
+  height: $width * $ratio;
+}

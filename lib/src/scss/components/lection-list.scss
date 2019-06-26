@@ -1,0 +1,79 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Lection List
+// ---------------------------------------------------------
+
+$lection-list-inner-spacing: spacing(2);
+$lection-list-icon-size: spacing(3);
+$lection-list-icon-size-sm: 22px;
+
+.lection-list {
+
+  &,
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  .lection-list__item {
+    margin: 0 0 $lection-list-inner-spacing;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    a {
+      color: getColor(black);
+      @include hoverState{
+        text-decoration: underline;
+      }
+    }
+
+    .lection-list__item__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: $lection-list-inner-spacing / 2;
+      @include square($lection-list-icon-size);
+      flex: 0 0 auto;
+
+      font-size: getFontSize(md);
+      background: getColor(primary);
+      border-radius: 50%;
+      color: getColor(white);
+    }
+
+    .lection-list__item__title {
+      font-weight: getFontWeight(medium);
+      font-size: getFontSize(lg);
+      margin-bottom: 0;
+    }
+
+    .lection-list__topline {
+      font-size: getFontSize(md);
+      line-height: getLineHeight(md);
+      color: getColor(grey-medium);
+      margin-bottom: 0;
+    }
+  }
+
+  &.lection-list--small {
+    .lection-list__item {
+      font-size: getFontSize(sm);
+
+      .lection-list__item__icon {
+        @include square($lection-list-icon-size-sm);
+        font-size: getFontSize(sm);
+      }
+
+      .lection-list__item__title {
+        font-size: getFontSize(md);
+      }
+    }
+  }
+}

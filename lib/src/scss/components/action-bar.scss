@@ -1,0 +1,47 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Action Bar
+// ---------------------------------------------------------
+
+.action-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: spacing(3);
+
+
+  .action-bar__group {
+
+  }
+
+  .action-group__item {
+  }
+
+  .action-bar__filter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    filter-component {
+      margin-right: spacing(2);
+    }
+  }
+
+  .action-bar__actions {
+  }
+
+  @include media-breakpoint-up(md) {
+    .form-control,
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+
+  &.action-bar--center {
+    justify-content: center;
+  }
+}

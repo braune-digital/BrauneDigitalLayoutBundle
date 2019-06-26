@@ -1,0 +1,36 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+<bd-link-list [title]="title ? title : 'social.title'">
+    <li *ngIf="website">
+        <a [href]="website | safe" target="_blank">
+            <bd-icon icon="link"></bd-icon>
+            {{ 'social.networks.website' | translate }}
+        </a>
+    </li>
+    <li *ngIf="facebook">
+        <a [href]="facebook | safe" target="_blank">
+            <bd-icon font="fab" icon="facebook"></bd-icon>
+            {{ 'social.networks.facebook' | translate }}
+        </a>
+    </li>
+    <li *ngIf="twitter">
+        <a [href]="twitter | safe" target="_blank">
+            <bd-icon font="fab" icon="twitter"></bd-icon>
+            {{ 'social.networks.twitter' | translate }}
+        </a>
+    </li>
+    <li *ngIf="instagram">
+        <a [href]="instagram | safe" target="_blank">
+            <bd-icon font="fab" icon="instagram"></bd-icon>
+            {{ 'social.networks.instagram' | translate }}
+        </a>
+    </li>
+    <li *ngIf="crowdfunding">
+        <a [href]="crowdfunding | safe" target="_blank">
+            <bd-icon icon="hand-holding-usd"></bd-icon>
+            {{ 'social.networks.crowdfunding' | translate }}
+        </a>
+    </li>
+</bd-link-list>

@@ -1,0 +1,182 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<div *ngIf="!isLoading" class="form-group {{ classes.main }}">
+
+    <div class="form-input">
+        <div class="form-legend">
+            <label class="form-label" *ngIf="label">
+                {{ label | translate }}
+            </label>
+        </div>
+        <div
+            ng2FileDrop
+            class="{{ classes.dropzone }}"
+            [ngClass]="[ (dropZoneHoverState) ? classes.dropzoneHover : '' ]"
+            [uploader]="uploader"
+            (fileOver)="dropZoneHoverState = $event;"
+        >
+            <label class="{{ classes.dropzoneLegend }}">
+                <bd-icon font="fas" icon="upload"></bd-icon>
+                <span *ngIf="!isAudio && !isFile">
+                    <strong *ngIf='uploader.queue?.length === 0'>
+                        {{ 'form.fields.uploader.upload' | translate }}
+                    </strong>
+                    <strong *ngIf='uploader.queue?.length > 0 && !multiple'>
+                        {{ 'form.fields.uploader.replace' | translate }}
+                    </strong>
+                    <strong *ngIf='uploader.queue?.length > 0 && multiple'>
+                        {{ 'form.fields.uploader.add' | translate }}
+                    </strong>
+                    {{ 'form.fields.uploader.howto' | translate }}
+                </span>
+                <span *ngIf="isAudio">
+                    <strong *ngIf='uploader.queue?.length === 0'>
+                        {{ 'form.fields.uploader.upload_audio' | translate }}
+                    </strong>
+                    <strong *ngIf='uploader.queue?.length > 0'>
+                        {{ 'form.fields.uploader.replace_audio' | translate }}
+                    </strong>
+                    {{ 'form.fields.uploader.howto_audio' | translate }}
+                </span>
+                <span *ngIf="isFile">
+                    <strong *ngIf='uploader.queue?.length === 0'>
+                        {{ 'form.fields.uploader.upload_file' | translate }}
+                    </strong>
+                    <strong *ngIf='uploader.queue?.length > 0'>
+                        {{ 'form.fields.uploader.replace_file' | translate }}
+                    </strong>
+                    {{ 'form.fields.uploader.howto_file' | translate }}
+                </span>
+                <input type="file" ng2FileSelect [uploader]="uploader" multiple>
+                <ng-content></ng-content>
+            </label>
+        </div>
+        <div class="form-help" *ngIf="help">
+            {{ help }}
+        </div>
+    </div>
+
+    <ng-container *ngFor="let item of uploader.queue; let i = index;">
+
+        <div class="{{ classes.queue }} {{ classes.queue }}--{{ uploader.queue.length }}">
+            <div [ngClass]="[classes.queueItem, classes.queueItemImage]">
+
+                <div ngClass="{{ classes.queue }} {{ classes.queue }}--content">
+
+                    <div class="{{ classes.queue }}--img-placeholder" *ngIf="!item.isSuccess"></div>
+
+
+                    <span *ngIf="!isAudio && !item._file.contentType">
+                        <img class="embed__item" [src]="item._file.path" *ngIf="item.isSuccess"/>
+                    </span>
+
+                    <ng-container *ngIf="item._file.contentType">
+                      <span *ngIf="!isAudio && checkIfFileIsImage(item)">
+                          <img class="embed__item" [src]="item._file.path" *ngIf="item.isSuccess"/>
+                      </span>
+
+                      <span *ngIf="!checkIfFileIsImage(item) && item.isSuccess" class="{{ classes.queue }}--filetype {{ classes.queue }}--filetype--{{ getFileType(item) }}">
+                          <span>{{ getFileType(item) }}</span>
+                      </span>
+                    </ng-container>
+
+                    <div ngClass="{{ classes.queue }} {{ classes.queue }}--text">
+                        <ng-container *ngIf="filterByProperty(metaData, 'id', item._file['id'])">
+                            <p>{{ 'form.fields.filename' | translate }}: {{ filterByProperty(metaData, 'id', item._file['id'])['name'] }}</p>
+                        </ng-container>
+                        <ng-container *ngIf="!filterByProperty(metaData, 'id', item._file['id'])">
+                            <p>{{ 'form.fields.filename' | translate }}: {{ item._file['name'] }}</p>
+                        </ng-container>
+                        <div class="{{ classes.queue }}--text--meta" *ngIf="metaIsEmpty && !disableMeta">
+
+                            <ng-container *ngIf="filterByProperty(metaData, 'id', item._file['id'])">
+                                <ng-container *ngIf="filterByProperty(metaData, 'id', item._file['id'])['copyright'] || filterByProperty(metaData, 'id', item._file['id'])['copyright'] === ''; else copyrightEmpty">
+                                   <p>{{ 'form.fields.copyright' | translate }}: {{ filterByProperty(metaData, 'id', item._file['id'])['copyright'] }}</p>
+                                </ng-container>
+                                <ng-template #copyrightEmpty>
+                                   <p>{{ 'form.fields.copyright' | translate }}: {{ 'form.errors.no_copyright' | translate }}</p>
+                                </ng-template>
+
+                                <ng-container *ngIf="filterByProperty(metaData, 'id', item._file['id'])['description'] || filterByProperty(metaData, 'id', item._file['id'])['description'] === ''; else descriptionEmpty">
+                                   <p>{{ 'form.fields.description' | translate }}: {{ filterByProperty(metaData, 'id', item._file['id'])['description'] }}</p>
+                                </ng-container>
+                                <ng-template #descriptionEmpty>
+                                   <p>{{ 'form.fields.description' | translate }}: {{ 'form.errors.no_description' | translate }}</p>
+                                </ng-template>
+                            </ng-container>
+
+                            <!--<p>{{ 'form.fields.copyright' | translate }}: {{ item._file['copyright'] || item._file['copyright'] === '' ? item._file['copyright'] : 'form.errors.no_copyright' | translate }}</p>-->
+                            <!--<p>{{ 'form.fields.description' | translate }}: {{ item._file['description'] || item._file['description'] === '' ? item._file['description'] : 'form.errors.no_description' | translate }}</p>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="{{ classes.queue }} {{ classes.actions }}">
+                    <bd-action-group>
+                        <bd-action-group-item *ngIf="showHelp && metaIsEmpty && !disableMeta">
+                                <a [ngClass]="[classes.action]" tooltip="{{ 'tooltips.images.help' | translate }}">
+                                    <bd-icon icon="info-circle"></bd-icon>
+                                </a>
+                        </bd-action-group-item>
+                        <bd-action-group-item *ngIf="metaIsEmpty && !disableMeta">
+                                <a [ngClass]="[classes.action]" (click)="openModal(templateUploaderModal, i, item)" tooltip="{{ 'tooltips.edit' | translate }}">
+                                    <bd-icon icon="pencil-alt"></bd-icon>
+                                </a>
+                        </bd-action-group-item>
+                        <bd-action-group-item type="danger">
+                            <a [ngClass]="[classes.action, classes.actionRemove]" (click)="onRemove(item)" tooltip="{{ 'tooltips.delete' | translate }}">
+                                <bd-icon icon="trash-alt"></bd-icon>
+                            </a>
+                        </bd-action-group-item>
+                    </bd-action-group>
+                </div>
+                <div [ngClass]="[classes.queueItem, classes.queueItemProgress]" *ngIf="item.isUploading">
+                    <bd-progress-bar [progress]="item.progress"></bd-progress-bar>
+                </div>
+            </div>
+            <div [ngClass]="[classes.queueItem, classes.queueItemError]" *ngIf="item.isError">
+                <i class="fa exclamation-triangle"></i>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+
+<ng-template #templateUploaderModal>
+    <div *ngIf="modalImageItem">
+        <bd-content-modal title="Edit {{ modalImageItem.file.name }}" [modalRef]="modalRef">
+          <bd-content-modal-main>
+            <form [formGroup]="modalForm" *ngIf="modalForm" (submit)="handleModalSubmit(modalImageItem._file['id'])">
+
+                <bd-input [ignoreTouchedForErrors]="true"
+                          [label]="'form.fields.image.file_name' | translate"
+                          [placeholder]="'form.placeholder.image.file_name' | translate"
+                          [formControl]="modalForm.get('name')"></bd-input>
+
+                <bd-input [ignoreTouchedForErrors]="true"
+                          [label]="'form.fields.image.copyright' | translate"
+                          [placeholder]="'form.placeholder.image.copyright' | translate"
+                          [formControl]="modalForm.get('copyright')"></bd-input>
+
+                <bd-textarea [ignoreTouchedForErrors]="true"
+                             [formControl]="modalForm.get('description')"
+                             [placeholder]="'form.placeholder.image.description' | translate"
+                             [label]="'form.fields.image.description' | translate"
+                             maxLength="300"
+                             [help]="'form.fields.image.description' | translate">
+                </bd-textarea>
+
+                <bd-progress-button
+                    [btnStateLoading]="isSendingRequest"
+                    btnType="submit"
+                    [btnDisabled]="form.invalid"
+                    btnClass="btn--primary">
+                    {{ 'form.actions.save' | translate }}
+                </bd-progress-button>
+            </form>
+          </bd-content-modal-main>
+        </bd-content-modal>
+    </div>
+</ng-template>

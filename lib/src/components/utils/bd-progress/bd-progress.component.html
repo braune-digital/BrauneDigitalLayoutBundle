@@ -1,0 +1,19 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<div class="progress">
+    <div class="progress__legend">
+        <div class="message__title" *ngIf="title">
+            {{ title }}
+        </div>
+        <div>
+            <ng-content select="bd-progress-link"></ng-content>
+        </div>
+    </div>
+    <bd-progress-bar [progress]="progress"></bd-progress-bar>
+    <div class="progres__help">
+        <ng-content select="bd-progress-help"></ng-content>
+    </div>
+</div>

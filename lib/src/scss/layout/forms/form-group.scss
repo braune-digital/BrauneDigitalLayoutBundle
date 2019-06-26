@@ -1,0 +1,35 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Form Group
+// ---------------------------------------------------------
+
+.form-group {
+  margin-bottom: $form-group-margin-bottom;
+
+  .row {
+    align-items: center;
+  }
+
+  &.has-errors {
+    .form-control {
+      box-shadow: 0 0 0 $base-border-width getColor(error);
+      // Placeholder
+      &::placeholder {
+        color: getColor(error);
+      }
+    }
+  }
+}
+
+// Form Legend
+// ---------------------------------------------------------
+
+.form-legend {
+  @include fontAwesomeClass {
+    color: getColor(primary);
+    font-size: getFontSize(sm)
+  }
+}

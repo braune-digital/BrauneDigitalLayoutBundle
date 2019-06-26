@@ -1,0 +1,10 @@
+<ng-container *ngIf="alert">
+    <div [@flash] (@flash.done)="removeAlert($event)" class="alert alert--{{ alert.type }} flash">
+        <div class="alert__title" *ngIf="alert.title">
+            {{ alert.title | translate }}
+        </div>
+        <div class="alert_body" *ngIf="alert.message">
+            {{ alert.message | translate }}
+        </div>
+    </div>
+</ng-container>

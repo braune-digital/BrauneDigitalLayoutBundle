@@ -1,0 +1,59 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Message
+// ---------------------------------------------------------
+
+.nav-arrow {
+  position: fixed;
+  top: spacing(1);
+  right: spacing(1);
+  font-size: 30px;
+
+  i {
+    cursor: pointer;
+  }
+
+  &.nav-arrow--left {
+    left: spacing(1.6);
+    i {
+      cursor: pointer;
+    }
+  }
+
+  &.nav-arrow--light {
+    opacity: .1;
+
+    i {
+      cursor: pointer;
+    }
+  }
+
+  &.nav-arrow--head {
+    right: spacing(7.5);
+    @include media-breakpoint-down(sm){
+      display: none;
+    }
+  }
+  // Mobile Style
+  // -----------------------------
+
+  &.nav-arrow--mobile {
+    @include media-breakpoint-down(xs) {
+      right: spacing(1);
+    }
+    right: spacing(7.5);
+    z-index: getZindex(popup);
+    display: none;
+  }
+
+  &.nav-arrow--mobile-nav {
+    right: spacing(1);
+    z-index: getZindex(popup);
+    display: none;
+  }
+}
+
+

@@ -1,0 +1,143 @@
+/*!
+ * @author Felix Baltruschat <fb@braune-digital.com>
+ * @copyright 2/7/19 2:30 PM Braune Digital GmbH
+ */
+
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Mixins
+// ---------------------------------------------------------
+
+@import "mixins/breakpoints";
+@import "mixins/form";
+@import "mixins/hover";
+@import "mixins/sizing";
+@import "mixins/type";
+
+// RTL
+// ---------------------------------------------------------
+
+@mixin rtl {
+  @at-root [dir="rtl"] #{&} {
+    @content
+  }
+}
+
+// States
+// ---------------------------------------------------------
+
+@mixin hoverState() {
+  &--hover,
+  &:hover {
+    @content;
+  }
+}
+
+@mixin focusState() {
+  &--focus,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hoverFocusState() {
+  &--hover,
+  &:hover,
+  &--focus,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin activeState() {
+  &--active,
+  &:active,
+  &.active,
+  &[active] {
+    @content;
+  }
+}
+
+@mixin inactiveState() {
+  &--inactive,
+  &.inactive,
+  &[inactive] {
+    @content;
+  }
+}
+
+@mixin disabledState() {
+  &#{&}--disabled,
+  &:disabled,
+  &.disabled,
+  &[disabled] {
+    @content;
+  }
+}
+
+@mixin allActiveStates() {
+  &--hover,
+  &:hover,
+  &--focus,
+  &:focus,
+  &--active,
+  &:active,
+  &.active,
+  &[active] {
+    @content;
+  }
+}
+
+
+// Border Stripes
+// ---------------------------------------------------------
+
+@mixin leftBorderStripe($stripe: $base-stripe-width, $zindex: getZindex(content), $color: false, $animate: true) {
+  position: relative;
+  z-index: $zindex;
+
+  &:after {
+    display: block;
+    position: absolute;
+    width: $stripe;
+    height: 100%;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index: $zindex;
+
+    @if $color != false {
+      background: $color;
+    }
+
+    @if $animate != false {
+      transition: $base-animation;
+    }
+  }
+}
+
+@mixin leftBorderStripeWidth($stripe: $base-stripe-width) {
+  &:after {
+    width: $stripe;
+  }
+}
+
+@mixin leftBorderStripeColor($color: transparent) {
+  &:after {
+    background: $color;
+  }
+}
+
+@mixin colorizeBorderStripe($colors: $bdColors) {
+
+  @each $name, $color in $bdColors {
+    &--#{$name} {
+      &:after {
+        background: $color;
+      }
+    }
+  }
+}

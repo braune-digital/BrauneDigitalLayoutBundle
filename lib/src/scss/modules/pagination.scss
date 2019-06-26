@@ -1,0 +1,131 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Pagination
+// ---------------------------------------------------------
+
+$pagination-link-size: calcHeight($input-padding-y, $input-padding-y, $input-font-size, $input-line-height);
+$pagination-spacing: spacing(.5);
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0 $pagination-spacing $pagination-spacing 0;
+    padding: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: getColor(grey-light);
+      font-weight: getFontWeight(medium);
+      color: getColor(grey-medium);
+      font-size: getFontSize(md);
+      @include square($pagination-link-size * .8);
+
+      @include hoverState {
+        background: getColor(fourthly);
+        color: getColor(black);
+      }
+    }
+
+    @include activeState {
+      a {
+        background: getColor(primary);
+        color: getColor(white);
+        font-weight: getFontWeight(bold);
+      }
+    }
+
+    @include disabledState {
+      a {
+        opacity: .4;
+        background: getColor(grey-light);
+        font-weight: getFontWeight(medium);
+        color: getColor(grey-medium);
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+
+    &.pagination-first,
+    &.pagination-prev,
+    &.pagination-next,
+    &.pagination-last {
+      @include fontAwesome();
+    }
+  }
+}
+
+.pagination-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  .form-group {
+    .ng-select-container {
+      min-width: unset;
+
+      min-height: $pagination-link-size * .8;
+      height: $pagination-link-size * .8;
+    }
+  }
+}
+
+
+// Responsive
+// ----------------------------
+@media (min-width: 432px) {
+  .pagination-bar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@include media-breakpoint-up(sm){
+  .pagination{
+    li {
+      a {
+        @include square($pagination-link-size * .9);
+      }
+    }
+  }
+
+  .pagination-bar {
+    .form-group {
+      .ng-select-container {
+        min-width: $input-min-width * .9;
+        min-height: $pagination-link-size * .9;
+        height: $pagination-link-size * .9;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  .pagination{
+    li {
+      a {
+        @include square($pagination-link-size);
+      }
+    }
+  }
+
+  .pagination-bar {
+    .form-group {
+      .ng-select-container {
+        min-width: $input-min-width;
+        min-height: $pagination-link-size;
+        height: $pagination-link-size;
+      }
+    }
+  }
+}

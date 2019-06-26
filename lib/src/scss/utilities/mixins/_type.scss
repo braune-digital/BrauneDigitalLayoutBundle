@@ -1,0 +1,54 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Mixins: Type
+// ---------------------------------------------------------
+
+// Text selection
+// ---------------------------------------------------------
+
+
+@mixin fontAwesomeClass {
+  .fa, .fas, .far, .fal, .fab {
+    @content;
+  }
+}
+
+@mixin fontAwesome($weight: 400) {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: $weight;
+}
+
+@mixin textSelection($text, $background) {
+  ::selection {
+    color: $text;
+    background: $background;
+  }
+}
+
+@mixin reset-text {
+  font-family: $base-font-family;
+  // We deliberately do NOT reset font-size or word-wrap.
+  font-style: normal;
+  font-weight: getFontWeight();
+  line-height: getLineHeight();
+  text-align: left; // Fallback for where `start` is not supported
+  text-align: start; // stylelint-disable-line declaration-block-no-duplicate-properties
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+}
+
+
+@mixin textEllipis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

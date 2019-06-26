@@ -1,0 +1,21 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Info Box
+// ---------------------------------------------------------
+
+.info-box {
+  font-size: getFontSize(md);
+  line-height: getLineHeight(md);
+
+  .info-box__topline {
+    display: block;
+    color: getColor(grey-medium);
+  }
+
+  a {
+    display: block;
+  }
+}

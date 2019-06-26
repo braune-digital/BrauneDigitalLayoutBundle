@@ -1,0 +1,17 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Mixins: Forms
+// ---------------------------------------------------------
+
+// Input Color
+// ---------------------------------------------------------
+
+@mixin inputColor($color, $bg) {
+  .form-control {
+    background-color: $bg;
+    color: $color;
+  }
+}

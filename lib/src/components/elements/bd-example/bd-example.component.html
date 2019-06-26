@@ -1,0 +1,8 @@
+<div class="example">
+    <ng-container *ngIf="example">
+        <span [innerHTML]="example"></span>
+    </ng-container>
+    <ng-container *ngIf="!example">
+        <ng-content></ng-content>
+    </ng-container>
+</div>

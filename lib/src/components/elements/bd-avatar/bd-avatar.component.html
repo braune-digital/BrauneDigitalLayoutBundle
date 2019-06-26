@@ -1,0 +1,32 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+<ng-container *ngIf="user">
+    <div class="avatar__img">
+        <bd-image [border]="color" [image]="user.avatar.path" *ngIf="user.avatar" ></bd-image>
+        <div class="avatar__initials avatar__initials--{{ avatarColor }}" *ngIf="!user.avatar">
+            <span class="avatar__initials__text">{{ getInitials() }}</span>
+        </div>
+    </div>
+    <div class="avatar__content">
+
+        <div ngClass="{{ headlineType }}" *ngIf="!hideName" [innerHTML]="user.fullname"></div>
+
+        <p *ngIf="user.description && showDescription">{{ user.description }}</p>
+        <div class="avatar__content__tags" *ngIf="tags">
+            <bd-tags [tags]="tags" [inline]="true" [title]="'form.fields.interests' | translate"></bd-tags>
+        </div>
+
+        <ng-container *isAuthorized>
+            <bd-button color="primary" [inline]="true" *ngIf="enableFollow">{{ 'bd.community.profile.follow' | translate }}</bd-button>
+            <bd-button color="fourthly" [inline]="true" *ngIf="enableMessage">{{ 'bd.community.profile.send_message' | translate }}</bd-button>
+        </ng-container>
+        <ng-container *isNotAuthorized>
+            <bd-button [disabled]="true" [inline]="true" *ngIf="enableFollow">{{ 'bd.community.profile.follow' | translate }}</bd-button>
+            <bd-button [disabled]="true" [inline]="true" *ngIf="enableMessage">{{ 'bd.community.profile.send_message' | translate }}</bd-button>
+        </ng-container>
+
+    </div>
+</ng-container>
+

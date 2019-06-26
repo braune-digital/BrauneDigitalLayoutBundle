@@ -1,0 +1,53 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Button Group
+// ---------------------------------------------------------
+
+.btn-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+  align-items: center;
+
+  > .btn,
+  > bd-progress-button {
+    position: relative;
+    flex: 0 1 auto;
+
+    &:not(:last-child) {
+      margin-right: spacing();
+    }
+
+    // Bring the hover, focused, and "active" buttons to the front to overlay
+    // the borders properly
+    @include hover {
+      z-index: 1;
+    }
+
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 1;
+    }
+  }
+
+  > .btn:first-child {
+    margin-left: 0;
+  }
+
+  // Button Group
+  // ---------------------------------------------------------
+
+  &.btn-group--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    .btn {
+      margin-bottom: spacing();
+    }
+  }
+}

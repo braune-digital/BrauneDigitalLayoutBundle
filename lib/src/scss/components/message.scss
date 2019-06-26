@@ -1,0 +1,39 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Message
+// ---------------------------------------------------------
+
+$message-padding-x: spacing(2);
+$message-padding-y: spacing();
+
+.message {
+  padding: $message-padding-y $message-padding-x;
+  margin-bottom: spacing(2);
+
+  .message__title {
+    font-weight: getFontWeight(bold);
+    text-transform: uppercase;
+    opacity: .6;
+    font-size: getFontSize(md);
+  }
+
+  .message__body {
+    font-size: getFontSize(md);
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @each $name, $color in map-merge($colors, $states) {
+    &.message--#{$name} {
+      background: $color;
+      color: color-contrast($color);
+
+      @include textSelection($color, color-contrast($color));
+    }
+  }
+}

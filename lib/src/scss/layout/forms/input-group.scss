@@ -1,0 +1,49 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Inputs Group
+// ---------------------------------------------------------
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+
+  &.input-group--inline {
+    display: flex;
+    flex-direction: row;
+
+    .input {
+      flex-grow: 1;
+      margin-right: $input-margin-bottom;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .form-control {
+    flex: 1 1 auto;
+    //width: 100%;
+  }
+
+  .input-group-prepend,
+  .input-group-prepend {
+  }
+
+  .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: $input-padding-y $input-padding-x;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    background-color: $input-background;
+
+  }
+}

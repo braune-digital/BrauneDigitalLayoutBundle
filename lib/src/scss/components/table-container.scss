@@ -1,0 +1,17 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Table Container
+// ---------------------------------------------------------
+
+.table-container {
+
+  .table-container__footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

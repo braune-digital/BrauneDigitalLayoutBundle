@@ -1,0 +1,73 @@
+/*!
+ * @author Felix Baltruschat <fb@braune-digital.com>
+ * @copyright 2/7/19 2:30 PM Braune Digital GmbH
+ */
+
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// SERP Preview
+// ---------------------------------------------------------
+
+$serp-font-family: arial,sans-serif;
+$serp-max-width: 592px;
+
+$serp-font-size: 13px;
+$serp-line-height: 1.4;
+$serp-color: #545454;
+
+$serp-link-font-size: 14px;
+$serp-link-line-height: 1.2;
+$serp-link-color: #006621;
+
+$serp-headline-font-size: 18px;
+$serp-headline-line-height: 1.2;
+$serp-headline-color: #1a0dab;
+
+
+bd-serp {
+  display: block;
+  width: 100%;
+}
+
+.serp-preview {
+  font-family: $serp-font-family;
+  font-size: $serp-font-size;
+  line-height: $serp-line-height;
+  color: $serp-color;
+  font-style: normal;
+
+  padding: spacing(3);
+  border: $base-border-width solid getColor(purple-light);
+
+  .serp-preview__title {
+    font-size: $serp-headline-font-size;
+    line-height: $serp-headline-line-height;
+    color: $serp-headline-color;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .serp-preview__url {
+    font-size: $serp-link-font-size;
+    line-height: $serp-link-line-height;
+    color: $serp-link-color;
+    @include paddingVertical(2px, 3px);
+  }
+
+  .serp-preview__description {
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: $serp-max-width;
+
+    .serp-preview__title,
+    .serp-preview__url {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

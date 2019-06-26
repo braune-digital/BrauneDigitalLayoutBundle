@@ -1,0 +1,38 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// approval
+// ---------------------------------------------------------
+
+
+$approval-padding-x: spacing(1.5);
+$approval-padding-y: spacing(1);
+
+.approval {
+  padding: $approval-padding-y $approval-padding-x 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 spacing(4);
+  border: 2px solid transparent;
+
+  p {
+    color: getColor(grey-dark);
+    font-size: getFontSize(md);
+    line-height: getLineHeight(sm);
+  }
+
+  // Approval colors
+  // ---------------------------------------------------------
+
+  @each $name, $color in $colorsAndStates {
+    &.approval--#{$name} {
+      border-color: $color;
+
+      h5 {
+        color: $color;
+      }
+    }
+  }
+}

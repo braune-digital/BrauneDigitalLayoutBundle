@@ -1,0 +1,26 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Functions
+// ---------------------------------------------------------
+
+// Color Contrast Function
+// ---------------------------------------------------------
+
+$dark-text-default: #000 !default;
+$light-text-default: #fff !default;
+
+@function color-contrast($color, $dark: $dark-text-default, $light: $light-text-default) {
+  @if $color == null {
+    @return null;
+  }
+  //@else if ($color == getColor(primary)) or ($color == getColor(success)) {
+  //  @return $light;
+  //}
+  @else {
+    $yiq: (red($color) * 299 + green($color) * 587 + blue($color) * 114) / 1000;
+    @return if($yiq >= 128, $dark, $light);
+  }
+}

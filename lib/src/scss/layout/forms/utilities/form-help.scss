@@ -1,0 +1,33 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Form help
+// ---------------------------------------------------------
+
+.form-help {
+  color: $form-help-color;
+  font-size: $form-help-size;
+  line-height: $form-help-line-height;
+  margin-top: $form-inner-margin;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &.form-help--center {
+    text-align: center;
+  }
+
+
+  // Form Help colors
+  // ---------------------------------------------------------
+
+  @each $name, $color in $colorsAndStates {
+    &.form-help--#{$name} {
+      color: $color;
+    }
+  }
+
+}

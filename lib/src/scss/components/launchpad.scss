@@ -1,0 +1,96 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Action Bar
+// ---------------------------------------------------------
+
+$launchpad-inner-padding: spacing(2);
+$launchpad-icon-width: 40px;
+
+.launchpad {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: spacing(3);
+
+  @include marginHorizontal(-(getGridGutter(sm)));
+
+  .launchpad__item {
+    position: relative;
+    min-height: 1px;
+    width: 100%;
+    @include paddingHorizontal(getGridGutter(sm));
+    margin-bottom: getGridGutter(sm, true);
+  }
+
+  .launchpad__app {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background: getColor(grey-light);
+    color: getColor(black);
+    padding: $launchpad-inner-padding;
+    font-weight: getFontWeight(bold);
+    transition: $base-animation;
+
+    @include fontAwesomeClass {
+      margin-right: $launchpad-inner-padding;
+      font-size: 28px;
+      width: $launchpad-icon-width;
+      text-align: center;
+    }
+
+    &:hover {
+      background: getColor(secondary);
+      color: getColor(white);
+
+      @include fontAwesomeClass {
+        color: getColor(white);
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .launchpad__item {
+      width: 50%;
+      flex: 1 0 auto;
+    }
+
+    .launchpad__app {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 170px;
+
+      @include fontAwesomeClass {
+        font-size: 36px;
+        margin-right: 0;
+        margin-bottom: spacing(1);
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .launchpad__item {
+      width: 33.33%;
+      flex: 1 0 33.33%;
+    }
+  }
+
+
+  @include media-breakpoint-up(xl) {
+    .launchpad__item {
+      width: 25%;
+      flex: 1 0 25%;
+    }
+
+    .launchpad__app {
+      min-height: 200px;
+    }
+  }
+}

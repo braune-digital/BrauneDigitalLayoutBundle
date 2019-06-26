@@ -1,0 +1,52 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Thumbnail List
+// ---------------------------------------------------------
+
+$thumbnail-list-image-width: 80px;
+$thumbnail-list-image-margin: spacing(2);
+
+.thumbnail-list {
+  display: block;
+  margin: 0 0 $list-margin-bottom;
+
+  .thumbnail-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: $list-item-margin-bottom;
+
+    h4 {
+      margin-bottom: 0;
+    }
+
+    .thumbnail-item__image {
+      margin-right: $thumbnail-list-image-margin;
+      width: $thumbnail-list-image-width;
+      flex: 0 0 $thumbnail-list-image-width;
+    }
+
+    .thumbnail-item__text {
+      flex: 2 1 auto;
+    }
+  }
+
+  &.thumbnail-list--crop {
+    .thumbnail-item {
+      .thumbnail-item__text {
+        align-self: center;
+        width: 0;
+
+        p {
+          @include textEllipis();
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: spacing(4);
+  }
+}

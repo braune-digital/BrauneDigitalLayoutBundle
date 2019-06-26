@@ -1,0 +1,33 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Info Box
+// ---------------------------------------------------------
+
+
+$icon-sizes: (
+    lg: 30px,
+    xl: 60px
+);
+
+.icon {
+  display: inline-block;
+
+  &.icon--xl {
+    @include marginVertical(spacing(2));
+  }
+
+  @each $name, $size in $icon-sizes {
+    &.icon--#{$name} {
+      font-size: $size;
+    }
+  }
+
+  @each $name, $color in $colors {
+    &.icon--#{$name} {
+      color: $color;
+    }
+  }
+}

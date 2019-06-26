@@ -1,0 +1,141 @@
+/*!
+ * @author Felix Baltruschat <fb@braune-digital.com>
+ * @copyright 2/7/19 2:24 PM Braune Digital GmbH
+ */
+
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Typography
+// ---------------------------------------------------------
+
+// General
+// ---------------------------------------------------------
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  letter-spacing: $base-letter-spacing;
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 1.25),
+  only screen and (min-device-pixel-ratio: 1.25),
+  only screen and (min-resolution: 200dpi),
+  only screen and (min-resolution: 1.25dppx) {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+@import "type/headlines";
+@import "type/helper";
+
+
+@include textSelection(getColor(black), getColor(secondary));
+
+$paragraph-margin: 1rem;
+
+// Paragraph
+// ---------------------------------------------------------
+
+p {
+  margin: 0 0 $paragraph-margin;
+}
+
+// Links
+// ---------------------------------------------------------
+
+a {
+  font-weight: getFontWeight(normal);
+  text-decoration: none;
+  color: getColor(primary);
+
+  @include hoverState {
+    text-decoration: none;
+    color: getColor(secondary);
+    cursor: pointer;
+  }
+}
+
+// Ordered / Unordered Lists
+// ---------------------------------------------------------
+
+$list-margin-bottom: 1rem;
+$list-margin-left: 1rem;
+$list-margin-right: 1rem;
+$list-item-margin-bottom: .5rem;
+
+ul, ol {
+  margin: 0 0 $list-margin-bottom $list-margin-left;
+  padding: 0;
+
+  li {
+    margin: 0 0 $list-item-margin-bottom;
+    padding: 0 0 0 $list-margin-left;
+
+    > ul, > ol {
+      margin-top: $list-item-margin-bottom;
+    }
+  }
+}
+
+// Definiton Lists
+// ---------------------------------------------------------
+
+dl {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 $list-margin-bottom;
+
+  dt {
+    color: getColor(grey-dark);
+    font-size: getFontSize(sm);
+    font-weight: getFontWeight(light);
+    padding-right: spacing(1);
+  }
+
+  dd {
+    color: getColor(grey-dark);
+    font-size: getFontSize(sm);
+    font-weight: getFontWeight(light);
+    margin: 0 0 $list-item-margin-bottom;
+  }
+
+  @include media-breakpoint-up(md)  {
+    flex-direction: column;
+
+    dt {
+      padding: 0;
+    }
+    dd {
+      color: getColor(black);
+      font-size: getFontSize(base);
+      font-weight: getFontWeight(regular);
+    }
+  }
+}
+
+// Helper
+// ---------------------------------------------------------
+
+.text--teaser {
+  font-size: getFontSize(lg);
+  line-height: getLineHeight(lg);
+  margin-bottom: $paragraph-margin * 2;
+  max-width: 700px;
+}
+
+.text--topline {
+  font-size: getFontSize(md);
+  line-height: getLineHeight(md);
+  color: getColor(grey-medium);
+  margin-bottom: 0;
+}
+
+
+.text--mute {
+  color: getColor(purple-light);
+  font-style: italic;
+}

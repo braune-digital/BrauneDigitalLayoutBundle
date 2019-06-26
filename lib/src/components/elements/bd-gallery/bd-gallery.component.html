@@ -1,0 +1,18 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<bd-grid layout="c" *ngIf="images">
+    <bd-col *ngFor="let image of images">
+        <bd-image [image]="image.path" [alt]="image.description ? image.description : ''"></bd-image>
+    </bd-col>
+</bd-grid>
+
+<!--<div bd-masonry *ngIf="images" gridGapRow="20px" gridGapColumn="20px">-->
+    <!--<div bd-masonry-item *ngFor="let image of images">-->
+        <!--<div class="masonry-item">-->
+            <!--<bd-image [image]="image.path" [alt]="image.description ? image.description : ''"></bd-image>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

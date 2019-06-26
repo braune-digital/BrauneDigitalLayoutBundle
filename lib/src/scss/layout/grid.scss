@@ -1,0 +1,266 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Grid
+// ---------------------------------------------------------
+
+$grid-col-last-width: spacing(12);
+
+$grid-gutters: (
+  sm: spacing(2),
+  md: spacing(4),
+  lg: spacing(8)
+);
+
+@function getGridGutter($size, $full: false) {
+  @if $full == true {
+    @return (map_get($grid-gutters, $size))
+  } @else {
+    @return (map_get($grid-gutters, $size) / 2)
+  }
+}
+
+.grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  > .col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+  }
+
+  // Responsive
+  // ---------------------------------------------------------
+
+  @include media-breakpoint-up(md) {
+    @include marginHorizontal(-(getGridGutter(sm)));
+    flex-direction: row;
+
+    > .col {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      min-height: 1px;
+      flex-basis: 0;
+      flex-grow: 1;
+      @include paddingHorizontal(getGridGutter(sm));
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    // Gutter options
+    // ---------------------------
+
+    &.grid--gutter-lg {
+      @include marginHorizontal(-(getGridGutter(lg)));
+      > .col {
+        @include paddingHorizontal(getGridGutter(lg));
+      }
+    }
+  }
+
+  // Gutter options
+  // ---------------------------
+
+  &.grid--center {
+    align-items: center;
+  }
+}
+
+// Grid A (1 column)
+// ---------------------------
+
+.grid--a {
+  @include media-breakpoint-up(xl) {
+    justify-content: center;
+
+    > .col:nth-child(1) {
+      flex: 0 0 90%;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    > .col:nth-child(1) {
+      flex-basis: 80%;
+    }
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    > .col:nth-child(1) {
+      flex-basis: 70%;
+    }
+  }
+}
+
+// Grid B (2 columns)
+// ---------------------------
+
+$grid-b-fixed-width: 200px;
+
+.grid--b,
+.grid--b-1 {
+  min-width: 0;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .col {
+      width: 50%;
+      flex: 0 1 50%;
+    }
+  }
+}
+
+.grid--b-1 {
+  @include media-breakpoint-up(md) {
+
+    > .col:nth-child(1) {
+      flex: 0 0 ($grid-b-fixed-width + getGridGutter(sm, true));
+      width: ($grid-b-fixed-width + getGridGutter(sm, true));
+    }
+
+    > .col:nth-child(2) {
+      flex: 2 1 auto;
+    }
+
+    // Gutter options
+    // ---------------------------
+
+    &.grid--gutter-lg {
+      > .col:nth-child(1) {
+        flex: 0 0 ($grid-b-fixed-width + getGridGutter(lg, true));
+        width: ($grid-b-fixed-width + getGridGutter(lg, true));
+      }
+    }
+  }
+}
+
+.grid--b-2 {
+  @include media-breakpoint-up(md) {
+
+    > .col:nth-child(2) {
+      flex: 0 0 ($grid-b-fixed-width + getGridGutter(sm, true));
+      width: ($grid-b-fixed-width + getGridGutter(sm, true));
+    }
+
+    > .col:nth-child(1) {
+      flex: 2 1 auto;
+    }
+
+    // Gutter options
+    // ---------------------------
+
+    &.grid--gutter-lg {
+      > .col:nth-child(2) {
+        flex: 0 0 ($grid-b-fixed-width + getGridGutter(lg, true));
+        width: ($grid-b-fixed-width + getGridGutter(lg, true));
+      }
+    }
+  }
+}
+
+// Grid C (3 columns)
+// ---------------------------
+
+.grid--c {
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .col {
+      flex: 0 0 50%;
+      width: 50%;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .col {
+      flex: 0 0 33.333333%;
+      width: 33.333333%;
+    }
+  }
+}
+
+// Grid D (4 columns)
+// ---------------------------
+
+.grid--d {
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .col {
+      flex: 0 0 50%;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+
+    > .col {
+      flex: 0 0 25%;
+    }
+  }
+}
+
+// Grid F
+// ---------------------------
+
+.grid--f {
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    > .col {
+      max-width: 360px;
+    }
+  }
+}
+
+// Grid Special header
+// ---------------------------
+
+.grid--header {
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .col {
+      width: 50%;
+      flex: 0 1 50%;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+
+    > .col {
+      flex-basis: 25%;
+
+      &.col--last {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+
+    > .col {
+
+      &,
+      &.col--last {
+        flex-basis: 20%;
+      }
+    }
+  }
+}

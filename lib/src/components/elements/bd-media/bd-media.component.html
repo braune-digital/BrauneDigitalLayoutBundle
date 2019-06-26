@@ -1,0 +1,23 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @company Braune Digital GmbH
+  -->
+
+<div class="figure">
+    <div class="figure__media" *ngIf="!onlyAudio">
+        <div class="embed embed-16by9">
+            <div class="embed-item" [innerHTML]="videoHtml"></div>
+        </div>
+    </div>
+
+    <div class="figure__media" *ngIf="onlyAudio">
+        <audio controls="false" preload="none" controlslist="nodownload">
+            <source [src]="audioFilePath" [type]="audioFormat">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="figure__caption">
+        <ng-content></ng-content>
+    </div>
+</div>

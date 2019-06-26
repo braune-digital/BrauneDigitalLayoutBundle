@@ -1,0 +1,614 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Templates
+// ---------------------------------------------------------
+
+// Aside
+// ---------------------------------------------------------
+
+.tmpl__aside {
+  position: fixed;
+  z-index: $tmpl-zindex-aside;
+  background: $tmpl-aside-background;
+  height: 100%;
+  width: 100%;
+  //min-height: 390px;
+  right: 0;
+  transition: $base-animation;
+  //top: $tmpl-head-bottom-height-mobile;
+  top: 0;
+  transform: translate(100%, 0);
+  color: getColor(white);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: auto;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $tmpl-aside-head-height-desktop;
+
+  a {
+    color: #fff;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .form-errors {
+    color: getColor(white);
+    font-weight: getFontWeight(light);
+    text-align: center;
+  }
+
+  // Login Form
+  // ---------------------------
+
+  .tmpl__aside__login {
+    width: $tmpl-aside-right-form-width-mobile;
+    transition: $base-animation;
+    margin-top: -28px;
+    @include paddingHorizontal(spacing(2));
+
+    .tmpl__aside__login__title {
+      font-size: 120px;
+      text-transform: uppercase;
+      font-weight: getFontWeight(bold);
+      display: inline-flex;
+      line-height: 1;
+      margin-bottom: spacing(2);
+
+      transition: $base-animation;
+      transform: rotate(90deg) translate(0, -10px);
+      transform-origin: left;
+    }
+
+    .tmpl__aside__login__subtitle {
+      transition: $base-animation;
+      opacity: .6;
+      font-size: 20px;
+      white-space: nowrap;
+      align-self: flex-end;
+      transform: translate(15px, -5px);
+      letter-spacing: 1px;
+    }
+
+    .tmpl__aside__login__text {
+      transition: $base-animation;
+      font-size: 16px;
+      opacity: 0;
+      margin-bottom: spacing(4);
+    }
+
+    .tmpl__aside__login__login {
+      transition: $base-animation;
+      opacity: 0;
+
+      input {
+        text-align: center;
+      }
+    }
+
+    .tmpl__aside__login__reset {
+      display: none;
+      margin-top: 10px;
+      text-align: center;
+      a {
+        font-weight: 100;
+      }
+    }
+
+  }
+  .btn--outline {
+    height: 40px;
+  }
+
+  // Register Form
+  // ---------------------------
+
+  .tmpl__aside__register {
+    bottom: $tmpl-aside-bottom-height-desktop;
+    width: 100%;
+    transition: $base-animation;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+    margin-top: 45px;
+    padding-top: spacing(3);
+    padding-bottom: spacing(2);
+
+    .tmpl__aside__register__title {
+      text-align: center;
+      font-size: 32px;
+      text-transform: uppercase;
+      font-weight: getFontWeight(bold);
+      display: block;
+      line-height: 1;
+      margin-bottom: spacing(2);
+    }
+
+    .tmpl__aside__register__arrow {
+      width: 100%;
+      display: block;
+      svg {
+        display: block;
+        margin: auto;
+      }
+
+    }
+  }
+
+  // User Part
+  // ---------------------------
+
+  .tmpl__aside__user {
+    font-size: 24px;
+    font-weight: getFontWeight(bold);
+    text-transform: uppercase;
+  }
+
+  // Navigation with icons
+  // ---------------------------
+
+  .nav-arrow--left {
+    transition: $base-animation;
+    opacity: 0;
+
+    i {
+      cursor: unset;
+    }
+  }
+
+  .tmpl__aside__nav {
+    display: flex;
+    flex-direction: column;
+
+    .tmpl__aside__nav__item {
+      margin: 0 0 spacing();
+      padding: 0;
+
+      a {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        span {
+          margin-left: spacing(2);
+          white-space: normal;
+        }
+      }
+
+      &.tmpl__aside__nav__item--space {
+        margin-top: spacing(2);
+      }
+    }
+
+    svg {
+      @include square($tmpl-aside-icon-width-desktop);
+
+      path,
+      circle {
+        fill: #fff;
+      }
+    }
+
+    // aside colors
+    // ---------------------------
+
+    @each $name, $color in $colors {
+      &.aside--#{$name} {
+
+        &:before {
+          background: $color;
+        }
+
+        &.btn--outline {
+          border-color: $color;
+          color: $color;
+
+          &:hover {
+            box-shadow: 0 0 0 1px $color;
+          }
+        }
+      }
+    }
+  }
+
+
+  // Responsive
+  // ---------------------------------------------------------
+
+  @include media-breakpoint-up(md) {
+    width: $tmpl-aside-right-width-desktop;
+    left: auto;
+    top: 0;
+    right: spacing(6);
+    box-shadow: $tmpl-box-shadow-vertical;
+
+    // Login & Register Form
+    // ---------------------------
+
+    .tmpl__aside__login,
+    .tmpl__aside__register {
+      width: 100%;
+    }
+
+    // Login Form
+    // ---------------------------
+
+    .tmpl__aside__login {
+      font-size: getFontSize(md);
+
+      .tmpl__aside__login__title {
+        font-size: 50px;
+      }
+    }
+
+    // Register Form
+    // ---------------------------
+
+    .tmpl__aside__register {
+
+      .tmpl__aside__register__title {
+        text-align: center;
+        font-size: 32px;
+        text-transform: uppercase;
+        font-weight: getFontWeight(bold);
+        display: block;
+        line-height: 1;
+        margin-bottom: spacing(2);
+      }
+
+      .tmpl__aside__register__arrow {
+        width: 100%;
+        display: block;
+        svg {
+          display: block;
+          margin: auto;
+        }
+
+      }
+    }
+
+    // User Part
+    // ---------------------------
+
+    .tmpl__aside__user {
+      position: relative;
+      width: 100%;
+      transform: rotate(-90deg);
+      transform-origin: center center;
+      padding-bottom: 100%;
+      height: 0;
+
+      span {
+        display: block;
+        position: absolute;
+        white-space: nowrap;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+      }
+    }
+
+    // Navigation with icons
+    // ---------------------------
+
+    .tmpl__aside__nav {
+      position: relative;
+
+      .tmpl__aside__nav__item {
+        a {
+          span {
+            white-space: nowrap;
+            display: none;
+          }
+
+          &:hover {
+            span {
+              text-transform: uppercase;
+              display: block;
+              position: absolute;
+              left: 0;
+              bottom: 100%;
+
+              height: 0;
+              width: $tmpl-aside-icon-width-desktop;
+              margin: 0 0 spacing(2);
+              padding-bottom: 100%;
+              line-height: $tmpl-aside-icon-width-desktop;
+
+              transform: rotate(-90deg);
+              transform-origin: center center;
+              transition: opacity $base-animation-easing $base-animation-duration;
+            }
+          }
+        }
+      }
+    }
+
+    // Hover Effects
+    // ---------------------------
+
+    @include hoverState{
+      transform: translate(97%, 0);
+
+      .tmpl__aside__login {
+        .tmpl__aside__login__subtitle {
+          opacity: 1;
+        }
+      }
+
+      .nav-arrow--left {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+
+// Left Aside
+// ---------------------------
+
+&.tmpl--aside-left {
+
+  .tmpl__aside {
+    right: auto;
+    left: 0;
+    transform: translate(-100%, 0);
+    min-height: 400px;
+    justify-content: center;
+    box-shadow: unset;
+
+    .tmpl__aside__user {
+      margin-bottom: spacing(2);
+    }
+
+
+    @include media-breakpoint-up(md) {
+      box-shadow: $base-border-width 0 0 0 rgba(0,0,0,0.2);
+      justify-content: space-between;
+      @include paddingHorizontal(($tmpl-aside-left-width-desktop - $tmpl-aside-icon-width-desktop) / 2);
+      width: $tmpl-aside-left-width-desktop;
+      left: $tmpl-aside-left-width-desktop;
+
+      .nav-arrow {
+        display: none;
+      }
+
+      .tmpl__aside__user {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .tmpl__nav {
+    transform: translate(100%, 0);
+  }
+
+  @include media-breakpoint-up(md) {
+    .tmpl__nav {
+      transform: translate(0, 0);
+    }
+  }
+
+  // Displaying Registration Buttons
+  // ---------------------------
+  .tmpl__registration {
+    display: none;
+  }
+  .nav-arrow{
+    &.nav-arrow--head, &.nav-arrow--mobile {
+      right: spacing(1);
+    }
+  }
+}
+
+// Events
+// ---------------------------------------------------------
+
+&.tmpl--aside-in {
+
+  .tmpl__aside {
+    right: 0;
+    transform: translate(0, 0);
+    cursor: unset;
+
+    .tmpl__aside__login {
+      margin-top: 45px;
+    }
+
+    .tmpl__aside__login, .tmpl__aside__register {
+      opacity: 1;
+      .tmpl__aside__login__title {
+        transform: rotate(0deg) translate(20px, 0);
+        font-size: 76px;
+      }
+
+      .tmpl__aside__login__text, .tmpl__aside__login__login {
+        animation-name: openAnimation;
+        animation-duration: $base-animation-duration * 2;
+        animation-fill-mode: forwards;
+        //opacity: 1;
+      }
+      .tmpl__aside__login__subtitle {
+        opacity: 0;
+        display: none;
+      }
+    }
+
+    &:hover {
+      .nav-arrow--left {
+        opacity: .3;
+        //cursor: unset;
+      }
+    }
+
+    .tmpl__aside__login__reset {
+      display: block;
+    }
+
+    @include media-breakpoint-up(md){
+      transform: translate(0, 0);
+    }
+
+  }
+
+
+  // Coloring for downside background in aside
+  // ---------------------------
+
+  .tmpl__aside__register {
+    @include hoverState{
+      background-color: getColor(teritary);
+    }
+  }
+
+  .tmpl__registration {
+    right: 0;
+    transform: translate(0, 100%);
+    opacity: 1;
+
+  }
+
+  .nav-arrow--left {
+    opacity: .3;
+    cursor: unset;
+  }
+}
+
+// Responsive for both sidebars
+// ---------------------------------------------------------
+// Media for very small screens
+// ---------------------------
+
+&.tmpl--aside-in {
+
+  @media screen and (max-height: 750px) {
+    // Register Form
+    // ---------------------------
+    .tmpl__aside {
+      .tmpl__aside__register, .tmpl__aside__login {
+        margin-top: spacing(2);
+
+        .tmpl__aside__register__title {
+          font-size: getFontSize(md);
+          margin-bottom: spacing(1);
+        }
+
+        .tmpl__aside__register__arrow {
+          svg {
+            height: 25px;
+          }
+        }
+      }
+
+      // Background-Color for Downside Element
+      // ---------------------------
+
+      .tmpl__aside__downside-background {
+
+        &:before {
+          height: 90px;
+        }
+
+      }
+    }
+  }
+
+  @media screen and (max-height: 550px) {
+    .tmpl__aside {
+      padding-bottom: 0;
+
+      .tmpl__aside__register {
+        padding-top: spacing(1.4);
+        padding-bottom: spacing(0.4);
+      }
+
+      .tmpl__aside__register, .tmpl__aside__login {
+        margin-top: spacing(2);
+
+        .tmpl__aside__login__title, .tmpl__aside__login__text {
+          margin-bottom: spacing(1);
+        }
+      }
+
+      .tmpl__aside__register {
+        margin-top: spacing(1);
+
+        .tmpl__aside__register__title {
+          font-size: getFontSize(md);
+          margin-bottom: spacing(1);
+        }
+
+        .tmpl__aside__register__arrow {
+          display: none;
+        }
+      }
+
+      // Background-Color for Downside Element
+      // ---------------------------
+
+      .tmpl__aside__downside-background {
+
+        &:before {
+          height: 35px;
+        }
+
+      }
+    }
+  }
+
+  @media screen and (max-height: 500px) {
+    .tmpl__aside {
+
+      .tmpl__aside__login {
+        margin-top: spacing(.5);
+        .form-group{
+          margin-bottom: spacing(1);
+        }
+        .form-control {
+          @include paddingVertical(6px)
+        }
+        .tmpl__aside__login__title{
+          font-size: 40px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-height: 460px) {
+    .tmpl__aside {
+
+      .tmpl__aside__register {
+        padding-bottom: spacing(0.4);
+      }
+
+      .tmpl__aside__downside-background {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Animations
+// ---------------------------------------------------------
+
+@keyframes openAnimation {
+  50% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

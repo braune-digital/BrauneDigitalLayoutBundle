@@ -1,0 +1,28 @@
+{
+  "name": "@braune-digital/layout",
+  "version": "1.0.0-alpha.1",
+  "description": "Braune Digital Layout Bundle for Angular",
+  "author": "Braune Digital GmbH <mail@braune-digital.com>",
+  "license": "GNU",
+  "repository": "git@github.com:braune-digital/layout.git",
+  "peerDependencies": {
+    "@angular/core": ">=5.0.0",
+    "@angular/common": ">=5.0.0",
+    "@angular/forms": ">=5.0.0",
+    "@angular/router": ">=5.0.0",
+    "@ng-select/ng-select": ">=2.0.0",
+    "@ngx-translate/core": ">=9.0.0",
+    "ngx-bootstrap": ">=2.0.0",
+    "ng2-file-upload": "=>2.0.0",
+    "@braune-digital/form-utilities": ">=1",
+    "angular-pipes": ">=9",
+    "@w11k/angular-sticky-things": "^1.1.0"
+  },
+  "ngPackage": {
+    "$schema": "../node_modules/ng-packagr/package.schema.json",
+    "lib": {
+      "entryFile": "./src/public_api.ts"
+    },
+    "dest": "../dist"
+  }
+}

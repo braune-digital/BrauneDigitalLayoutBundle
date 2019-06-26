@@ -1,0 +1,121 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Checkbox
+// ---------------------------------------------------------
+
+.checkbox {
+
+  display: flex;
+  align-items: center;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"] + label {
+    width: $base-spacing * 2;
+    height: $base-spacing * 2;
+    border: 2px solid getColor(black);
+    border-radius: 15%;
+    top: 50%;
+    left: 10%;
+    transform: translate(0);
+    transition: $base-animation;
+    text-indent: $base-spacing * 3;
+    white-space: nowrap;
+    color: getColor(black);
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 8px;
+      border-bottom: 2px solid getColor(black);
+      border-left: 2px solid getColor(black);
+      top: 30%;
+      left: 41%;
+      transform-origin: bottom left;
+      transform: rotate(-45deg);
+      opacity: 0;
+      transition: $base-animation;
+
+      @include hoverState {
+        cursor: pointer;
+      }
+    }
+
+    div{
+      padding-left: 30px;
+      text-indent: 0;
+      img{
+        width: 20px;
+      }
+    }
+
+    .checkbox-label{
+      font-weight: getFontWeight(light);
+
+      @include hoverState {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+
+    @include disabledState {
+      border: 10px solid getColor(primary);
+      opacity: .3;
+    }
+
+  }
+
+
+  .checkbox-label__link{
+    font-weight: getFontWeight(light);
+    padding-left: spacing(1);
+
+    @include hoverState {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  input[type="checkbox"]:checked+label {
+
+    &:after {
+      opacity: 1;
+      width: 12px;
+    }
+  }
+
+  // Checkbox colors
+  // ---------------------------------------------------------
+
+  @each $name, $color in $colors {
+    &.checkbox--#{$name} {
+      color: $color;
+
+      .checkbox-label {
+        color: $color;
+      }
+
+      input[type="checkbox"] + label {
+        border-color: $color;
+
+        &:after {
+          border-color: $color;
+        }
+      }
+
+    }
+  }
+}
+
+

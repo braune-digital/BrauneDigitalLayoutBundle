@@ -1,0 +1,26 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Form
+// ---------------------------------------------------------
+
+form,
+.form {
+
+  &.form--white {
+    @include inputColor(getColor(black), getColor(white));
+
+    .ng-select .ng-select-container {
+      background-color: getColor(white);
+    }
+
+    @include quillColor(getColor(white), getColor(black));
+  }
+
+  .form__actions {
+    @include paddingVertical(spacing(6), spacing(2));
+    text-align: right;
+  }
+}

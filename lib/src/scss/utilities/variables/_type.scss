@@ -1,0 +1,94 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Variables: Typography
+// ---------------------------------------------------------
+
+// Font Sizes
+// ---------------------------------------------------------
+
+$text-class: 'text';
+
+$base-font-family: 'Walsheim', Futura, "Trebuchet MS", Arial, sans-serif !default;
+$base-font-size: 16px;
+$base-line-height: 1.6em;
+$base-letter-spacing: 0.02em;
+
+$headline-line-height: 1.2em;
+$headline-letter-spacing: 0;
+
+
+
+// Line Heights
+// ---------------------------------------------------------
+
+$line-heights: (
+  xs: 1em,
+  sm: 1.3em,
+  md: 1.5em,
+  base: 1.6em,
+  lg: 1.8em
+);
+
+@function getLineHeight($height: base) {
+  @return map_get($line-heights, $height)
+}
+
+// Font Sizes
+// ---------------------------------------------------------
+
+$font-sizes: (
+  xs: 10px,
+  sm: 12px,
+  md: 14px,
+  base: 16px,
+  lg: 18px,
+  xl: 20px,
+);
+
+@function getFontSize($size) {
+  @return map_get($font-sizes, $size)
+}
+
+// Font Weights
+// ---------------------------------------------------------
+
+$font-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700
+);
+
+@function getFontWeight($weight: regular) {
+  @return map_get($font-weights, $weight)
+}
+
+
+// calculations for font-sizes
+// ---------------------------------------------------------
+
+@function calculateRemFontSize($size) {
+  $remSize: $size / $base-font-size;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRemFontSize($size);
+}
+
+// calculations for line-heights
+// ---------------------------------------------------------
+
+@function calculateRemLineHeight($size) {
+  $remSize: $size * $base-line-height;
+  @return #{$remSize};
+}
+
+@mixin lineHeightSize($size) {
+  line-height: $size; //Fallback in px
+  line-height: calculateRemLineHeight($size);
+}

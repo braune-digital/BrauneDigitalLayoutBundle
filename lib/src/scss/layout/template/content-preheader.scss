@@ -1,0 +1,66 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Templates
+// ---------------------------------------------------------
+
+// Content Nav
+// ---------------------------------------------------------
+
+$tmpl-preheader-margin-vertical: spacing(1);
+
+.tmpl__preheader {
+  display: flex;
+  flex-direction: column;
+
+  .tmpl__preheader__main {
+    order: 2;
+    @include marginVertical($tmpl-preheader-margin-vertical);
+    animation: fadeInContent $base-animation-duration;
+  }
+
+  .tmpl__preheader__actions {
+    order: 1;
+
+  }
+
+  // Responsive
+  // ---------------------------------------------------------
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: $tmpl-content-width-lg;
+
+    .tmpl__preheader__main {
+      order: 1;
+      flex: 2 1 auto;
+      margin-right: $tmpl-content-aside-width-md + $tmpl-content-aside-margin-md;
+    }
+
+    .tmpl__preheader__actions {
+      order: 2;
+      flex: 0 0 $tmpl-content-aside-width-md;
+      margin-left: $tmpl-content-aside-margin-md;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+
+    .tmpl__preheader__actions {
+      flex-basis: $tmpl-content-aside-width-lg;
+      margin-left: $tmpl-content-aside-margin-lg;
+
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+
+    .tmpl__preheader__actions {
+      flex-basis: $tmpl-content-aside-width-xl;
+      //margin-left: $tmpl-content-aside-margin-xl;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Divider
+// ---------------------------------------------------------
+
+$divider-background: getColor(purple-light);
+$divider-height: $base-border-width;
+$divider-height-small: 1px;
+$divider-height-large: $base-stripe-width;
+$divider-margin: spacing(4);
+
+
+.divider {
+
+  hr {
+    background: $divider-background;
+    height: $divider-height;
+    @include marginVertical($divider-margin);
+    border: none;
+  }
+
+
+  &.divider--xs {
+    hr {
+      opacity: .5;
+      @include marginVertical($divider-margin * .75);
+      height: $divider-height-small;
+    }
+  }
+
+  &.divider--sm {
+    hr {
+      height: $divider-height-small;
+    }
+  }
+
+  &.divider--lg {
+    hr {
+      height: $divider-height-large;
+    }
+  }
+}

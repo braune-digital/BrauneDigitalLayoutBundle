@@ -1,0 +1,75 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Templates
+// ---------------------------------------------------------
+
+// Content Lock
+// ---------------------------------------------------------
+
+.tmpl__lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $tmpl-zindex-content-lock;
+  background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0) 80%);
+  transition: $base-animation;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .tmpl__lock__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: spacing(4);
+
+    .tmpl__lock__text {
+      margin-bottom: spacing(4);
+    }
+
+    .tmpl__lock__actions {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        text-transform: uppercase;
+        font-weight: getFontWeight(bold);
+        line-height: 1;
+        letter-spacing: $headline-letter-spacing;
+      }
+
+      @include media-breakpoint-up(sm) {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+
+    .tmpl__lock__login {
+      color: getColor(teritary);
+      font-size: 48px;
+      margin-bottom: spacing(3);
+
+      @include media-breakpoint-up(sm) {
+        font-size: 70px;
+        margin-right: spacing(6);
+        margin-bottom: 0;
+        max-width: 330px;
+      }
+    }
+
+    .tmpl__lock__register {
+      color: getColor(primary);
+      font-size: 25px;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 30px;
+        margin-bottom: 6px;
+        max-width: 200px;
+      }
+    }
+  }
+}

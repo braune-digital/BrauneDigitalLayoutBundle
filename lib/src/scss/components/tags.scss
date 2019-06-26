@@ -1,0 +1,64 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Tags
+// ---------------------------------------------------------
+
+$tags-text-transform: $base-text-transform;
+
+.tags {
+
+  a {
+    color: getColor(black);
+    text-transform: $tags-text-transform;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+
+    li {
+      padding-left: 0;
+    }
+  }
+
+  &.tags--inline {
+    ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      li {
+        margin-right: $list-margin-right;
+        margin-bottom: 0;
+      }
+    }
+    .link-list__title {
+      display: flex;
+      justify-content: normal;
+      i {
+        display: none;
+      }
+    }
+    .link-list__list {
+      ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        li {
+          margin-right: $list-margin-right;
+          margin-bottom: 0;
+        }
+
+        &:before, &:after {
+          display: none;
+          content: none;
+        }
+      }
+    }
+
+  }
+}

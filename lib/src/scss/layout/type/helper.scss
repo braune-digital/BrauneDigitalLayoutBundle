@@ -1,0 +1,70 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Typography: Helper
+// ---------------------------------------------------------
+
+// Colors
+// ---------------------------------------------------------
+
+
+@each $name, $color in $colorsAndStates {
+
+  .#{$text-class}--#{$name} {
+    color: $color;
+
+    @at-root a#{&} {
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-bottom-color: $color;
+      }
+    }
+  }
+}
+
+// Fonts Sizes
+// ---------------------------------------------------------
+
+@each $name, $size in $font-sizes {
+  .#{$text-class}--#{$name} {
+    font-size: $size;
+  }
+}
+
+// Fonts Weights
+// ---------------------------------------------------------
+
+@each $name, $weight in $font-weights {
+  .#{$text-class}--#{$name} {
+    font-weight: $weight;
+  }
+}
+
+// Transform
+// ---------------------------------------------------------
+
+.#{$text-class}--upper {
+  text-transform: uppercase;
+}
+
+.#{$text-class}--lower {
+  text-transform: lowercase;
+}
+
+// Align
+// ---------------------------------------------------------
+
+.#{$text-class}--left {
+  text-align: left;
+}
+
+.#{$text-class}--center {
+  text-align: center;
+}
+
+.#{$text-class}--right {
+  text-align: right;
+}

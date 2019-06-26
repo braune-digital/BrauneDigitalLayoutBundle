@@ -1,0 +1,143 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Hamburger
+// ---------------------------------------------------------
+
+$hamburger-height: $tmpl-head-bottom-height-mobile;
+$hamburger-layer-height: 2px;
+$hamburger-layer-width: 16px;
+$hamburger-layer-spacing: 3px;
+
+$hamburger-padding-x: 10px;
+$hamburger-padding-y: ($hamburger-height - (($hamburger-layer-spacing + $hamburger-layer-height) * 3)) / 2;
+
+$hamburger-layer-color: getColor(black);
+$hamburger-layer-border-radius: 2px;
+$hamburger-hover-opacity: 0.7;
+$hamburger-active-layer-color  : $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+
+.hamburger {
+  padding: $hamburger-padding-y $hamburger-padding-x;
+  display: inline-block;
+  cursor: pointer;
+
+  transition-property: opacity, filter;
+  transition-duration: $base-animation-duration;
+  transition-timing-function: linear;
+
+  // Normalize (<button>)
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  margin-left: -($hamburger-padding-x);
+  overflow: visible;
+  line-height: ($hamburger-layer-spacing + $hamburger-layer-height) * 3;
+
+
+  &:hover {
+    opacity: $hamburger-hover-opacity;
+  }
+
+  &.is-active {
+    &:hover {
+      opacity: $hamburger-active-hover-opacity;
+    }
+
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+      background-color: $hamburger-active-layer-color;
+    }
+  }
+}
+
+.hamburger-box {
+  width: $hamburger-layer-width;
+  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: $hamburger-layer-height / -2;
+
+  &,
+  &::before,
+  &::after {
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height;
+    background-color: $hamburger-layer-color;
+    border-radius: $hamburger-layer-border-radius;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+  }
+
+  &::before {
+    top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+  }
+
+  &::after {
+    bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+  }
+}
+
+
+/*
+ * Spring
+ */
+.hamburger--spring {
+  .hamburger-inner {
+    top: $hamburger-layer-height / 2;
+    transition: background-color 0s 0.13s linear;
+
+    &::before {
+      top: $hamburger-layer-height + $hamburger-layer-spacing;
+      transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+      transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    &::after {
+      top: ($hamburger-layer-height * 2) + ($hamburger-layer-spacing * 2);
+      transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+      transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  }
+
+  &.is-active {
+    .hamburger-inner {
+      transition-delay: 0.22s;
+      background-color: transparent !important;
+
+      &::before {
+        top: 0;
+        transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+        transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, $hamburger-layer-spacing + $hamburger-layer-height, 0) rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+        transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, $hamburger-layer-spacing + $hamburger-layer-height, 0) rotate(-45deg);
+      }
+    }
+  }
+}

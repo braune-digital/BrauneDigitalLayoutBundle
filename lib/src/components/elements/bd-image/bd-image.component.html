@@ -1,0 +1,13 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @company Braune Digital GmbH
+  -->
+
+<figure>
+    <div class="figure__media">
+        <img [src]="image" [alt]="alt" *ngIf="image">
+    </div>
+    <figcaption>
+        <ng-content></ng-content>
+    </figcaption>
+</figure>

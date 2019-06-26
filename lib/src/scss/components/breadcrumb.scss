@@ -1,0 +1,105 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Breadcrumb
+// ---------------------------------------------------------
+
+$breadcrumb-link-color: getColor(primary);
+$breadcrumb-font-weight: getFontWeight(light);
+$breadcrumb-font-weight-active: getFontWeight(regular);
+
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: getFontSize(md);
+
+  overflow-x: scroll;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    margin: spacing(1) 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+
+    //Hide Scrollbars
+    &::-webkit-scrollbar {
+      display: none;  // Safari and Chrome
+    }
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+
+    li {
+      margin: 0;
+      padding: 0 (spacing(2) + $breadcrumb-dot-size) 0 0;
+      position: relative;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 130px;
+
+      &:after {
+        display: block;
+        content: '';
+        @include square($breadcrumb-dot-size);
+        background: getColor(primary);
+        border-radius: 50%;
+        position: absolute;
+        right: spacing();
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+
+      a {
+        display: inline-block;
+        font-weight: $breadcrumb-font-weight;
+        color: $breadcrumb-link-color;
+
+        @include hoverState {
+          color: getColor(black);
+        }
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+
+        a {
+          font-weight: $breadcrumb-font-weight-active;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm){
+    overflow-x: auto;
+
+    ul {
+      li {
+        overflow: auto;
+        text-overflow: unset;
+        max-width: unset;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md){
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        white-space: normal;
+      }
+    }
+  }
+}

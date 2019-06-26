@@ -1,0 +1,87 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// content Header
+// ---------------------------------------------------------
+
+$tmpl-header-margin-vertical: spacing(3);
+
+.tmpl__header {
+  display: flex;
+  flex-direction: column;
+
+  .tmpl__header__inner {
+    z-index: getZindex(contentHeader);
+    @include marginVertical($tmpl-header-margin-vertical);
+  }
+
+  .tmpl__header__headline {
+    margin-bottom: spacing(2);
+  }
+
+  // Responsive
+  // ---------------------------------------------------------
+
+  @include media-breakpoint-up(md) {
+    flex-wrap: nowrap;
+    max-width: $tmpl-content-width-lg;
+
+    .tmpl__header__inner {
+      margin-right: $tmpl-content-aside-width-md + $tmpl-content-aside-margin-md;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .tmpl__header__inner {
+      margin-right: $tmpl-content-aside-width-lg + $tmpl-content-aside-margin-lg;
+      margin-bottom: $tmpl-header-margin-vertical * 1.5;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+
+    .tmpl__header__inner {
+      margin-right: $tmpl-content-aside-width-xl + $tmpl-content-aside-margin-xl;
+    }
+  }
+
+  &.tmpl__header--inline {
+
+
+    .tmpl__header__inner {
+
+      @include media-breakpoint-up(xl) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        h1,
+        .tmpl__header__headline {
+          margin-bottom: 0;
+        }
+
+        .tmpl__header__headline {
+          margin-right: getGridGutter(lg);
+        }
+      }
+    }
+  }
+
+  // Headline colors
+  // ---------------------------------------------------------
+
+  @each $name, $color in $colorsAndStates {
+    &.tmpl__header--#{$name} {
+      .tmpl__header__headline {
+        text-transform: uppercase;
+        color: $color;
+
+        h1, h2, h3 {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

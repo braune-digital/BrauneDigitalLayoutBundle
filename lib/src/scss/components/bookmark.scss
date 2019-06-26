@@ -1,0 +1,35 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Bookmark
+// ---------------------------------------------------------
+
+.bookmark {
+
+  a {
+    color: #CCC7D1;
+
+    &:hover {
+      color: getColor(black);
+    }
+  }
+
+  @include activeState {
+    a {
+      color: getColor(secondary);
+    }
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6  .h6 {
+  .bookmark {
+    margin-left: spacing(2);
+  }
+}

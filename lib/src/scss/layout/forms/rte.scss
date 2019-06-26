@@ -1,0 +1,48 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// RTE: Quill
+// ---------------------------------------------------------
+
+
+
+@include quillColor($input-background, $input-color);
+
+
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border: none;
+}
+
+.ql-toolbar.ql-snow {
+  margin-bottom: 1px;
+  line-height: 1.15;
+}
+
+.ql-container.ql-snow {
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  font-weight: $input-font-weight;
+  font-family: $base-font-family;
+
+  .ql-editor {
+    padding: ($input-padding-y * 2) $input-padding-x;
+
+    p, li {
+      margin-bottom: $input-padding-y;
+    }
+  }
+}
+
+
+.form--white {
+  .ql-toolbar.ql-snow,
+  .ql-container.ql-snow {
+
+    background: $input-background;
+    color: $input-color;
+    border: none;
+  }
+}

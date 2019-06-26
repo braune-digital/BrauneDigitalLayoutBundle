@@ -1,0 +1,144 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Button Formutilities
+// ---------------------------------------------------------
+
+.btn-progress {
+
+  overflow: hidden;
+  position: relative;
+
+
+  .btn-loading {
+    position: absolute;
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -59%);
+      display: inline-block;
+      line-height: $input-line-height;
+
+      span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: white;
+        margin: 0 3px;
+
+        animation: load .6s infinite;
+
+        &:nth-child(2) {
+          animation-delay: .1s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: .2s;
+        }
+      }
+
+    }
+  }
+
+  &.btn--link, &.btn--white{
+    .btn-loading{
+      .loader{
+        span{
+
+          background: white;
+        }
+      }
+    }
+  }
+
+  .btn-text,
+  .btn-loading,
+  .btn-success {
+    display: block;
+
+    transition: transform .2s ease-in-out, opacity .1s ease-in-out;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .btn-loading {
+    transform: translate(0, 100%);
+    opacity: 1;
+  }
+
+  .btn-onSuccess {
+    transform: translate(0, 100%);
+    opacity: 0;
+  }
+
+  &.btn-loading {
+    pointer-events: none;
+
+    .btn-text {
+      transform: translate(0, -100%);
+      opacity: 0;
+    }
+
+    .btn-onSuccess {
+      transform: translate(0, -100%);
+      opacity: 0;
+    }
+
+    .btn-loading {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+  &.btn-onSuccess {
+    pointer-events: none;
+
+    .btn-text {
+      transform: translate(0, -100%);
+      opacity: 0;
+    }
+
+    .btn-loading {
+      transform: translate(0, -100%);
+      opacity: 0;
+    }
+    .btn-onSuccess {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes load {
+  from {
+    opacity: .6;
+    transform: scale(1)
+  }
+
+  30% {
+    opacity: .7;
+    transform: scale(1.1)
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4)
+  }
+
+  80% {
+    opacity: .7;
+    transform: scale(1.1)
+  }
+
+  to {
+    opacity: .6;
+    transform: scale(1)
+  }
+}

@@ -1,0 +1,19 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Button
+// ---------------------------------------------------------
+
+$example-font-size: getFontSize(md);
+$example-spacing: spacing(2);
+$example-border-width: $base-border-width;
+$example-border-color: getColor(teritary);
+
+.example {
+  border: $example-border-width solid $example-border-color;
+  padding: $example-spacing $example-spacing ($example-spacing / 2);
+  font-size: $example-font-size;
+  margin-bottom: $example-spacing;
+}

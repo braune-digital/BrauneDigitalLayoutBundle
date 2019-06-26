@@ -1,0 +1,138 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<h5 *ngIf="title">
+    {{ title }}
+</h5>
+
+<p *ngIf="helpText">
+    {{ helpText}}
+</p>
+
+<!-- ready for approval and is yellow -->
+<ng-container *ngIf="isOpen">
+    <bd-link-list>
+      <bd-link-list-item>
+          <a [name]="'approval.enable' | translate" (click)="enableClicked.emit(true)" class="approval__action-accept">
+              <bd-icon font="far" icon="eye"></bd-icon>
+              <span>{{ 'approval.enable' | translate }}</span>
+          </a>
+      </bd-link-list-item>
+      <bd-link-list-item>
+          <a [name]="'approval.disable' | translate" (click)="disableClicked.emit(true)" class="approval__action-close">
+              <bd-icon font="far" icon="eye-slash"></bd-icon>
+              <span>{{ 'approval.disable' | translate }}</span>
+          </a>
+      </bd-link-list-item>
+      <bd-link-list-item>
+        <a [name]="'approval.decline' | translate" (click)="declineClicked.emit(true)" class="approval__action-close">
+          <bd-icon font="far" icon="ban"></bd-icon>
+          <span>{{ 'approval.decline' | translate }}</span>
+        </a>
+      </bd-link-list-item>
+    </bd-link-list>
+</ng-container>
+
+<!-- is accepted and green-->
+<ng-container *ngIf="isAccepted">
+    <bd-link-list>
+      <bd-link-list-item>
+        <a [name]="'approval.wait' | translate" (click)="waitClicked.emit(true)" class="approval__action-close">
+          <bd-icon font="far" icon="tasks"></bd-icon>
+          <span>{{ 'approval.wait' | translate }}</span>
+        </a>
+      </bd-link-list-item>
+      <bd-link-list-item>
+        <a [name]="'approval.disable' | translate" (click)="disableClicked.emit(true)" class="approval__action-close">
+          <bd-icon font="far" icon="eye-slash"></bd-icon>
+          <span>{{ 'approval.disable' | translate }}</span>
+        </a>
+      </bd-link-list-item>
+      <bd-link-list-item>
+        <a [name]="'approval.decline' | translate" (click)="declineClicked.emit(true)" class="approval__action-close">
+          <bd-icon font="far" icon="ban"></bd-icon>
+          <span>{{ 'approval.decline' | translate }}</span>
+        </a>
+      </bd-link-list-item>
+    </bd-link-list>
+</ng-container>
+
+
+<!--is declined and red -->
+<ng-container *ngIf="isDeclined">
+  <bd-link-list>
+    <bd-link-list-item>
+      <a [name]="'approval.enable' | translate" (click)="enableClicked.emit(true)" class="approval__action-accept">
+        <bd-icon font="far" icon="eye"></bd-icon>
+        <span>{{ 'approval.enable' | translate }}</span>
+      </a>
+    </bd-link-list-item>
+    <bd-link-list-item>
+      <a [name]="'approval.accept' | translate" (click)="acceptClicked.emit(true)" class="approval__action-accept">
+        <bd-icon font="far" icon="check-circle"></bd-icon>
+        <span>{{ 'approval.accept' | translate }}</span>
+      </a>
+    </bd-link-list-item>
+    <bd-link-list-item>
+      <a [name]="'approval.wait' | translate" (click)="waitClicked.emit(true)" class="approval__action-close">
+        <bd-icon font="far" icon="tasks"></bd-icon>
+        <span>{{ 'approval.wait' | translate }}</span>
+      </a>
+    </bd-link-list-item>
+  </bd-link-list>
+</ng-container>
+
+<!-- is enabled and green-->
+<ng-container *ngIf="isEnabled">
+    <bd-link-list>
+      <bd-link-list-item>
+        <a [name]="'approval.disable' | translate" (click)="disableClicked.emit(true)" class="approval__action-close">
+          <bd-icon font="far" icon="eye-slash"></bd-icon>
+          <span>{{ 'approval.disable' | translate }}</span>
+        </a>
+      </bd-link-list-item>
+      <bd-link-list-item>
+        <a [name]="'approval.wait' | translate" (click)="waitClicked.emit(true)" class="approval__action-close">
+          <bd-icon font="far" icon="tasks"></bd-icon>
+          <span>{{ 'approval.wait' | translate }}</span>
+        </a>
+      </bd-link-list-item>
+      <bd-link-list-item>
+        <a [name]="'approval.decline' | translate" (click)="declineClicked.emit(true)" class="approval__action-close">
+          <bd-icon font="far" icon="ban"></bd-icon>
+          <span>{{ 'approval.decline' | translate }}</span>
+        </a>
+      </bd-link-list-item>
+    </bd-link-list>
+</ng-container>
+
+<!--is declined and red -->
+<ng-container *ngIf="isDisabled">
+  <bd-link-list>
+    <bd-link-list-item>
+      <a [name]="'approval.enable' | translate" (click)="enableClicked.emit(true)" class="approval__action-accept">
+        <bd-icon font="far" icon="eye"></bd-icon>
+        <span>{{ 'approval.enable' | translate }}</span>
+      </a>
+    </bd-link-list-item>
+    <bd-link-list-item>
+      <a [name]="'approval.wait' | translate" (click)="waitClicked.emit(true)" class="approval__action-close">
+        <bd-icon font="far" icon="tasks"></bd-icon>
+        <span>{{ 'approval.wait' | translate }}</span>
+      </a>
+    </bd-link-list-item>
+    <bd-link-list-item>
+      <a [name]="'approval.decline' | translate" (click)="declineClicked.emit(true)" class="approval__action-close">
+        <bd-icon font="far" icon="ban"></bd-icon>
+        <span>{{ 'approval.decline' | translate }}</span>
+      </a>
+    </bd-link-list-item>
+  </bd-link-list>
+</ng-container>
+
+<!--is for status messages and primary -->
+<ng-container *ngIf="isStatusMessage"></ng-container>
+
+<ng-content></ng-content>

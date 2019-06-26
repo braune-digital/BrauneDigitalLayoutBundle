@@ -1,0 +1,21 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Form errors
+// ---------------------------------------------------------
+
+.form-errors {
+  color: $form-error-color;
+  font-size: $form-error-size;
+  line-height: $form-error-line-height;
+  margin: $input-inner-margin 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0 0 $input-inner-margin;
+    padding: 0;
+  }
+}

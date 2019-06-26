@@ -1,0 +1,108 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Forms
+// ---------------------------------------------------------
+
+$input-font-size: getFontSize(base) !default;
+$input-line-height: getLineHeight(md) !default;
+
+$input-min-width: 200px !default;
+$input-padding-x: spacing(1.5) !default;
+$input-padding-y: spacing(.8) !default;
+$input-margin-bottom: 0 !default;
+
+$input-label-width: 120px !default;
+$input-font-weight: getFontWeight(medium) !default;
+$input-placeholder-color: getColor(grey-medium) !default;
+$input-placeholder-font-weight: getFontWeight(light) !default;
+$input-background: getColor(grey-light) !default;
+$input-background-focus: getColor(white) !default;
+$input-background-disabled: getColor(grey-light) !default;
+$input-color: getColor(black) !default;
+$input-color-disabled: getColor(grey-medium) !default;
+
+$input-focus-shadow: 0 0 0 1px rgba(0,0,0,1) !default;
+$form-group-margin-bottom: spacing(2) !default;
+
+$input-inner-margin: spacing(.7) !default;
+
+$select-border-color: $input-background !default;
+$select-color: $input-color !default;
+$select-border-radius: 0 !default;
+
+// General
+// -----------------------------
+
+$form-inner-margin: spacing(.5) !default;
+
+// Form Label
+// -----------------------------
+
+$form-label-size: getFontSize(base) !default;
+$form-label-color: getColor(black) !default;
+$form-label-font-weight: getFontWeight(medium) !default;
+$form-label-line-height: getLineHeight(md) !default;
+
+// Form Help
+// -----------------------------
+
+$form-help-color: getColor(grey-medium) !default;
+$form-help-size: getFontSize(md) !default;
+$form-help-line-height: getLineHeight(sm) !default;
+
+// Form Errors
+// -----------------------------
+
+$form-error-color: getColor(error) !default;
+$form-error-size: getFontSize(md) !default;
+$form-error-line-height: getLineHeight(sm) !default;
+
+// Form Counter
+// -----------------------------
+
+$form-counter-color: getColor(primary) !default;
+$form-counter-size: getFontSize(sm) !default;
+$form-counter-line-height: getLineHeight(sm) !default;
+
+
+// Form Requiered
+// -----------------------------
+
+$form-required-color: getColor(error);
+
+// Mixins
+// ---------------------------------------------------------
+
+@mixin quillColor($bg, $color) {
+
+  .ql-toolbar.ql-snow,
+  .ql-container.ql-snow {
+    background: $bg;
+    color: $color;
+  }
+}
+
+// Imports
+// ---------------------------------------------------------
+
+@import "forms/form";
+@import "forms/form-group";
+@import "forms/input";
+@import "forms/datepicker";
+@import "forms/dynamic-filters";
+@import "forms/checkbox";
+@import "forms/input-group";
+@import "forms/uploader";
+@import "forms/select";
+@import "forms/rte";
+
+
+@import "forms/utilities/form-counter";
+@import "forms/utilities/form-errors";
+@import "forms/utilities/form-help";
+@import "forms/utilities/form-label";
+@import "forms/utilities/form-required";
+

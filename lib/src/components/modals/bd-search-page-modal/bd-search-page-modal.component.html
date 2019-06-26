@@ -1,0 +1,24 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<bd-button [color]="color" (click)="openModal(templateUserModal, 0)">
+    <ng-content></ng-content>
+</bd-button>
+
+<ng-template #templateUserModal>
+    <bd-content-modal [title]="title ? title : 'bd.modal.page.title' | translate" [modalRef]="modalRef">
+      <bd-content-modal-main>
+        <bd-search-entity [properties]="['translations.title']" [searchTemplate]="searchTemplate" [route]="route" [headers]="headers" (selected)="handleSelect($event)">
+            <bd-message  color="warning">
+                {{ 'global.noResults' | translate }}
+            </bd-message>
+        </bd-search-entity>
+      </bd-content-modal-main>
+    </bd-content-modal>
+</ng-template>
+
+<ng-template #searchTemplate let-result="result">
+    {{ result.title }}
+</ng-template>

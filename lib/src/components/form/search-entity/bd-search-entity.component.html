@@ -1,0 +1,34 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<list-container [filter]="filter">
+    <div filter class="action-bar">
+        <div class="action-bar__filter">
+            <filter-component #searchFilter type="text"
+                              filterPlaceholder="{{ 'global.search' | translate }}"
+                              [params]="{ properties: properties }"
+                              (onRefreshFilter)="filter.refresh()"
+            ></filter-component>
+        </div>
+    </div>
+
+    <bd-loading [overlay]="true" loading></bd-loading>
+
+    <ng-container noResults>
+        <div (click)="handleAddClick()">
+            <ng-content></ng-content>
+        </div>
+    </ng-container>
+
+    <div list>
+        <bd-link-list [vertical]="true">
+            <bd-link-list-item *ngFor="let result of results">
+                <a (click)="handleClick(result)">
+                    <ng-container *ngTemplateOutlet="searchTemplate; context: { result: result }"></ng-container>
+                </a>
+            </bd-link-list-item>
+        </bd-link-list>
+    </div>
+</list-container>

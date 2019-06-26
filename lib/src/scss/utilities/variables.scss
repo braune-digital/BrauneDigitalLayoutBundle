@@ -1,0 +1,178 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Variables
+// ---------------------------------------------------------
+
+// Paths
+// ---------------------------------------------------------
+
+$path-to-images: "../assets/img/";
+$path-to-fonts: "../assets/fonts/";
+
+// Imports
+// ---------------------------------------------------------
+
+@import "variables/type";
+@import "variables/grid";
+@import "variables/colors";
+
+// Base Shit
+// ---------------------------------------------------------
+
+$base-spacing: 10px !default;
+
+@function spacing($mod: 1) {
+  @return $base-spacing * $mod;
+}
+
+$base-border-radius: 2px !default;
+
+$base-border-width: 3px !default;
+$base-stripe-width: 8px !default;
+$base-box-shadow: 0 0 0 $base-border-width rgba(0,0,0,0.2) !default;
+$base-box-shadow-large: 0 0 0 $base-stripe-width rgba(0,0,0,0.2) !default;
+$base-box-shadow-vertical: ($base-border-width * -1) 0 0 0 rgba(0,0,0,0.2) !default;
+$base-box-shadow-bottom: 0 $base-border-width 0 0 rgba(0,0,0,0.2) !default;
+$base-box-shadow-top: 0 ($base-border-width * -1) 0 0 rgba(0,0,0,0.2) !default;
+
+$base-legend-margin: 5px;
+$base-legend-font-size: getFontSize(md);
+
+$base-progress-bar-height: 16px;
+
+// Animation
+// ---------------------------------------------------------
+
+$base-animation-easing: ease;
+$base-animation-duration: .3s;
+$base-animation-attributes: all;
+
+$base-animation: $base-animation-attributes $base-animation-easing $base-animation-duration;
+
+// Z-Index for Elements
+// ---------------------------------------------------------
+
+$tmpl-zindex-base: 900;
+
+$tmpl-zindex-popup: $tmpl-zindex-base         + 100;
+$tmpl-zindex-aside: $tmpl-zindex-base         - 10;
+$tmpl-zindex-head: $tmpl-zindex-base          - 20;
+$tmpl-zindex-overlay: $tmpl-zindex-base       - 40;
+$tmpl-zindex-nav: $tmpl-zindex-base           - 50;
+$tmpl-zindex-content-lock: $tmpl-zindex-base  - 60;
+
+$z-index: (
+  base: 900,
+  overlay: 900 + 1,
+  popup: 900 + 10,
+  alert: $tmpl-zindex-aside - 1,
+  search: 891,
+  modal: 890,
+  tooltip: 875,
+  breadcrumb: $tmpl-zindex-nav + 1,
+  contentOverlay: 650,
+  content: 600,
+  contentHeader: 700,
+);
+
+@function getZindex($index) {
+  @return map_get($z-index, $index)
+}
+
+
+// Template Shadows
+// ---------------------------------------------------------
+
+$tmpl-box-shadow: $base-box-shadow;
+$tmpl-box-shadow-vertical: $base-box-shadow-vertical;
+
+// Spacings, Heights and Widths
+// ---------------------------------------------------------
+$tmpl-head-bottom-height-mobile: spacing(5);
+$tmpl-head-bottom-height-desktop: spacing(5);
+$tmpl-aside-head-height-desktop: spacing(5);
+$tmpl-aside-bottom-height-desktop: spacing(2);
+$tmpl-head-logo-height: spacing(4);
+$tmpl-head-background-mobile: getColor(white);
+$tmpl-head-background-desktop: getColor(grey-light);
+$tmpl-head-logo-height-mobile: 14px;
+$tmpl-head-logo-height-desktop: 20px;
+
+$tmpl-nav-background: getColor(white);
+$tmpl-nav-height-desktop: spacing(12);
+
+$tmpl-content-width-lg: 1800px;
+
+$tmpl-aside-background: getColor(primary);
+$tmpl-aside-registration-background: getColor(teritary);
+$tmpl-aside-icon-width-desktop: 32px;
+$tmpl-aside-right-width-desktop: 240px;
+$tmpl-aside-right-form-width-mobile: 260px;
+$tmpl-aside-left-width-desktop: spacing(6);
+
+$tmpl-overlay-background: rgba(255,255,255,.6);
+
+// Divider
+// ---------------------------------------------------------
+
+$base-divider-color: getColor(black);
+$base-divider-margin-y: spacing();
+
+
+// Progressbar
+// ---------------------------------------------------------
+
+$progress-height:                   1rem !default;
+$progress-bar-animation-timing:     $base-animation-duration !default;
+$progress-bar-transition:           $base-animation-easing !default;
+
+// Tables
+// ---------------------------------------------------------
+
+$table-border-color: getColor(purple-light);
+$table-cell-horizontal-padding: spacing(1);
+$table-cell-vertical-padding: spacing(1.5);
+$table-cell-vertical-padding-sm: spacing(1.3);
+$table-border-width: 1px;
+
+// Order
+// ---------------------------------------------------------
+
+$order-arrow-color: getColor(purple-light);
+
+
+// Breadcrumb
+// ---------------------------------------------------------
+
+$breadcrumb-dot-size: 4px;
+
+// Action Group
+// ---------------------------------------------------------
+
+$action-group-item-width: 20px;
+$action-group-item-spacing: spacing(.5);
+
+@function getActionGroupWidth($items: 1) {
+  @return (($action-group-item-spacing + $action-group-item-width) * $items);
+}
+
+
+// Embed Ratios
+// ---------------------------------------------------------
+
+$embed-aspect-ratios: ();
+$embed-aspect-ratios: join(
+      (
+          (21 9),
+          (16 9),
+          (3 4),
+          (1 1),
+      ),
+    $embed-aspect-ratios
+);
+
+
+$base-text-transform: lowercase !default;

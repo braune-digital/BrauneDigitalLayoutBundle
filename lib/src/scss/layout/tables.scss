@@ -1,0 +1,238 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Tables
+// ---------------------------------------------------------
+
+$table-level-indent: spacing(3);
+$table-thumbnail-size: 60px;
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: spacing(2);
+  line-height: getLineHeight(sm);
+
+  // Rows and Row Classes
+  // ---------------------------
+
+  .figure,
+  .avatar {
+    margin-bottom: 0;
+  }
+
+  thead {
+    th {
+      border-bottom-width: $table-border-width * 2;
+    }
+  }
+  tfoot {
+    th {
+      border-top: $table-border-width * 2 solid $table-border-color;
+      border-bottom-width: 0;
+    }
+  }
+
+  // Rows and Row Classes
+  // ---------------------------
+
+  tr {
+    @for $i from 1 through 4 {
+      &.level--#{$i} {
+        font-size: getFontSize(md);
+        .table__title {
+          padding-left: $table-level-indent * $i;
+        }
+      }
+    }
+  }
+
+  // Cells and Cell Classes
+  // ---------------------------
+
+  td, th {
+    @include paddingVertical($table-cell-vertical-padding);
+    padding-right: $table-cell-horizontal-padding;
+    border-bottom: $table-border-width solid $table-border-color;
+    position: relative;
+    vertical-align: middle;
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .cell-text {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box;
+      display: block;
+      @include paddingVertical($table-cell-vertical-padding);
+      padding-right: $table-cell-horizontal-padding;
+      width: 100%;
+
+      .cell-text__overflow {
+        @include textEllipis();
+      }
+    }
+
+    .action-group__item{
+      a {
+        color: getColor(purple-light);
+
+        &:hover {
+          color: getColor(black);
+        }
+      }
+    }
+
+    .form-group{
+      margin: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  th {
+    font-weight: getFontWeight(bold);
+    white-space: nowrap;
+  }
+
+  .table__id {
+    width: 60px;
+  }
+
+  .table__indicator {
+    width: 40px;
+    text-align: center;
+  }
+
+  .table__image {
+    width: 60px;
+    img{
+      width: 60px;
+      max-width: none;
+    }
+  }
+
+  .table__title {
+    width: 100%;
+    &:not(th) {
+      font-weight: getFontWeight(medium);
+    }
+  }
+
+  .table__thumbnail {
+    width: $table-thumbnail-size;
+    padding-right: $table-cell-horizontal-padding * 2;
+  }
+
+  .table__actions {
+    text-align: right;
+
+    @for $i from 1 through 4 {
+
+      &.table__actions--#{$i} {
+        width: getActionGroupWidth($i);
+      }
+    }
+  }
+
+  .table__number,
+  .table__right{
+    text-align: right;
+  }
+
+  .table__number{
+    white-space: nowrap;
+  }
+
+  .table__nowrap{
+    white-space: nowrap;
+  }
+
+  .table__dropdown {
+    transition: $base-animation;
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    max-height: 0;
+
+    td {
+      background: getColor(grey-light);
+      box-shadow: $base-box-shadow-bottom;
+    }
+
+    &.table__dropdown--show {
+      transform: scaleY(1);
+      opacity: 1;
+      max-height: 100px;
+    }
+  }
+
+  // Table Responsive
+  // ---------------------------
+
+  &.table--responsive {
+
+    td, th {
+      display: none;
+
+      &.table__actions,
+      &.table__title {
+        display: table-cell;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+
+      td, th {
+        &.table__id,
+        &.table__indicator {
+          display: table-cell;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+
+      td, th {
+        display: table-cell;
+      }
+    }
+  }
+
+  // Table Small
+  // ---------------------------
+
+  &.table--sm {
+    font-size: getFontSize(md);
+
+    th {
+      font-weight: getFontWeight(medium);
+    }
+
+    td, th {
+      @include paddingVertical($table-cell-vertical-padding-sm);
+
+      .cell-text {
+        @include paddingVertical($table-cell-vertical-padding-sm);
+      }
+    }
+  }
+}
+
+

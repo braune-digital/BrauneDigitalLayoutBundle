@@ -1,0 +1,15 @@
+//
+// BD CSS Framework
+// ---------------------------------------------------------
+
+//
+// Form requiered
+// ---------------------------------------------------------
+
+.form-required {
+  color: $form-required-color;
+
+  &.form-required--margin {
+    margin-left: $form-inner-margin;
+  }
+}

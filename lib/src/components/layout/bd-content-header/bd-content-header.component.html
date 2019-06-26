@@ -1,0 +1,56 @@
+
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<div class="tmpl__header {{ specialClass }}" [ngClass]="{'tmpl__header--inline': inline}">
+
+    <div class="tmpl__header__inner">
+
+        <ng-container *ngIf="center">
+            <bd-grid layout="a">
+                <bd-col>
+                    <div class="tmpl__header__headline">
+                        <h1 [ngClass]="{'text--primary text--upper': titleHighlight === true }">{{ title | translate }}</h1>
+                    </div>
+                    <div class="tmpl__header__text">
+                        <ng-container *ngTemplateOutlet="headerContent"></ng-container>
+                    </div>
+                </bd-col>
+            </bd-grid>
+        </ng-container>
+
+        <ng-container *ngIf="!center">
+            <ng-container *ngIf="image">
+                <bd-grid layout="b-1" [largeGutter]="true">
+                    <bd-col>
+                        <bd-image [image]="image" [border]="imageBorder"></bd-image>
+                    </bd-col>
+                    <bd-col>
+                        <div class="tmpl__header__headline">
+                            <h1 [ngClass]="{'text--primary text--upper': titleHighlight === true }">{{ title | translate }}</h1>
+                        </div>
+                        <div class="tmpl__header__text">
+                            <ng-container *ngTemplateOutlet="headerContent"></ng-container>
+                        </div>
+                    </bd-col>
+                </bd-grid>
+            </ng-container>
+
+            <ng-container *ngIf="!image">
+                <div class="tmpl__header__headline">
+                    <h1 [ngClass]="{'text--primary text--upper': titleHighlight === true }">{{ title | translate }}</h1>
+                </div>
+                <div class="tmpl__header__text">
+                    <ng-container *ngTemplateOutlet="headerContent"></ng-container>
+                </div>
+            </ng-container>
+        </ng-container>
+
+    </div>
+</div>
+
+<ng-template #headerContent>
+    <ng-content></ng-content>
+</ng-template>

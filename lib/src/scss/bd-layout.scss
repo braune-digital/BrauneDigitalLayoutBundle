@@ -1,0 +1,108 @@
+/*!
+ * @author Felix Baltruschat <fb@braune-digital.com>
+ * @copyright 2/7/19 2:25 PM Braune Digital GmbH
+ */
+
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Vendor
+// ---------------------------------------------------------
+
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.snow.css";
+
+//
+// Base
+// ---------------------------------------------------------
+
+// Mixins & Variables
+// ---------------------------------------------------------
+
+@import "utilities/functions";
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "utilities/reboot";
+
+
+// Layout
+// ---------------------------------------------------------
+
+@import "layout/forms";
+@import "layout/grid";
+@import "layout/tables";
+@import "layout/templates";
+@import "layout/type";
+@import "layout/media";
+@import "layout/utilities";
+@import "layout/dragdrop";
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+// Components
+// ---------------------------------------------------------
+
+@import "components/action-bar";
+@import "components/action-group";
+@import "components/alert";
+@import "components/approval";
+@import "components/avatar";
+@import "components/badge";
+@import "components/bookmark";
+@import "components/breadcrumb";
+@import "components/button";
+@import "components/button-formutilites";
+@import "components/button-group";
+@import "components/code";
+@import "components/divider";
+@import "components/embed";
+@import "components/example";
+@import "components/hamburger";
+@import "components/icon";
+@import "components/info-box";
+@import "components/launchpad";
+@import "components/lection-list";
+@import "components/link-list";
+@import "components/loading";
+@import "components/message";
+@import "components/nav-arrow";
+@import "components/order";
+@import "components/progress-bar";
+@import "components/section-nav";
+@import "components/social-share";
+@import "components/social-links";
+@import "components/table-container";
+@import "components/tabs";
+@import "components/tags";
+@import "components/thumbnail-list";
+@import "components/tooltip";
+
+// Modules
+// ---------------------------------------------------------
+
+@import "modules/content-element";
+@import "modules/dropdown";
+@import "modules/masonry";
+@import "modules/modal";
+@import "modules/pagination";
+@import "modules/popup";
+@import "modules/progress-indicator";
+@import "modules/serp-preview";
+@import "modules/social-share";
+

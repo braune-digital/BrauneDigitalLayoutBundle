@@ -1,0 +1,22 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
+  -->
+
+<div class="link-list" [ngClass]="{ 'link-list--inline' : inline, 'link-list--vertical' : vertical, 'link-list--hide-mobile': hideMobile}">
+    <div class="link-list__title" *ngIf="title">
+        <div>
+            {{ title | translate }}
+        </div>
+        <div class="link-list__actions" *ngIf="collapseEnabled">
+            <div class="link-list__chevron">
+                <bd-icon (click)="collasped = !collasped" [icon]="collasped ? 'chevron-down' : 'chevron-up'"></bd-icon>
+            </div>
+        </div>
+    </div>
+    <div class="link-list__list" [ngClass]="{ 'list--hide': collasped && collapseEnabled }">
+        <ul>
+            <ng-content></ng-content>
+        </ul>
+    </div>
+</div>
