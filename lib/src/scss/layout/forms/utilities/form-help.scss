@@ -25,7 +25,7 @@
   // ---------------------------------------------------------
 
   @each $name, $color in $colorsAndStates {
-    &.form-help--#{$name} {
+    &.form-help--#{'' + $name} {
       color: $color;
     }
   }

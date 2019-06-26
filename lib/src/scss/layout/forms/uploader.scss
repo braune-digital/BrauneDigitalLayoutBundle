@@ -37,7 +37,7 @@ $base-radius: 2px;
       transition: $base-animation;
 
       @include paddingVertical(spacing(1));
-      @include paddingHorizontal(spacing(2))
+      @include paddingHorizontal(spacing(2));
 
       bd-icon {
         font-size: 34px;
@@ -104,7 +104,7 @@ $base-radius: 2px;
           @include square($avatar-size);
 
           @each $name, $color in $fileTypes {
-            &.uploader__queue--file-audio--#{$name} {
+            &.uploader__queue--file-audio--#{'' + $name} {
               background: $color;
               color: color-contrast($color);
             }
@@ -122,7 +122,7 @@ $base-radius: 2px;
           @include square($avatar-size);
 
           @each $name, $color in $fileTypes {
-            &.uploader__queue--filetype--#{$name} {
+            &.uploader__queue--filetype--#{'' + $name} {
               background: $color;
               color: color-contrast($color);
             }

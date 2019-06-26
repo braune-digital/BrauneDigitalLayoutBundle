@@ -14,6 +14,12 @@
 // Braune-Digital 4 Main Colors
 // ----------------------------
 
+$color-red: #DA3D3B;
+$color-yellow: #EB983C;
+$color-green: #4CB180;
+$color-purple: #753E82;
+
+
 $bdColors: (
   purple: #753E82,
   yellow: #EB983C,
@@ -87,7 +93,7 @@ $colorsAndStatesAndFileTypes: map-merge($colorsAndStates, $fileTypes);
 // ---------------------------
 
 @each $name, $color in $colorsAndStatesAndFileTypes {
-  .background--#{$name} {
+  .background--#{'' + $name} {
     background: $color !important;
   }
 }

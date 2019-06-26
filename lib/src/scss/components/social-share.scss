@@ -82,7 +82,7 @@ $share-button-size-sm: 25px;
       // ---------------------------------------------------------
 
       @each $name, $color in $colors {
-        &.social-share__btn--#{$name} {
+        &.social-share__btn--#{'' + $name} {
           &:before {
             background: $color;
 

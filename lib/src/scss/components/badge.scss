@@ -55,7 +55,7 @@ $badge-padding-y-lg: spacing(.75);
   // ---------------------------------------------------------
 
   @each $name, $color in $colorsAndStates {
-    &.badge--#{$name} {
+    &.badge--#{'' + $name} {
       background: $color;
       color: color-contrast($color);
     }

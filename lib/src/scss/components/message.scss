@@ -29,7 +29,7 @@ $message-padding-y: spacing();
   }
 
   @each $name, $color in map-merge($colors, $states) {
-    &.message--#{$name} {
+    &.message--#{'' + $name} {
       background: $color;
       color: color-contrast($color);
 

@@ -306,7 +306,7 @@ $btn-disabled-background: getColor(grey-light) !default;
   // ---------------------------------------------------------
 
   @each $name, $color in $colorsAndStates {
-    &.btn--#{$name} {
+    &.btn--#{'' + $name} {
 
       &:before {
         background: $color;

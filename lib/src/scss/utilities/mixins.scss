@@ -134,7 +134,7 @@
 @mixin colorizeBorderStripe($colors: $bdColors) {
 
   @each $name, $color in $bdColors {
-    &--#{$name} {
+    &--#{'' + $name} {
       &:after {
         background: $color;
       }

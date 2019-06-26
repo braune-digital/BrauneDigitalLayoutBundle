@@ -27,7 +27,7 @@ $approval-padding-y: spacing(1);
   // ---------------------------------------------------------
 
   @each $name, $color in $colorsAndStates {
-    &.approval--#{$name} {
+    &.approval--#{'' + $name} {
       border-color: $color;
 
       h5 {

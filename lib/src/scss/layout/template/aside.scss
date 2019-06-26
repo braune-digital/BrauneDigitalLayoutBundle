@@ -203,7 +203,7 @@
     // ---------------------------
 
     @each $name, $color in $colors {
-      &.aside--#{$name} {
+      &.aside--#{'' + $name} {
 
         &:before {
           background: $color;

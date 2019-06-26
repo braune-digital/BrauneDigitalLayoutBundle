@@ -40,7 +40,7 @@ $table-thumbnail-size: 60px;
 
   tr {
     @for $i from 1 through 4 {
-      &.level--#{$i} {
+      &.level--#{'' + $i} {
         font-size: getFontSize(md);
         .table__title {
           padding-left: $table-level-indent * $i;
@@ -145,7 +145,7 @@ $table-thumbnail-size: 60px;
 
     @for $i from 1 through 4 {
 
-      &.table__actions--#{$i} {
+      &.table__actions--#{'' + $i} {
         width: getActionGroupWidth($i);
       }
     }

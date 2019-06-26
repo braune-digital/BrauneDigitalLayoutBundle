@@ -12,7 +12,7 @@
 
 @each $name, $color in $colorsAndStates {
 
-  .#{$text-class}--#{$name} {
+  .#{$text-class}--#{'' + $name} {
     color: $color;
 
     @at-root a#{&} {
@@ -29,7 +29,7 @@
 // ---------------------------------------------------------
 
 @each $name, $size in $font-sizes {
-  .#{$text-class}--#{$name} {
+  .#{$text-class}--#{'' + $name} {
     font-size: $size;
   }
 }
@@ -38,7 +38,7 @@
 // ---------------------------------------------------------
 
 @each $name, $weight in $font-weights {
-  .#{$text-class}--#{$name} {
+  .#{$text-class}--#{'' + $name} {
     font-weight: $weight;
   }
 }

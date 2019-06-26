@@ -71,7 +71,7 @@ bd-action-group {
     // ---------------------------------------------------------
 
     @each $name, $color in $colorsAndStates {
-      &.action-group__item--#{$name} {
+      &.action-group__item--#{'' + $name} {
         a {
           &:hover {
             color: $color;

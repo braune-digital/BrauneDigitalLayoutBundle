@@ -73,7 +73,7 @@ $modal-offset-left: (
   // ---------------------------------------------------------
 
   @each $name, $color in $colorsAndStates {
-    &.modal--#{$name} {
+    &.modal--#{'' + $name} {
       background-color: $color;
     }
   }

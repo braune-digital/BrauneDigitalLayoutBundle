@@ -20,13 +20,13 @@ $icon-sizes: (
   }
 
   @each $name, $size in $icon-sizes {
-    &.icon--#{$name} {
+    &.icon--#{'' + $name} {
       font-size: $size;
     }
   }
 
   @each $name, $color in $colors {
-    &.icon--#{$name} {
+    &.icon--#{'' + $name} {
       color: $color;
     }
   }

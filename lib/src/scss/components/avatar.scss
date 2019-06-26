@@ -47,7 +47,7 @@ $avatar-sizes: (
     font-weight: getFontWeight(medium);
 
     @each $name, $color in $bdColors {
-      &.avatar__initials--#{$name} {
+      &.avatar__initials--#{'' + $name} {
         background: $color;
         color: color-contrast($color);
       }
@@ -86,7 +86,7 @@ $avatar-sizes: (
   // -------------------------------------------
 
   @each $name, $size in $avatar-sizes {
-    &.avatar--#{$name} {
+    &.avatar--#{'' + $name} {
 
       .avatar__initials__text {
         font-size: $size * 0.3;

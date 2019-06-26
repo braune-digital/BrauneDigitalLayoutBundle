@@ -73,7 +73,7 @@ $tmpl-header-margin-vertical: spacing(3);
   // ---------------------------------------------------------
 
   @each $name, $color in $colorsAndStates {
-    &.tmpl__header--#{$name} {
+    &.tmpl__header--#{'' + $name} {
       .tmpl__header__headline {
         text-transform: uppercase;
         color: $color;
