@@ -21,17 +21,17 @@
 // Mixins & Variables
 // ---------------------------------------------------------
 
+@import "utilities/mixins";
 @import "utilities/functions";
 @import "utilities/variables";
-@import "utilities/mixins";
 @import "utilities/reboot";
 
 
 // Layout
 // ---------------------------------------------------------
 
-@import "layout/forms";
 @import "layout/grid";
+@import "layout/forms";
 @import "layout/tables";
 @import "layout/templates";
 @import "layout/type";
@@ -54,6 +54,16 @@
 .cdk-drag-animating {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+
+// Fontawesome
+// ---------------------------------------------------------
+
+@import "fonts/fontawesome5/fontawesome";
+$fa-font-path: '/assets/fonts/fontawesome5';
+@import "fonts/fontawesome5/brands";
+@import "fonts/fontawesome5/light";
+@import "fonts/fontawesome5/regular";
+@import "fonts/fontawesome5/solid";
 
 // Components
 // ---------------------------------------------------------
@@ -105,4 +115,3 @@
 @import "modules/progress-indicator";
 @import "modules/serp-preview";
 @import "modules/social-share";
-
