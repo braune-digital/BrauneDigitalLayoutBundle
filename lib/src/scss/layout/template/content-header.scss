@@ -8,16 +8,16 @@
 
 $tmpl-header-margin-vertical: spacing(3);
 
-.tmpl__header {
+.tmpl__content__header {
   display: flex;
   flex-direction: column;
 
-  .tmpl__header__inner {
+  .tmpl__content__header__inner {
     z-index: getZindex(contentHeader);
     @include marginVertical($tmpl-header-margin-vertical);
   }
 
-  .tmpl__header__headline {
+  .tmpl__content__header__headline {
     margin-bottom: spacing(2);
   }
 
@@ -28,13 +28,13 @@ $tmpl-header-margin-vertical: spacing(3);
     flex-wrap: nowrap;
     max-width: $tmpl-content-width-lg;
 
-    .tmpl__header__inner {
+    .tmpl__content__header__inner {
       margin-right: $tmpl-content-aside-width-md + $tmpl-content-aside-margin-md;
     }
   }
 
   @include media-breakpoint-up(lg) {
-    .tmpl__header__inner {
+    .tmpl__content__header__inner {
       margin-right: $tmpl-content-aside-width-lg + $tmpl-content-aside-margin-lg;
       margin-bottom: $tmpl-header-margin-vertical * 1.5;
     }
@@ -42,15 +42,15 @@ $tmpl-header-margin-vertical: spacing(3);
 
   @include media-breakpoint-up(xl) {
 
-    .tmpl__header__inner {
+    .tmpl__content__header__inner {
       margin-right: $tmpl-content-aside-width-xl + $tmpl-content-aside-margin-xl;
     }
   }
 
-  &.tmpl__header--inline {
+  &.tmpl__content__header--inline {
 
 
-    .tmpl__header__inner {
+    .tmpl__content__header__inner {
 
       @include media-breakpoint-up(xl) {
         display: flex;
@@ -58,11 +58,11 @@ $tmpl-header-margin-vertical: spacing(3);
         align-items: center;
 
         h1,
-        .tmpl__header__headline {
+        .tmpl__content__header__headline {
           margin-bottom: 0;
         }
 
-        .tmpl__header__headline {
+        .tmpl__content__header__headline {
           margin-right: getGridGutter(lg);
         }
       }
@@ -73,8 +73,8 @@ $tmpl-header-margin-vertical: spacing(3);
   // ---------------------------------------------------------
 
   @each $name, $color in $colorsAndStates {
-    &.tmpl__header--#{'' + $name} {
-      .tmpl__header__headline {
+    &.tmpl__content__header--#{'' + $name} {
+      .tmpl__content__header__headline {
         text-transform: uppercase;
         color: $color;
 

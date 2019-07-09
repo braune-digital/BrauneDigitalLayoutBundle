@@ -4,13 +4,18 @@
   -->
 
 <div class="tmpl__content" [ngClass]="{ 'tmpl__content--inline': inline }">
-    <div class="tmpl__content__main">
-        <ng-content select="bd-content-main"></ng-content>
+    <div class="tmpl__content__header">
+        <ng-content select="bd-content-header"></ng-content>
     </div>
-    <div class="tmpl__content__aside" *ngIf="hasAside">
-      <div #boundary [ngStyle]="{'height': heightString.toString() + 'px'}">
-        <div stickyThing [boundary]="boundary" marginTop="20" [enable]="enableSticky">
-          <ng-content select="bd-content-aside"></ng-content>
+    <div class="tmpl__content__content">
+      <div class="tmpl__content__main">
+          <ng-content select="bd-content-main"></ng-content>
+      </div>
+      <div class="tmpl__content__aside" *ngIf="hasAside">
+        <div #boundary [ngStyle]="{'height': heightString.toString() + 'px'}">
+          <div stickyThing [boundary]="boundary" marginTop="20" [enable]="enableSticky">
+            <ng-content select="bd-content-aside"></ng-content>
+          </div>
         </div>
       </div>
     </div>

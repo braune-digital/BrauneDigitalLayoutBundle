@@ -13,6 +13,7 @@ $dynamicfilter-dropdown-min-width: 220px !default;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
 
   .dynamic-filter {
     position: relative;
@@ -159,6 +160,10 @@ $dynamicfilter-dropdown-min-width: 220px !default;
         @include paddingVertical(spacing(1));
       }
     }
+  }
+
+  .dynamic-filter-bar__info {
+    margin-bottom: spacing(1);
   }
 }
 
