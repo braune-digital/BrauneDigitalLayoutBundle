@@ -40,7 +40,7 @@ $tmpl-content-aside-width-xl: 260px !default;
   // Content Nav
   // ---------------------------------------------------------
 
-  @import "template/content-preheader";
+  @import "template/header";
 
   // Content Header
   // ---------------------------------------------------------
@@ -85,7 +85,6 @@ $tmpl-content-aside-width-xl: 260px !default;
   // ---------------------------------------------------------
 
   
-  .tmpl__preheader,
   .tmpl__head,
   .tmpl__nav,
   .tmpl__content,
@@ -96,7 +95,6 @@ $tmpl-content-aside-width-xl: 260px !default;
   }
 
   @include media-breakpoint-up(md) {
-    .tmpl__preheader,
     .tmpl__head,
     .tmpl__nav,
     .tmpl__content,
@@ -107,7 +105,6 @@ $tmpl-content-aside-width-xl: 260px !default;
     }
 
     &.tmpl--aside-left {
-      .tmpl__preheader,
       .tmpl__head,
       .tmpl__nav,
       .tmpl__content,
@@ -121,7 +118,6 @@ $tmpl-content-aside-width-xl: 260px !default;
   }
 
   @include media-breakpoint-up(lg) {
-    .tmpl__preheader,
     .tmpl__head,
     .tmpl__nav,
     .tmpl__content,
@@ -133,7 +129,6 @@ $tmpl-content-aside-width-xl: 260px !default;
     }
 
     &.tmpl--aside-left {
-      .tmpl__preheader,
       .tmpl__head,
       .tmpl__nav,
       .tmpl__content,

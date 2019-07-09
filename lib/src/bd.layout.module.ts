@@ -77,11 +77,11 @@ import {BdMasonryItemDirective} from './directive/bd-masonry/bd-masonry-item.dir
 import {SafePipe} from './pipes/safe.pipe';
 import {AlertService} from './services/alert.service';
 import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
-import {BdContentPreheaderComponent} from './components/layout/bd-content-preheader/bd-content-preheader.component';
-import {BdContentPreheaderMainComponent} from './components/layout/bd-content-preheader-main/bd-content-preheader-main.component';
-import {BdContentPreheaderActionsComponent} from './components/layout/bd-content-preheader-actions/bd-content-preheader-actions.component';
 import {BdContentModalMainComponent} from './components/content/bd-content-modal-main/bd-content-modal-main.component';
 import {BdContentModalFooterComponent} from './components/content/bd-content-modal-footer/bd-content-modal-footer.component';
+import {BdHeaderComponent} from './components/layout/bd-header/bd-header.component';
+import {BdHeaderMainComponent} from './components/layout/bd-header-main/bd-header-main.component';
+import {BdHeaderActionsComponent} from './components/layout/bd-header-actions/bd-header-actions.component';
 
 @NgModule({
     imports: [
@@ -122,9 +122,9 @@ import {BdContentModalFooterComponent} from './components/content/bd-content-mod
         BdLoadingComponent,
         BdContentAsideComponent,
         BdContentMainComponent,
-        BdContentPreheaderComponent,
-        BdContentPreheaderMainComponent,
-        BdContentPreheaderActionsComponent,
+        BdHeaderComponent,
+        BdHeaderMainComponent,
+        BdHeaderActionsComponent,
 
         // ---------------------------
         // Utils
@@ -208,9 +208,9 @@ import {BdContentModalFooterComponent} from './components/content/bd-content-mod
         BdContentComponent,
         BdContentAsideComponent,
         BdContentMainComponent,
-        BdContentPreheaderComponent,
-        BdContentPreheaderMainComponent,
-        BdContentPreheaderActionsComponent,
+        BdHeaderComponent,
+        BdHeaderMainComponent,
+        BdHeaderActionsComponent,
         BdLayoutComponent,
         BdLoadingComponent,
         BdGridComponent,

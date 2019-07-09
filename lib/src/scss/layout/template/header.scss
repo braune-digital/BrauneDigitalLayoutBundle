@@ -6,22 +6,22 @@
 // Templates
 // ---------------------------------------------------------
 
-// Content Nav
+// Header
 // ---------------------------------------------------------
 
-$tmpl-preheader-margin-vertical: spacing(1);
+$tmpl-header-margin-vertical: spacing(1);
 
-.tmpl__preheader {
+.tmpl__header {
   display: flex;
   flex-direction: column;
 
-  .tmpl__preheader__main {
+  .tmpl__header__main {
     order: 2;
-    @include marginVertical($tmpl-preheader-margin-vertical);
+    @include marginVertical($tmpl-header-margin-vertical);
     animation: fadeInContent $base-animation-duration;
   }
 
-  .tmpl__preheader__actions {
+  .tmpl__header__actions {
     order: 1;
 
   }
@@ -34,13 +34,13 @@ $tmpl-preheader-margin-vertical: spacing(1);
     flex-wrap: nowrap;
     max-width: $tmpl-content-width-lg;
 
-    .tmpl__preheader__main {
+    .tmpl__header__main {
       order: 1;
       flex: 2 1 auto;
       margin-right: $tmpl-content-aside-width-md + $tmpl-content-aside-margin-md;
     }
 
-    .tmpl__preheader__actions {
+    .tmpl__header__actions {
       order: 2;
       flex: 0 0 $tmpl-content-aside-width-md;
       margin-left: $tmpl-content-aside-margin-md;
@@ -49,7 +49,7 @@ $tmpl-preheader-margin-vertical: spacing(1);
 
   @include media-breakpoint-up(xl) {
 
-    .tmpl__preheader__actions {
+    .tmpl__header__actions {
       flex-basis: $tmpl-content-aside-width-lg;
       margin-left: $tmpl-content-aside-margin-lg;
 
@@ -58,7 +58,7 @@ $tmpl-preheader-margin-vertical: spacing(1);
 
   @include media-breakpoint-up(xxl) {
 
-    .tmpl__preheader__actions {
+    .tmpl__header__actions {
       flex-basis: $tmpl-content-aside-width-xl;
       //margin-left: $tmpl-content-aside-margin-xl;
     }

@@ -6,8 +6,8 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'bd-content-preheader-actions',
-    templateUrl: './bd-content-preheader-actions.component.html',
+    selector: 'bd-header-actions',
+    templateUrl: './bd-header-actions.component.html',
 })
-export class BdContentPreheaderActionsComponent {
+export class BdHeaderActionsComponent {
 }

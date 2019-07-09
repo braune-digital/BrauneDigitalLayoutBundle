@@ -7,10 +7,10 @@ import {Component, OnInit} from '@angular/core';
 import {Breakpoints} from '../../../utils/breakpoints';
 
 @Component({
-  selector: 'bd-content-preheader',
-  templateUrl: './bd-content-preheader.component.html',
+  selector: 'bd-header',
+  templateUrl: './bd-header.component.html',
 })
-export class BdContentPreheaderComponent implements OnInit {
+export class BdHeaderComponent implements OnInit {
 
   breakpoints;
 
