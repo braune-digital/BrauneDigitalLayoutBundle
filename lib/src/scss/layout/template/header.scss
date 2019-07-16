@@ -14,16 +14,15 @@ $tmpl-header-margin-vertical: spacing(1);
 .tmpl__header {
   display: flex;
   flex-direction: column;
+  @include marginVertical($tmpl-header-margin-vertical);
 
   .tmpl__header__main {
     order: 2;
-    @include marginVertical($tmpl-header-margin-vertical);
     animation: fadeInContent $base-animation-duration;
   }
 
-  .tmpl__header__actions {
+  .tmpl__header__aside {
     order: 1;
-
   }
 
   // Responsive
@@ -40,7 +39,7 @@ $tmpl-header-margin-vertical: spacing(1);
       margin-right: $tmpl-content-aside-width-md + $tmpl-content-aside-margin-md;
     }
 
-    .tmpl__header__actions {
+    .tmpl__header__aside {
       order: 2;
       flex: 0 0 $tmpl-content-aside-width-md;
       margin-left: $tmpl-content-aside-margin-md;
@@ -49,7 +48,7 @@ $tmpl-header-margin-vertical: spacing(1);
 
   @include media-breakpoint-up(xl) {
 
-    .tmpl__header__actions {
+    .tmpl__header__aside {
       flex-basis: $tmpl-content-aside-width-lg;
       margin-left: $tmpl-content-aside-margin-lg;
 
@@ -58,7 +57,7 @@ $tmpl-header-margin-vertical: spacing(1);
 
   @include media-breakpoint-up(xxl) {
 
-    .tmpl__header__actions {
+    .tmpl__header__aside {
       flex-basis: $tmpl-content-aside-width-xl;
       //margin-left: $tmpl-content-aside-margin-xl;
     }

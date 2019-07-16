@@ -81,7 +81,7 @@ import {BdContentModalMainComponent} from './components/content/bd-content-modal
 import {BdContentModalFooterComponent} from './components/content/bd-content-modal-footer/bd-content-modal-footer.component';
 import {BdHeaderComponent} from './components/layout/bd-header/bd-header.component';
 import {BdHeaderMainComponent} from './components/layout/bd-header-main/bd-header-main.component';
-import {BdHeaderActionsComponent} from './components/layout/bd-header-actions/bd-header-actions.component';
+import {BdHeaderAsideComponent} from './components/layout/bd-header-aside/bd-header-aside.component';
 import { BdCenterComponent } from './components/layout/bd-center/bd-center.component';
 
 @NgModule({
@@ -125,7 +125,7 @@ import { BdCenterComponent } from './components/layout/bd-center/bd-center.compo
         BdContentMainComponent,
         BdHeaderComponent,
         BdHeaderMainComponent,
-        BdHeaderActionsComponent,
+        BdHeaderAsideComponent,
 
         // ---------------------------
         // Utils
@@ -212,7 +212,7 @@ import { BdCenterComponent } from './components/layout/bd-center/bd-center.compo
         BdContentMainComponent,
         BdHeaderComponent,
         BdHeaderMainComponent,
-        BdHeaderActionsComponent,
+        BdHeaderAsideComponent,
         BdLayoutComponent,
         BdLoadingComponent,
         BdGridComponent,
