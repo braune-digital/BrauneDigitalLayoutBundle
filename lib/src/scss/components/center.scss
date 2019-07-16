@@ -1,16 +1,18 @@
-.center{
+.centered-wrapper {
   display: flex;
   align-self: center;
   justify-content: center;
-  text-align: center;
 
-  &--spacing-sm{
+  &--spacing-sm {
     padding: spacing(1);
   }
-  &--spacing-md{
+
+  &--spacing-md {
     padding: spacing(3);
   }
-  &--spacing-lg{
+
+  &--spacing-lg {
     padding: spacing(6);
   }
+
 }

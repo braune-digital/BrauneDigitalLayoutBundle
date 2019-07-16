@@ -11,7 +11,7 @@ import { Bem } from '../../../utils/bem';
   templateUrl: './bd-center.component.html',
 })
 export class BdCenterComponent {
-  baseClass: string = 'center';
+  baseClass: string = 'centered-wrapper';
 
   @Input()
   spacing = null;
