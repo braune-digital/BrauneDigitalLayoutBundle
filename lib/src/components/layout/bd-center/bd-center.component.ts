@@ -13,7 +13,8 @@ import { Bem } from '../../../utils/bem';
 export class BdCenterComponent {
   baseClass: string = 'center';
 
-  @Input('wideSpacing') wideSpacing = null;
+  @Input()
+  spacing = null;
 
   @HostBinding('class')
   get hostClasses(): string {
@@ -21,7 +22,7 @@ export class BdCenterComponent {
     const bem = new Bem(this.baseClass);
 
     return bem.setMods(this.baseClass, [
-      bem.checkModifier(this.wideSpacing, 'spacing'),
+      bem.setModifier(this.spacing, 'spacing-'),
     ]);
   }
 }

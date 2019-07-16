@@ -236,6 +236,7 @@ import { BdCenterComponent } from './components/layout/bd-center/bd-center.compo
         BdAvatarComponent,
         BdBookmarkComponent,
         BdButtonComponent,
+        BdCenterComponent,
         BdDividerComponent,
         BdExampleComponent,
         BdHighlightComponent,
