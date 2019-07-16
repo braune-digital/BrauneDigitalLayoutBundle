@@ -14,6 +14,10 @@
 // General
 // ---------------------------------------------------------
 
+$base-link-color: getColor(primary) !default;
+$base-link-color-hover: getColor(secondary) !default;
+
+
 body {
   font-family: $base-font-family;
   font-size: $base-font-size;
@@ -50,11 +54,11 @@ p {
 a {
   font-weight: getFontWeight(normal);
   text-decoration: none;
-  color: getColor(primary);
+  color: $base-link-color;
 
   @include hoverState {
     text-decoration: none;
-    color: getColor(secondary);
+    color: $base-link-color-hover;
     cursor: pointer;
   }
 }

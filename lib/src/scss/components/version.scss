@@ -9,6 +9,7 @@
 // Version
 // ---------------------------------------------------------
 
+$version-color: getColor(grey-dark) !default;
 
 .version {
     display: block;
@@ -20,7 +21,7 @@
       margin: 0;
       font-family: $base-font-family;
       font-size: getFontSize(sm);
-      color: getColor(grey-dark);
+      color: $version-color;
       letter-spacing: 0;
       text-align: center;
     }

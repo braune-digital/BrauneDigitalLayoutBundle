@@ -1,0 +1,19 @@
+
+$brand-color: getColor(black) !default;
+
+.brand {
+  text-align: center;
+
+  .brand__logo {
+    @include paddingVertical(spacing(1));
+    svg {
+      fill: $brand-color;
+    }
+  }
+
+  .brand__label {
+    color: $brand-color;
+    font-weight: getFontWeight(bold);
+    font-size: getFontSize(md);
+  }
+}

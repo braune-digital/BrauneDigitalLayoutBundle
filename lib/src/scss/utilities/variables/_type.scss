@@ -12,12 +12,12 @@
 $text-class: 'text';
 
 $base-font-family: 'Walsheim', Futura, "Trebuchet MS", Arial, sans-serif !default;
-$base-font-size: 16px;
-$base-line-height: 1.6em;
-$base-letter-spacing: 0.02em;
+$base-font-size: 16px !default;
+$base-line-height: 1.6em !default;
+$base-letter-spacing: 0.02em !default;
 
-$headline-line-height: 1.2em;
-$headline-letter-spacing: 0;
+$headline-line-height: 1.2em !default;
+$headline-letter-spacing: 0 !default;
 
 
 

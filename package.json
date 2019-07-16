@@ -9,10 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "rimraf ./dist && ng-packagr -p ./lib/package.json && npm run scss",
+    "build:lib": "rimraf ./dist && ng-packagr -p ./lib/package.json && cp -R ./lib/src/scss ./dist/scss",
     "pack:lib": "npm run build:lib && npm pack ./dist",
-    "publish:lib": "npm run build:lib && cp ./README.md ./dist/ && npm publish ./dist",
-    "scss": "scss-bundle -e ./lib/src/scss/bd-layout.scss -d ./dist/scss/bd-layout.bundle.scss"
+    "publish:lib": "npm run build:lib && cp ./README.md ./dist/ && npm publish ./dist"
   },
   "dependencies": {
     "@angular/animations": "~8.0.1",

@@ -18,14 +18,23 @@ $color-red: #DA3D3B !default;
 $color-yellow: #EB983C !default;
 $color-green: #4CB180 !default;
 $color-purple: #753E82 !default;
-
+$color-cyan: #5dbfbe !default;
+$color-black: #000 !default;
+$color-white: #FFF !default;
+$color-grey-light: #F2F2F2 !default;
+$color-grey-light-accent-light: #EFEFEF !default;
+$color-grey-light-accent: #DFDFDF !default;
+$color-grey-medium: #B0B0B0 !default;
+$color-grey-dark: #7E7E7E !default;
+$color-dark: #2D2D2C !default;
+$color-purple-light: #CCC7D1 !default;
 
 $bdColors: (
-  purple: #753E82,
-  yellow: #EB983C,
-  cyan: #5dbfbe,
-  green: #4CB180,
-  red: #DA3D3B,
+  purple: $color-purple,
+  yellow: $color-yellow,
+  cyan: $color-cyan,
+  green: $color-green,
+  red: $color-red,
   primary: $color-green,
   secondary: $color-red,
   tertiary: $color-purple,
@@ -48,7 +57,7 @@ $colors: map-merge(
       purple-light: #CCC7D1,
     ),
     $bdColors
-);
+) !default;
 
 // State Colors
 // ----------------------------

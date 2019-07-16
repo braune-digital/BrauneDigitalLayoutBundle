@@ -1,9 +1,14 @@
 $bd-sidebar-width: 250px !default;
-$bd-sidebar-color: getColor(grey-light) !default;
+$bd-sidebar-color: $color-grey-light !default;
+$bd-sidebar-color-text: $color-dark !default;
+$bd-sidebar-color-text-hover: $color-red !default;
+$bd-sidebar-color-background-hover: $color-grey-light-accent !default;
+$bd-sidebar-item-border: 1px solid $color-grey-light-accent !default;
 
 .sidebar {
 
   width: $bd-sidebar-width;
+  max-width: $bd-sidebar-width;
   background: $bd-sidebar-color;
   min-height: 100vh;
   position: relative;
@@ -14,7 +19,6 @@ $bd-sidebar-color: getColor(grey-light) !default;
   justify-content: space-between;
 
   overflow-y: scroll;
-  height: 100%;
 
   .sidebar__pre {
     justify-content: center;
@@ -42,22 +46,25 @@ $bd-sidebar-color: getColor(grey-light) !default;
         list-style: none;
         padding: 0;
         margin: 0;
-        border-bottom: 1px solid getColor(grey-light-accent);
+        border-bottom: $bd-sidebar-item-border;
 
         li {
           margin: 0;
           padding: 0;
+          border-top: $bd-sidebar-item-border;
 
           a {
             display: block;
-            border-top: 1px solid getColor(grey-light-accent);
             margin: 0;
             transition: $base-animation;
+            color: $bd-sidebar-color-text;
+
             @include paddingVertical(spacing(1.5));
             @include paddingHorizontal(spacing(2));
 
-            @include hoverState {
-              background: getColor(grey-light-accent);
+            &:hover {
+              background: $bd-sidebar-color-background-hover;
+              color: $bd-sidebar-color-text-hover;
               cursor: pointer;
             }
           }

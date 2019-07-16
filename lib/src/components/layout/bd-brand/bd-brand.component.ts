@@ -10,9 +10,13 @@ import {Component, Input} from '@angular/core';
     templateUrl: 'bd-brand.component.html'
 })
 export class BdBrandComponent {
-    @Input()
-    brand: string;
 
     @Input()
-    title: string;
+    brandSrc: string;
+
+    @Input()
+    alt: string;
+
+    @Input()
+    label: string;
 }

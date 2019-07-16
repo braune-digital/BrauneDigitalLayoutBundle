@@ -1,1 +1,12 @@
-<a [routerLink]="['/']" title="{{ title | translate }}" *ngIf="brand"><img [src]="brand"></a>
+<div class="brand">
+  <div class="brand__logo" *ngIf="brandSrc">
+    <a [routerLink]="['/']" title="{{ alt | translate }}">
+      <img [src]="brandSrc">
+    </a>
+  </div>
+  <div class="brand__label" *ngIf="label">
+    {{ label }}
+  </div>
+  <ng-content></ng-content>
+</div>
+
