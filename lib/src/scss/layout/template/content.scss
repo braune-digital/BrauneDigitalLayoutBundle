@@ -12,7 +12,7 @@
 .tmpl__content {
   display: flex;
   flex-direction: column;
-
+  padding-bottom: $tmpl-content-padding-bottom;
 
   .tmpl__content__header {
       order: 1;

@@ -30,6 +30,7 @@ $pagination-spacing: spacing(.5);
       color: getColor(grey-medium);
       font-size: getFontSize(md);
       @include square($pagination-link-size * .8);
+      transition: $base-animation;
 
       @include hoverState {
         background: getColor(fourthly);

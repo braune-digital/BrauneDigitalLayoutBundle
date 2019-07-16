@@ -1,5 +1,1 @@
-<!--
-  ~ @author Felix Baltruschat <fb@braune-digital.com>
-  ~ @company Braune Digital GmbH
-  -->
-<img [src]="brand">
+<a [routerLink]="['/']" title="{{ title | translate }}" *ngIf="brand"><img [src]="brand"></a>

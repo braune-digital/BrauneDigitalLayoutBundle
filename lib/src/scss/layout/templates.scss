@@ -30,128 +30,162 @@ $tmpl-content-aside-width-md: 140px !default;
 $tmpl-content-aside-width-lg: 200px !default;
 $tmpl-content-aside-width-xl: 260px !default;
 
+$tmpl-background: getColor(grey-light) !default;
+$tmpl-background-content: getColor(white) !default;
+
 .tmpl {
-  //position: relative;
-  padding-top: $tmpl-head-bottom-height-desktop;
 
+  display: flex;
+  flex-direction: row;
   animation: fadeIn $base-animation-duration * 2;
+  height: 100%;
+  background: $tmpl-background;
 
 
-  // Content Nav
-  // ---------------------------------------------------------
+  .tmpl__layout__sidebar {
+    order: 1;
 
-  @import "template/header";
+    // Sidebar
+    // ---------------------------------------------------------
 
-  // Content Header
-  // ---------------------------------------------------------
+    @import "template/sidebar";
 
-  @import "template/content-header";
-
-
-  // Main Content
-  // ---------------------------------------------------------
-
-  @import "template/content";
-
-
-  // Content Lock
-  // ---------------------------------------------------------
-
-  @import "template/content-lock";
-
-  // Aside
-  // ---------------------------------------------------------
-
-  @import "template/aside";
-
-
-  // Overlay
-  // ---------------------------------------------------------
-
-  @import "template/overlay";
-
-  // Popup
-  // ---------------------------------------------------------
-
-  @import "template/popup";
-
-  // Footer
-  // ---------------------------------------------------------
-
-  @import "template/footer";
-
-
-  // Responsiv fixes
-  // ---------------------------------------------------------
-
-  
-  .tmpl__head,
-  .tmpl__nav,
-  .tmpl__content,
-  .tmpl__footer,
-  .tmpl__header,
-  .tmpl__lock {
-    @include paddingHorizontal(spacing(2));
   }
+  .tmpl__layout__content {
+    order: 2;
+    flex-grow: 1;
+    //@include paddingVertical($tmpl-layout-content-vertical-padding);
 
-  @include media-breakpoint-up(md) {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    // Content Nav
+    // ---------------------------------------------------------
+
+    @import "template/header";
+
+    // Content Header
+    // ---------------------------------------------------------
+
+    @import "template/content-header";
+
+    // Main Content
+    // ---------------------------------------------------------
+
+    @import "template/content";
+
+
+    // Content Lock
+    // ---------------------------------------------------------
+
+    @import "template/content-lock";
+
+    // Aside
+    // ---------------------------------------------------------
+
+    @import "template/aside";
+
+
+    // Overlay
+    // ---------------------------------------------------------
+
+    @import "template/overlay";
+
+    // Popup
+    // ---------------------------------------------------------
+
+    @import "template/popup";
+
+    // Footer
+    // ---------------------------------------------------------
+
+    @import "template/footer";
+
+
+
+    // Content Backgrounds
+    // ---------------------------------------------------------
+
+    .tmpl__header,
+    .tmpl__content {
+      background: $tmpl-background-content;
+    }
+
+    // Responsiv fixes
+    // ---------------------------------------------------------
+
     .tmpl__head,
     .tmpl__nav,
     .tmpl__content,
     .tmpl__footer,
     .tmpl__header,
     .tmpl__lock {
-      padding-right: spacing(2) + $tmpl-aside-left-width-desktop;
+      @include paddingHorizontal(spacing(2));
     }
 
-    &.tmpl--aside-left {
+    @include media-breakpoint-up(md) {
       .tmpl__head,
       .tmpl__nav,
       .tmpl__content,
       .tmpl__footer,
       .tmpl__header,
       .tmpl__lock {
-        padding-right: spacing(2);
-        padding-left: spacing(2) + $tmpl-aside-left-width-desktop;
+        padding-right: spacing(2) + $tmpl-aside-left-width-desktop;
+      }
+
+      &.tmpl--aside-left {
+        .tmpl__head,
+        .tmpl__nav,
+        .tmpl__content,
+        .tmpl__footer,
+        .tmpl__header,
+        .tmpl__lock {
+          padding-right: spacing(2);
+          padding-left: spacing(2) + $tmpl-aside-left-width-desktop;
+        }
       }
     }
-  }
 
-  @include media-breakpoint-up(lg) {
-    .tmpl__head,
-    .tmpl__nav,
-    .tmpl__content,
-    .tmpl__footer,
-    .tmpl__header,
-    .tmpl__lock {
-      padding-left: spacing(5);
-      padding-right: spacing(5) + spacing(5);
-    }
-
-    &.tmpl--aside-left {
+    @include media-breakpoint-up(lg) {
       .tmpl__head,
       .tmpl__nav,
       .tmpl__content,
       .tmpl__footer,
       .tmpl__header,
       .tmpl__lock {
-        padding-left: spacing(5) + $tmpl-aside-left-width-desktop;
+        padding-left: spacing(5);
+        padding-right: spacing(5) + spacing(5);
+      }
+
+      &.tmpl--aside-left {
+        .tmpl__head,
+        .tmpl__nav,
+        .tmpl__content,
+        .tmpl__footer,
+        .tmpl__header,
+        .tmpl__lock {
+          padding-left: spacing(5) + $tmpl-aside-left-width-desktop;
+        }
       }
     }
-  }
 
-  // Disable Scrolling for Content Lock
-  // ---------------------------------------------------------
-  &.tmpl--no-scrolling {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-  }
 
-  @include media-breakpoint-down(xs) {
-    overflow-x: hidden;
-  }
+    // ---------------------------------------------------------
+    // Options
+    // ---------------------------------------------------------
 
+    // Disable Scrolling for Content Lock
+    // ---------------------------------------------------------
+    &.tmpl--no-scrolling {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+    }
+
+    @include media-breakpoint-down(xs) {
+      overflow-x: hidden;
+    }
+  }
 }
 
 // Fade-In Animation to hide moving elements an page load

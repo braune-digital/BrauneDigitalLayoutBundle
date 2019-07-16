@@ -3,7 +3,7 @@
  * @copyright 2/5/19 4:42 PM Braune Digital GmbH
  */
 
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
 
 @Component({
@@ -12,8 +12,10 @@ import {Meta} from '@angular/platform-browser';
 })
 export class BdLayoutComponent implements OnInit {
 
-  constructor(private metaSettings: Meta) {
-  }
+  @Input()
+  sidebar = false;
+
+  constructor(private metaSettings: Meta) {}
 
   ngOnInit() {
     this.metaSettings.updateTag({name: 'viewport', content: 'width=device-width, user-scalable=no'});

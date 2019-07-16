@@ -1,0 +1,13 @@
+
+<div class="sidebar-list">
+    <div class="sidebar-list__title" *ngIf="title">
+        <div>
+            {{ title | translate }}
+        </div>
+    </div>
+    <div class="sidebar-list__list" [ngClass]="{ 'sidebar-list--hide': collasped && collapseEnabled }">
+        <ul>
+            <ng-content></ng-content>
+        </ul>
+    </div>
+</div>

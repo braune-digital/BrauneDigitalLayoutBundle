@@ -57,6 +57,8 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 body {
   margin: 0; // 1
   text-align: left; // 3
+  height: 100%;
+  overflow: hidden;
 }
 
 // Suppress the focus outline on elements that cannot be accessed via keyboard.

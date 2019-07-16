@@ -1,0 +1,75 @@
+$bd-sidebar-width: 250px !default;
+$bd-sidebar-color: getColor(grey-light) !default;
+
+.sidebar {
+
+  width: $bd-sidebar-width;
+  background: $bd-sidebar-color;
+  min-height: 100vh;
+  position: relative;
+  @include paddingVertical(spacing(4));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow-y: scroll;
+  height: 100%;
+
+  .sidebar__pre {
+    justify-content: center;
+    display: flex;
+  }
+
+  .sidebar__main {
+  }
+
+  .sidebar__post {
+  }
+
+  // Sidebar List
+  // ---------------------------------------------------------
+  .sidebar-list {
+    @include paddingVertical(spacing(4));
+
+    .sidebar-list__title {
+
+    }
+
+    .sidebar-list__list {
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-bottom: 1px solid getColor(grey-light-accent);
+
+        li {
+          margin: 0;
+          padding: 0;
+
+          a {
+            display: block;
+            border-top: 1px solid getColor(grey-light-accent);
+            margin: 0;
+            transition: $base-animation;
+            @include paddingVertical(spacing(1.5));
+            @include paddingHorizontal(spacing(2));
+
+            @include hoverState {
+              background: getColor(grey-light-accent);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Options
+  // ---------------------------------------------------------
+  &.sidebar--collapsed {
+  }
+}
+
+

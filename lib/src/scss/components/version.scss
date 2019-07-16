@@ -1,0 +1,27 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Components
+// ---------------------------------------------------------
+
+// Version
+// ---------------------------------------------------------
+
+
+.version {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+
+    p {
+      margin: 0;
+      font-family: $base-font-family;
+      font-size: getFontSize(sm);
+      color: getColor(grey-dark);
+      letter-spacing: 0;
+      text-align: center;
+    }
+}

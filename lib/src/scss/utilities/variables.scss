@@ -91,6 +91,7 @@ $tmpl-box-shadow-vertical: $base-box-shadow-vertical;
 
 // Spacings, Heights and Widths
 // ---------------------------------------------------------
+$tmpl-layout-content-vertical-padding: spacing(4);
 $tmpl-head-bottom-height-mobile: spacing(5);
 $tmpl-head-bottom-height-desktop: spacing(5);
 $tmpl-aside-head-height-desktop: spacing(5);
@@ -105,6 +106,7 @@ $tmpl-nav-background: getColor(white);
 $tmpl-nav-height-desktop: spacing(12);
 
 $tmpl-content-width-lg: 1800px;
+$tmpl-content-padding-bottom: spacing(5);
 
 $tmpl-aside-background: getColor(primary);
 $tmpl-aside-registration-background: getColor(teritary);

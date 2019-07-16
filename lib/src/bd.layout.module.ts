@@ -83,6 +83,15 @@ import {BdHeaderComponent} from './components/layout/bd-header/bd-header.compone
 import {BdHeaderMainComponent} from './components/layout/bd-header-main/bd-header-main.component';
 import {BdHeaderAsideComponent} from './components/layout/bd-header-aside/bd-header-aside.component';
 import { BdCenterComponent } from './components/layout/bd-center/bd-center.component';
+import {BdSidebarComponent} from './components/layout/bd-sidebar/bd-sidebar.component';
+import {BdSidebarPreComponent} from './components/layout/bd-sidebar/bd-sidebar-pre/bd-sidebar-pre.component';
+import {BdSidebarPostComponent} from './components/layout/bd-sidebar/bd-sidebar-post/bd-sidebar-post.component';
+import {BdSidebarMainComponent} from './components/layout/bd-sidebar/bd-sidebar-main/bd-sidebar-main.component';
+import {BdSidebarListComponent} from './components/layout/bd-sidebar/bd-sidebar-list/bd-sidebar-list.component';
+import {BdSidebarListItemComponent} from './components/layout/bd-sidebar/bd-sidebar-list-item/bd-sidebar-list-item.component';
+import {BdLayoutContentComponent} from './components/layout/bd-layout/bd-layout-content/bd-layout-content.component';
+import {BdLayoutSidebarComponent} from './components/layout/bd-layout/bd-layout-sidebar/bd-layout-sidebar.component';
+import {BdVersionComponent} from './components/elements/bd-version/bd-version.component';
 
 @NgModule({
     imports: [
@@ -120,12 +129,20 @@ import { BdCenterComponent } from './components/layout/bd-center/bd-center.compo
         BdContentComponent,
         BdGridComponent,
         BdLayoutComponent,
+        BdLayoutContentComponent,
+        BdLayoutSidebarComponent,
         BdLoadingComponent,
         BdContentAsideComponent,
         BdContentMainComponent,
         BdHeaderComponent,
         BdHeaderMainComponent,
         BdHeaderAsideComponent,
+        BdSidebarComponent,
+        BdSidebarPreComponent,
+        BdSidebarMainComponent,
+        BdSidebarPostComponent,
+        BdSidebarListComponent,
+        BdSidebarListItemComponent,
 
         // ---------------------------
         // Utils
@@ -167,6 +184,7 @@ import { BdCenterComponent } from './components/layout/bd-center/bd-center.compo
         BdThumbnailListComponent,
         BdThumbnailListItemComponent,
         BdUserProfileComponent,
+        BdVersionComponent,
 
         // ---------------------------
         // Content
@@ -207,6 +225,7 @@ import { BdCenterComponent } from './components/layout/bd-center/bd-center.compo
         // Layout
         // ---------------------------
         BdAlertComponent,
+        BdBrandComponent,
         BdContentComponent,
         BdContentAsideComponent,
         BdContentMainComponent,
@@ -214,9 +233,17 @@ import { BdCenterComponent } from './components/layout/bd-center/bd-center.compo
         BdHeaderMainComponent,
         BdHeaderAsideComponent,
         BdLayoutComponent,
+        BdLayoutContentComponent,
+        BdLayoutSidebarComponent,
         BdLoadingComponent,
         BdGridComponent,
         BdContentHeaderComponent,
+        BdSidebarComponent,
+        BdSidebarPreComponent,
+        BdSidebarMainComponent,
+        BdSidebarPostComponent,
+        BdSidebarListComponent,
+        BdSidebarListItemComponent,
 
         // ---------------------------
         // Utils
@@ -258,6 +285,7 @@ import { BdCenterComponent } from './components/layout/bd-center/bd-center.compo
         BdThumbnailListComponent,
         BdThumbnailListItemComponent,
         BdUserProfileComponent,
+        BdVersionComponent,
 
         // ---------------------------
         // Content

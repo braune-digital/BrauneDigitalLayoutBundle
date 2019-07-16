@@ -2,19 +2,24 @@
   ~ @author Felix Baltruschat <fb@braune-digital.com>
   ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
   -->
-<div [className]="'tmpl'">
+<div [className]="'tmpl'" [ngClass]="{ 'tmpl--sidebar' : sidebar}">
 
-    <bd-alert></bd-alert>
-    <bd-overlay></bd-overlay>
+    <!--<bd-alert></bd-alert>-->
+    <!--<bd-overlay></bd-overlay>-->
 
-    <bd-navigation></bd-navigation>
+    <!--<bd-navigation></bd-navigation>-->
 
     <!-- Slides -->
-    <bd-head></bd-head>
-    <bd-aside></bd-aside>
-    <bd-aside-registration></bd-aside-registration>
+    <!--<bd-head></bd-head>-->
+    <!--<bd-aside></bd-aside>-->
+    <!--<bd-aside-registration></bd-aside-registration>-->
 
-    <ng-content></ng-content>
+    <div class="tmpl__layout__sidebar">
+      <ng-content select="bd-layout-sidebar"></ng-content>
+    </div>
+    <div class="tmpl__layout__content">
+      <ng-content select="bd-layout-content"></ng-content>
+    </div>
 
-    <bd-footer></bd-footer>
+    <!--<bd-footer></bd-footer>-->
 </div>

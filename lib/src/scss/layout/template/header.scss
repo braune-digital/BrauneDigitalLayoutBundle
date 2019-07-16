@@ -9,12 +9,12 @@
 // Header
 // ---------------------------------------------------------
 
-$tmpl-header-margin-vertical: spacing(1);
+$tmpl-header-margin-vertical: spacing(4) !default;
 
 .tmpl__header {
   display: flex;
   flex-direction: column;
-  @include marginVertical($tmpl-header-margin-vertical);
+  @include paddingVertical($tmpl-header-margin-vertical);
 
   .tmpl__header__main {
     order: 2;
