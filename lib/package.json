@@ -16,7 +16,7 @@
     "ngx-bootstrap": ">=2.0.0",
     "ng2-file-upload": "=>2.0.0",
     "@braune-digital/form-utilities": ">=1",
-    "angular-pipes": ">=9",di
+    "angular-pipes": ">=9",
     "@w11k/angular-sticky-things": "^1.1.0",
     "node-sass": "^4.12.0"
   },
