@@ -3,6 +3,7 @@
     <a [routerLink]="['/']" title="{{ alt | translate }}">
       <img [src]="brandSrc">
     </a>
+    <div [innerHTML]="svgCode" *ngIf="svgCode"></div>
   </div>
   <div class="brand__label" *ngIf="label">
     {{ label }}

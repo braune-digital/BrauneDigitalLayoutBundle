@@ -15,6 +15,7 @@ $tmpl-header-margin-vertical: spacing(4) !default;
   display: flex;
   flex-direction: column;
   @include paddingVertical($tmpl-header-margin-vertical);
+  align-items: center;
 
   .tmpl__header__main {
     order: 2;
@@ -23,6 +24,18 @@ $tmpl-header-margin-vertical: spacing(4) !default;
 
   .tmpl__header__aside {
     order: 1;
+
+  }
+
+  // Margin resets
+  // ---------------------------------------------------------
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  .avatar {
+    margin-bottom: 0;
   }
 
   // Responsive
@@ -31,18 +44,17 @@ $tmpl-header-margin-vertical: spacing(4) !default;
   @include media-breakpoint-up(md) {
     flex-direction: row;
     flex-wrap: nowrap;
-    max-width: $tmpl-content-width-lg;
 
     .tmpl__header__main {
       order: 1;
       flex: 2 1 auto;
-      margin-right: $tmpl-content-aside-width-md + $tmpl-content-aside-margin-md;
+      //margin-right: $tmpl-content-aside-width-md + $tmpl-content-aside-margin-md;
     }
 
     .tmpl__header__aside {
       order: 2;
       flex: 0 0 $tmpl-content-aside-width-md;
-      margin-left: $tmpl-content-aside-margin-md;
+      //margin-left: $tmpl-content-aside-margin-md;
     }
   }
 

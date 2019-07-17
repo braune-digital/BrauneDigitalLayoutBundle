@@ -3,16 +3,20 @@
  * @copyright 2/5/19 4:42 PM Braune Digital GmbH
  */
 
-import {Component, Input} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'bd-brand',
-    templateUrl: 'bd-brand.component.html'
+    templateUrl: 'bd-brand.component.html',
+    encapsulation: ViewEncapsulation.None,
 })
 export class BdBrandComponent {
 
     @Input()
     brandSrc: string;
+
+    @Input()
+    svgCode: string;
 
     @Input()
     alt: string;

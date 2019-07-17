@@ -22,6 +22,8 @@
 //
 //
 
+$tmpl-base-padding-horizontal: spacing(2) !default;
+
 $tmpl-content-aside-margin-md: spacing(6) !default;
 $tmpl-content-aside-margin-lg: spacing(6) !default;
 $tmpl-content-aside-margin-xl: spacing(10) !default;
@@ -120,7 +122,7 @@ $tmpl-background-content: getColor(white) !default;
     .tmpl__footer,
     .tmpl__header,
     .tmpl__lock {
-      @include paddingHorizontal(spacing(2));
+      @include paddingHorizontal($tmpl-base-padding-horizontal);
     }
 
     @include media-breakpoint-up(md) {
@@ -130,7 +132,7 @@ $tmpl-background-content: getColor(white) !default;
       .tmpl__footer,
       .tmpl__header,
       .tmpl__lock {
-        padding-right: spacing(2) + $tmpl-aside-left-width-desktop;
+        padding-right: $tmpl-base-padding-horizontal + $tmpl-aside-left-width-desktop;
       }
 
       &.tmpl--aside-left {
@@ -140,8 +142,8 @@ $tmpl-background-content: getColor(white) !default;
         .tmpl__footer,
         .tmpl__header,
         .tmpl__lock {
-          padding-right: spacing(2);
-          padding-left: spacing(2) + $tmpl-aside-left-width-desktop;
+          padding-right: $tmpl-base-padding-horizontal;
+          padding-left: $tmpl-base-padding-horizontal + $tmpl-aside-left-width-desktop;
         }
       }
     }
@@ -153,8 +155,8 @@ $tmpl-background-content: getColor(white) !default;
       .tmpl__footer,
       .tmpl__header,
       .tmpl__lock {
-        padding-left: spacing(5);
-        padding-right: spacing(5) + spacing(5);
+        padding-left: $tmpl-base-padding-horizontal * 2.5;
+        padding-right: $tmpl-base-padding-horizontal * 2 + $tmpl-base-padding-horizontal * 2;
       }
 
       &.tmpl--aside-left {
@@ -164,7 +166,7 @@ $tmpl-background-content: getColor(white) !default;
         .tmpl__footer,
         .tmpl__header,
         .tmpl__lock {
-          padding-left: spacing(5) + $tmpl-aside-left-width-desktop;
+          padding-left: $tmpl-base-padding-horizontal * 2.5 + $tmpl-aside-left-width-desktop;
         }
       }
     }
