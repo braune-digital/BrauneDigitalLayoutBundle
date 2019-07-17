@@ -6,11 +6,11 @@
 // Divider
 // ---------------------------------------------------------
 
-$divider-background: getColor(purple-light);
-$divider-height: $base-border-width;
-$divider-height-small: 1px;
-$divider-height-large: $base-stripe-width;
-$divider-margin: spacing(4);
+$divider-background: $color-white !default;
+$divider-height: $base-border-width !default;
+$divider-height-small: 1px !default;
+$divider-height-large: $base-stripe-width !default;
+$divider-margin: spacing(4) !default;
 
 
 .divider {

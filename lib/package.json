@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/ng-packagr/package.schema.json",
   "name": "@braune-digital/layout",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "Braune Digital Layout Bundle for Angular",
   "author": "Braune Digital GmbH <mail@braune-digital.com>",
   "license": "GNU",
@@ -16,7 +16,7 @@
     "ngx-bootstrap": ">=2.0.0",
     "ng2-file-upload": "=>2.0.0",
     "@braune-digital/form-utilities": ">=1",
-    "angular-pipes": ">=9",
+    "angular-pipes": ">=9",di
     "@w11k/angular-sticky-things": "^1.1.0",
     "node-sass": "^4.12.0"
   },
