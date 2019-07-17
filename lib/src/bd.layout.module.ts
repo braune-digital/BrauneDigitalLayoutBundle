@@ -24,13 +24,10 @@ import {BdBadgeComponent} from './components/utils/bd-badge/bd-badge.component';
 
 import {BdLayoutComponent} from './components/layout/bd-layout/bd-layout.component';
 import {BdBrandComponent} from './components/layout/bd-brand/bd-brand.component';
-import {BdContentAsideComponent} from './components/layout/bd-content-aside/bd-content-aside.component';
-import {BdContentMainComponent} from './components/layout/bd-content-main/bd-content-main.component';
 import {BdContentComponent} from './components/layout/bd-content/bd-content.component';
 import {BdColComponent} from './components/layout/bd-col/bd-col.component';
 import {BdGridComponent} from './components/layout/bd-grid/bd-grid.component';
 import {BdAlertComponent} from './components/layout/bd-alert/bd-alert.component';
-import {BdContentHeaderComponent} from './components/layout/bd-content-header/bd-content-header.component';
 import {BdOverlayComponent} from './components/layout/bd-overlay/bd-overlay.component';
 import {ContentLockComponent} from './components/layout/content-lock/content-lock.component';
 import {ContentLockContentComponent} from './components/layout/content-lock-content/content-lock-content.component';
@@ -80,8 +77,6 @@ import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 import {BdContentModalMainComponent} from './components/content/bd-content-modal-main/bd-content-modal-main.component';
 import {BdContentModalFooterComponent} from './components/content/bd-content-modal-footer/bd-content-modal-footer.component';
 import {BdHeaderComponent} from './components/layout/bd-header/bd-header.component';
-import {BdHeaderMainComponent} from './components/layout/bd-header-main/bd-header-main.component';
-import {BdHeaderAsideComponent} from './components/layout/bd-header-aside/bd-header-aside.component';
 import { BdCenterComponent } from './components/layout/bd-center/bd-center.component';
 import {BdSidebarComponent} from './components/layout/bd-sidebar/bd-sidebar.component';
 import {BdSidebarPreComponent} from './components/layout/bd-sidebar/bd-sidebar-pre/bd-sidebar-pre.component';
@@ -92,6 +87,13 @@ import {BdSidebarListItemComponent} from './components/layout/bd-sidebar/bd-side
 import {BdLayoutContentComponent} from './components/layout/bd-layout/bd-layout-content/bd-layout-content.component';
 import {BdLayoutSidebarComponent} from './components/layout/bd-layout/bd-layout-sidebar/bd-layout-sidebar.component';
 import {BdVersionComponent} from './components/elements/bd-version/bd-version.component';
+import {BdContentHeaderComponent} from './components/layout/bd-content/bd-content-header/bd-content-header.component';
+import {BdContentMainComponent} from './components/layout/bd-content/bd-content-main/bd-content-main.component';
+import {BdContentAsideComponent} from './components/layout/bd-content/bd-content-aside/bd-content-aside.component';
+import {BdHeaderMainComponent} from './components/layout/bd-header/bd-header-main/bd-header-main.component';
+import {BdHeaderAsideComponent} from './components/layout/bd-header/bd-header-aside/bd-header-aside.component';
+import {BdHeaderPostAsideComponent} from './components/layout/bd-header/bd-header-post-aside/bd-header-post-aside.component';
+import {BdHeaderPostMainComponent} from './components/layout/bd-header/bd-header-post-main/bd-header-post-main.component';
 
 @NgModule({
     imports: [
@@ -137,6 +139,8 @@ import {BdVersionComponent} from './components/elements/bd-version/bd-version.co
         BdHeaderComponent,
         BdHeaderMainComponent,
         BdHeaderAsideComponent,
+        BdHeaderPostMainComponent,
+        BdHeaderPostAsideComponent,
         BdSidebarComponent,
         BdSidebarPreComponent,
         BdSidebarMainComponent,
@@ -226,18 +230,20 @@ import {BdVersionComponent} from './components/elements/bd-version/bd-version.co
         // ---------------------------
         BdAlertComponent,
         BdBrandComponent,
+        BdContentHeaderComponent,
         BdContentComponent,
+        BdGridComponent,
+        BdLayoutComponent,
+        BdLayoutContentComponent,
+        BdLayoutSidebarComponent,
+        BdLoadingComponent,
         BdContentAsideComponent,
         BdContentMainComponent,
         BdHeaderComponent,
         BdHeaderMainComponent,
         BdHeaderAsideComponent,
-        BdLayoutComponent,
-        BdLayoutContentComponent,
-        BdLayoutSidebarComponent,
-        BdLoadingComponent,
-        BdGridComponent,
-        BdContentHeaderComponent,
+        BdHeaderPostMainComponent,
+        BdHeaderPostAsideComponent,
         BdSidebarComponent,
         BdSidebarPreComponent,
         BdSidebarMainComponent,

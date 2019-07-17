@@ -7,7 +7,7 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Breakpoints} from '../../../utils/breakpoints';
 
 @Component({
-    selector: 'bd-content',
+    selector: 'bd-content, [bd-content]',
     templateUrl: './bd-content.component.html',
 })
 export class BdContentComponent implements OnInit{

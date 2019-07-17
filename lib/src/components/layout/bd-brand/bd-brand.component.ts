@@ -6,7 +6,7 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
 
 @Component({
-    selector: 'bd-brand',
+    selector: 'bd-brand, [bd-brand]',
     templateUrl: 'bd-brand.component.html',
     encapsulation: ViewEncapsulation.None,
 })

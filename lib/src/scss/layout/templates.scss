@@ -61,10 +61,15 @@ $tmpl-background-content: getColor(white) !default;
     overflow-y: scroll;
     scroll-behavior: smooth;
 
-    // Content Nav
+    // Header
     // ---------------------------------------------------------
 
     @import "template/header";
+
+    // Header-Post
+    // ---------------------------------------------------------
+
+    @import "template/header-post";
 
     // Content Header
     // ---------------------------------------------------------

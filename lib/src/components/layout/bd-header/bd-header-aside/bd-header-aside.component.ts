@@ -6,14 +6,8 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'bd-col, [bd-col]',
-    templateUrl: 'bd-col.component.html',
-    host: { 'class': 'col' }
+    selector: 'bd-header-aside, [bd-header-aside]',
+    templateUrl: './bd-header-aside.component.html',
 })
-export class BdColComponent {
-
-    constructor() {
-
-    }
-
+export class BdHeaderAsideComponent {
 }

@@ -7,7 +7,7 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { Bem } from '../../../utils/bem';
 
 @Component({
-  selector: 'bd-center',
+  selector: 'bd-center, [bd-center]',
   templateUrl: './bd-center.component.html',
 })
 export class BdCenterComponent {

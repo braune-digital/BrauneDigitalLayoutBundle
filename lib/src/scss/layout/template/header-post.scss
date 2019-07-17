@@ -1,0 +1,82 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Templates
+// ---------------------------------------------------------
+
+// Header-Post
+// ---------------------------------------------------------
+
+$header-post-background: getColor(white) !default;
+
+.tmpl__header__post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $header-post-background;
+
+  .tmpl__header__post__main {
+    order: 2;
+    animation: fadeInContent $base-animation-duration;
+  }
+
+  .tmpl__header__post__aside {
+    order: 1;
+
+  }
+
+  // Margin resets
+  // ---------------------------------------------------------
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  .avatar {
+    margin-bottom: 0;
+  }
+
+  // Responsive
+  // ---------------------------------------------------------
+
+  @include paddingHorizontal($tmpl-base-padding-horizontal);
+
+  @include media-breakpoint-up(md) {
+    padding-right: $tmpl-base-padding-horizontal + $tmpl-aside-left-width-desktop;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    .tmpl__header__post__main {
+      order: 1;
+      flex: 2 1 auto;
+      //margin-right: $tmpl-content-aside-width-md + $tmpl-content-aside-margin-md;
+    }
+
+    .tmpl__header__post__aside {
+      order: 2;
+      flex: 0 0 $tmpl-content-aside-width-md * 0.66;
+      //margin-left: $tmpl-content-aside-margin-md;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-left: $tmpl-base-padding-horizontal * 2.5;
+    padding-right: $tmpl-base-padding-horizontal * 2 + $tmpl-base-padding-horizontal * 2;
+
+    .tmpl__header__post__aside {
+      flex-basis: $tmpl-content-aside-width-lg * 0.66;
+      margin-left: $tmpl-content-aside-margin-lg;
+
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+
+    .tmpl__header__post__aside {
+      flex-basis: $tmpl-content-aside-width-xl * 0.66;
+      //margin-left: $tmpl-content-aside-margin-xl;
+    }
+  }
+}

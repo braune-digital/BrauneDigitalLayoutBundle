@@ -9,7 +9,7 @@ import { AlertService } from '../../../services/alert.service';
 import {AlertInterface} from '../../../services/alert.abstract.service';
 
 @Component({
-  selector: 'bd-alert',
+  selector: 'bd-alert, [bd-alert]',
   templateUrl: './bd-alert.component.html',
     animations: [
         trigger('flash', [

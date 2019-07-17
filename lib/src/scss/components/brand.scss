@@ -1,5 +1,6 @@
 
 $brand-color: getColor(black) !default;
+$brand-label-color: getColor(black) !default;
 $brand-width: spacing(8) !default;
 
 .brand {
@@ -18,7 +19,7 @@ $brand-width: spacing(8) !default;
   }
 
   .brand__label {
-    color: $brand-color;
+    color: $brand-label-color;
     font-weight: getFontWeight(bold);
     font-size: getFontSize(md);
   }

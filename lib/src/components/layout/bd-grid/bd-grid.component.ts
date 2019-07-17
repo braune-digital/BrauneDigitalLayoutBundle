@@ -7,7 +7,7 @@ import {Component, HostBinding, Input, OnInit} from '@angular/core';
 import {Bem} from "../../../utils/bem";
 
 @Component({
-    selector: 'bd-grid',
+    selector: 'bd-grid, [bd-grid]',
     templateUrl: 'bd-grid.component.html'
 })
 export class BdGridComponent{

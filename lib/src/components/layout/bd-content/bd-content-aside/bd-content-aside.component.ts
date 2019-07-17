@@ -6,8 +6,9 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'bd-header-main',
-    templateUrl: './bd-header-main.component.html',
+    selector: 'bd-content-aside, [bd-content-aside]',
+    templateUrl: './bd-content-aside.component.html',
 })
-export class BdHeaderMainComponent {
+export class BdContentAsideComponent {
+
 }

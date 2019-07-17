@@ -3,14 +3,24 @@
   ~ @author Felix Baltruschat <fb@braune-digital.com>
   ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
   -->
+<div class="tmpl__header__pre">
+  <!--TODO-->
+</div>
 
 <div class="tmpl__header">
   <div class="tmpl__header__aside">
     <ng-content select="bd-header-aside"></ng-content>
   </div>
   <div class="tmpl__header__main">
-    <div>
-      <ng-content select="bd-header-main"></ng-content>
-    </div>
+    <ng-content select="bd-header-main"></ng-content>
+  </div>
+</div>
+
+<div class="tmpl__header__post">
+  <div class="tmpl__header__post__aside">
+    <ng-content select="bd-header-post-aside"></ng-content>
+  </div>
+  <div class="tmpl__header__post__main">
+    <ng-content select="bd-header-post-main"></ng-content>
   </div>
 </div>

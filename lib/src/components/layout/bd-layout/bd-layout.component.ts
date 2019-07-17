@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
 
 @Component({
-  selector: 'bd-layout',
+  selector: 'bd-layout, [bd-layout]',
   templateUrl: 'bd-layout.component.html'
 })
 export class BdLayoutComponent implements OnInit {
