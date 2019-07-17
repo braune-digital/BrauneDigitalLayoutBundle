@@ -11,6 +11,8 @@
 // Avatar
 // ---------------------------------------------------------
 
+$avatar-border-radius: 0% !default;
+
 $avatar-sizes: (
   base: 42px,
   xs: 30px,
@@ -32,6 +34,7 @@ $avatar-sizes: (
     margin-right: spacing(2);
     flex: 0 0 auto;
     overflow: hidden;
+    border-radius: $avatar-border-radius;
 
     img {
       width: 100%;
