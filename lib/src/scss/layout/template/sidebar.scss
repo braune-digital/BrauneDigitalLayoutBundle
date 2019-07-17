@@ -18,7 +18,7 @@ $bd-sidebar-item-border: 1px solid $color-grey-light-accent !default;
   flex-direction: column;
   justify-content: space-between;
 
-  overflow-y: scroll;
+  overflow-y: auto;
 
   .sidebar__pre {
     justify-content: center;
