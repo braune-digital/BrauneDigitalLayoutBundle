@@ -1,0 +1,41 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Centered Wrapper
+// ---------------------------------------------------------
+
+$tmpl-content-centered-padding: spacing(2) !default;
+$tmpl-content-centered-background: getColor(white) !default;
+
+.tmpl__content__centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .tmpl__content__centered__inner {
+    background: $tmpl-content-centered-background;
+    padding: $tmpl-content-centered-padding;
+  }
+
+  &.tmpl__content__centered--spacing-sm {
+    .tmpl__content__centered__inner {
+      padding: $tmpl-content-centered-padding * 0.5;
+    }
+  }
+
+  &.tmpl__content__centered--spacing-md {
+    .tmpl__content__centered__inner {
+      padding: $tmpl-content-centered-padding * 2;
+    }
+  }
+
+  &.tmpl__content__centered--spacing-lg {
+    .tmpl__content__centered__inner {
+      padding: $tmpl-content-centered-padding * 3;
+    }
+  }
+
+}

@@ -40,9 +40,8 @@ $tmpl-background-content: getColor(white) !default;
   display: flex;
   flex-direction: row;
   animation: fadeIn $base-animation-duration * 2;
-  height: 100%;
   background: $tmpl-background;
-
+  height: 100vh;
 
   .tmpl__layout__sidebar {
     @include fade();
@@ -79,6 +78,11 @@ $tmpl-background-content: getColor(white) !default;
     // ---------------------------------------------------------
 
     @import "template/content-header";
+
+    // Content Centered
+    // ---------------------------------------------------------
+
+    @import "template/content-cendered";
 
     // Main Content
     // ---------------------------------------------------------

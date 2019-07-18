@@ -77,7 +77,6 @@ import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 import {BdContentModalMainComponent} from './components/content/bd-content-modal-main/bd-content-modal-main.component';
 import {BdContentModalFooterComponent} from './components/content/bd-content-modal-footer/bd-content-modal-footer.component';
 import {BdHeaderComponent} from './components/layout/bd-header/bd-header.component';
-import { BdCenterComponent } from './components/layout/bd-center/bd-center.component';
 import {BdSidebarComponent} from './components/layout/bd-sidebar/bd-sidebar.component';
 import {BdSidebarPreComponent} from './components/layout/bd-sidebar/bd-sidebar-pre/bd-sidebar-pre.component';
 import {BdSidebarPostComponent} from './components/layout/bd-sidebar/bd-sidebar-post/bd-sidebar-post.component';
@@ -94,6 +93,7 @@ import {BdHeaderMainComponent} from './components/layout/bd-header/bd-header-mai
 import {BdHeaderAsideComponent} from './components/layout/bd-header/bd-header-aside/bd-header-aside.component';
 import {BdHeaderPostAsideComponent} from './components/layout/bd-header/bd-header-post-aside/bd-header-post-aside.component';
 import {BdHeaderPostMainComponent} from './components/layout/bd-header/bd-header-post-main/bd-header-post-main.component';
+import {BdContentCenteredComponent} from './components/layout/bd-content/bd-content-centered/bd-content-centered.component';
 
 @NgModule({
     imports: [
@@ -102,9 +102,9 @@ import {BdHeaderPostMainComponent} from './components/layout/bd-header/bd-header
         HttpClientModule,
         FormsModule,
         FormUtilitiesModule,
+        ReactiveFormsModule,
         BdFilterModule,
         ModalModule,
-        ReactiveFormsModule,
         RouterModule,
         NgStringPipesModule,
         NgArrayPipesModule,
@@ -136,6 +136,7 @@ import {BdHeaderPostMainComponent} from './components/layout/bd-header/bd-header
         BdLoadingComponent,
         BdContentAsideComponent,
         BdContentMainComponent,
+        BdContentCenteredComponent,
         BdHeaderComponent,
         BdHeaderMainComponent,
         BdHeaderAsideComponent,
@@ -166,7 +167,6 @@ import {BdHeaderPostMainComponent} from './components/layout/bd-header/bd-header
         BdAvatarComponent,
         BdBookmarkComponent,
         BdButtonComponent,
-        BdCenterComponent,
         BdDividerComponent,
         BdExampleComponent,
         BdHighlightComponent,
@@ -239,6 +239,7 @@ import {BdHeaderPostMainComponent} from './components/layout/bd-header/bd-header
         BdLoadingComponent,
         BdContentAsideComponent,
         BdContentMainComponent,
+        BdContentCenteredComponent,
         BdHeaderComponent,
         BdHeaderMainComponent,
         BdHeaderAsideComponent,
@@ -269,7 +270,6 @@ import {BdHeaderPostMainComponent} from './components/layout/bd-header/bd-header
         BdAvatarComponent,
         BdBookmarkComponent,
         BdButtonComponent,
-        BdCenterComponent,
         BdDividerComponent,
         BdExampleComponent,
         BdHighlightComponent,

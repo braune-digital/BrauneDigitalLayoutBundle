@@ -4,14 +4,14 @@
  */
 
 import { Component, HostBinding, Input } from '@angular/core';
-import { Bem } from '../../../utils/bem';
+import {Bem} from '../../../../utils/bem';
 
 @Component({
-  selector: 'bd-center, [bd-center]',
-  templateUrl: './bd-center.component.html',
+  selector: 'bd-content-centered, [bd-center]',
+  templateUrl: './bd-content-centered.component.html',
 })
-export class BdCenterComponent {
-  baseClass: string = 'centered-wrapper';
+export class BdContentCenteredComponent {
+  baseClass: string = 'tmpl__content__centered';
 
   @Input()
   spacing = null;
