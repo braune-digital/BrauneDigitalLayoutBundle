@@ -9,6 +9,8 @@
 // Figure
 // ---------------------------------------------------------
 
+$figure-background-fill-color: getColor(grey-light) !default;
+
 img {
   max-width: 100%;
 }
@@ -40,7 +42,7 @@ img {
   }
 
   .figure__media {
-    background: getColor(grey-light);
+    background: $figure-background-fill-color;
 
     img {
       width: auto;
