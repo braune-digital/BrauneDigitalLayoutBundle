@@ -15,7 +15,9 @@ $tmpl-content-centered-background: getColor(white) !default;
   justify-content: center;
   height: 100vh;
 
+
   .tmpl__content__centered__inner {
+    border-radius: $base-border-radius;
     background: $tmpl-content-centered-background;
     padding: $tmpl-content-centered-padding;
   }
