@@ -12,20 +12,24 @@
 $tmpl-header-margin-vertical: spacing(4) !default;
 
 .tmpl__header {
+  @include fadeOut();
+
   display: flex;
   flex-direction: column;
   @include paddingVertical($tmpl-header-margin-vertical);
   align-items: center;
 
   .tmpl__header__main {
+    @include fadeOut();
     order: 2;
-    animation: fadeInContent $base-animation-duration;
   }
 
   .tmpl__header__aside {
+    @include fadeOut();
     order: 1;
 
   }
+
 
   // Margin resets
   // ---------------------------------------------------------

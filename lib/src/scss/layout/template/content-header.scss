@@ -9,6 +9,8 @@
 $tmpl-header-margin-vertical: spacing(3);
 
 .tmpl__content__header {
+  @include fadeOut();
+
   display: flex;
   flex-direction: column;
 

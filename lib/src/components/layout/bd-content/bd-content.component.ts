@@ -16,6 +16,9 @@ export class BdContentComponent implements OnInit{
   @Input('stickyAside') stickyAside = true;
   @Input('inline') inline = false;
 
+  @Input()
+  fadeOut = false;
+
   enableSticky = false;
   breakpoints;
   heightString;

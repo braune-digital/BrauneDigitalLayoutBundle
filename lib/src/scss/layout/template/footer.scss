@@ -10,6 +10,8 @@
 // ---------------------------------------------------------
 
 .tmpl__footer {
+  @include fadeOut();
+
   position: relative;
   margin-top: spacing(8);
   margin-bottom: spacing(4);

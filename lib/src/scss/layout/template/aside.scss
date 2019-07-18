@@ -10,6 +10,8 @@
 // ---------------------------------------------------------
 
 .tmpl__aside {
+  @include fadeOut();
+
   position: fixed;
   z-index: $tmpl-zindex-aside;
   background: $tmpl-aside-background;

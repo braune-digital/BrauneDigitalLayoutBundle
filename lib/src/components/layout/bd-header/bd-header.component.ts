@@ -3,7 +3,7 @@
  * @copyright 2/5/19 4:42 PM Braune Digital GmbH
  */
 
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Breakpoints} from '../../../utils/breakpoints';
 
 @Component({
@@ -13,6 +13,9 @@ import {Breakpoints} from '../../../utils/breakpoints';
 export class BdHeaderComponent implements OnInit {
 
   breakpoints;
+
+  @Input()
+  fadeOut: false;
 
   ngOnInit() {
     this.breakpoints = new Breakpoints();

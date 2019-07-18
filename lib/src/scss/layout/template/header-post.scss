@@ -12,6 +12,8 @@
 $header-post-background: getColor(white) !default;
 
 .tmpl__header__post {
+  @include fadeOut();
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +21,6 @@ $header-post-background: getColor(white) !default;
 
   .tmpl__header__post__main {
     order: 2;
-    animation: fadeInContent $base-animation-duration;
   }
 
   .tmpl__header__post__aside {

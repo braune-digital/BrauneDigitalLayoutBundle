@@ -10,25 +10,30 @@
 // ---------------------------------------------------------
 
 .tmpl__content {
+  @include fadeOut();
+
   display: flex;
   flex-direction: column;
   padding-bottom: $tmpl-content-padding-bottom;
 
   .tmpl__content__header {
+      @include fadeOut();
       order: 1;
   }
 
   .tmpl__content__content {
+    @include fadeOut();
     display: flex;
     flex-direction: column;
     order: 2;
 
     .tmpl__content__main {
+      @include fadeOut();
       order: 2;
-      animation: fadeInContent $base-animation-duration;
     }
 
     .tmpl__content__aside {
+      @include fadeOut();
       order: 1;
 
       .tmpl__content__aside__actions {

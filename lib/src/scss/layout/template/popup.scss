@@ -10,6 +10,8 @@
 // ---------------------------------------------------------
 
 .tmpl__popup {
+  @include fadeOut();
+
   position: fixed;
   z-index: $tmpl-zindex-popup;
   background: $tmpl-aside-background;

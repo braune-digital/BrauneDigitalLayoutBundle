@@ -3,15 +3,15 @@
   ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
   -->
 
-<div class="tmpl__content" [ngClass]="{ 'tmpl__content--inline': inline }">
-    <div class="tmpl__content__header">
+<div class="tmpl__content" [ngClass]="{ 'tmpl__content--inline': inline}">
+    <div class="tmpl__content__header" [ngClass]="{'fade-out': fadeOut}">
         <ng-content select="bd-content-header"></ng-content>
     </div>
     <div class="tmpl__content__content">
-      <div class="tmpl__content__main">
+      <div class="tmpl__content__main" [ngClass]="{'fade-out': fadeOut}">
           <ng-content select="bd-content-main"></ng-content>
       </div>
-      <div class="tmpl__content__aside" *ngIf="hasAside">
+      <div class="tmpl__content__aside" *ngIf="hasAside" [ngClass]="{'fade-out': fadeOut}">
         <div #boundary [ngStyle]="{'height': heightString.toString() + 'px'}">
           <div stickyThing [boundary]="boundary" marginTop="20" [enable]="enableSticky">
             <ng-content select="bd-content-aside"></ng-content>
