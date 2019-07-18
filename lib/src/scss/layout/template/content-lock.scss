@@ -10,7 +10,7 @@
 // ---------------------------------------------------------
 
 .tmpl__lock {
-  @include fadeOut();
+  @include fade();
 
   position: fixed;
   top: 0;

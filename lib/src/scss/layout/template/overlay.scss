@@ -13,7 +13,7 @@
 &.tmpl--contact-in,
 &.tmpl--registration-in {
   .tmpl__overlay {
-    @include fadeOut();
+    @include fade();
 
     position: fixed;
     left: 0;

@@ -6,7 +6,7 @@ $bd-sidebar-color-background-hover: $color-grey-light-accent !default;
 $bd-sidebar-item-border: 1px solid $color-grey-light-accent !default;
 
 .sidebar {
-  @include fadeOut();
+  @include fade();
 
   width: $bd-sidebar-width;
   max-width: $bd-sidebar-width;

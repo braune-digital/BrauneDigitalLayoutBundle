@@ -12,7 +12,7 @@
 $header-post-background: getColor(white) !default;
 
 .tmpl__header__post {
-  @include fadeOut();
+  @include fade();
 
   display: flex;
   flex-direction: column;

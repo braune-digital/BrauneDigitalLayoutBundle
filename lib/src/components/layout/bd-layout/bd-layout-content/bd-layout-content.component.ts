@@ -10,6 +10,4 @@ import {Meta} from '@angular/platform-browser';
   selector: 'bd-layout-content, [bd-layout-content]',
   templateUrl: 'bd-layout-content.component.html'
 })
-export class BdLayoutContentComponent {
-
-}
+export class BdLayoutContentComponent {}

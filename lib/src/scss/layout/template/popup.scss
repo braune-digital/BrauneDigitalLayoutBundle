@@ -10,7 +10,7 @@
 // ---------------------------------------------------------
 
 .tmpl__popup {
-  @include fadeOut();
+  @include fade();
 
   position: fixed;
   z-index: $tmpl-zindex-popup;

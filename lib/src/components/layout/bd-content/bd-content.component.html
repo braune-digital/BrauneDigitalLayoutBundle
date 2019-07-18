@@ -4,14 +4,14 @@
   -->
 
 <div class="tmpl__content" [ngClass]="{ 'tmpl__content--inline': inline}">
-    <div class="tmpl__content__header" [ngClass]="{'fade-out': fadeOut}">
+    <div class="tmpl__content__header" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
         <ng-content select="bd-content-header"></ng-content>
     </div>
     <div class="tmpl__content__content">
-      <div class="tmpl__content__main" [ngClass]="{'fade-out': fadeOut}">
+      <div class="tmpl__content__main" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
           <ng-content select="bd-content-main"></ng-content>
       </div>
-      <div class="tmpl__content__aside" *ngIf="hasAside" [ngClass]="{'fade-out': fadeOut}">
+      <div class="tmpl__content__aside" *ngIf="hasAside" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
         <div #boundary [ngStyle]="{'height': heightString.toString() + 'px'}">
           <div stickyThing [boundary]="boundary" marginTop="20" [enable]="enableSticky">
             <ng-content select="bd-content-aside"></ng-content>
