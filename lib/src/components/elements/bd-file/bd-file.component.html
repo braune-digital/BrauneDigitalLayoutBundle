@@ -1,0 +1,22 @@
+<div class="file" *ngIf="file">
+    <div ngClass="{{'file__initials file__initials--filetype--' + getFileType(file)}}">
+        <span>{{ getFileType(file) }}</span>
+    </div>
+    <div class="file__content">
+
+        <div class="file__content__text">
+            {{ file.name }}
+            <ng-content></ng-content>
+        </div>
+
+        <div class="file__actions">
+            <!--<a (click)="openModal(templateFileModal, 0)" tooltip="Ansehen">-->
+                <!--<ywd-icon [icon]="'eye'" tooltip="Ansehen"></ywd-icon>-->
+            <!--</a>-->
+            <a target="_new" [href]="file.path" download>
+                <ywd-icon [icon]="'download'" tooltip="Herunterladen" font="fas"></ywd-icon>
+            </a>
+        </div>
+    </div>
+
+</div>

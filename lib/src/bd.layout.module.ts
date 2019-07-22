@@ -94,6 +94,7 @@ import {BdHeaderAsideComponent} from './components/layout/bd-header/bd-header-as
 import {BdHeaderPostAsideComponent} from './components/layout/bd-header/bd-header-post-aside/bd-header-post-aside.component';
 import {BdHeaderPostMainComponent} from './components/layout/bd-header/bd-header-post-main/bd-header-post-main.component';
 import {BdContentCenteredComponent} from './components/layout/bd-content/bd-content-centered/bd-content-centered.component';
+import {BdFileComponent} from './components/elements/bd-file/bd-file.component';
 
 @NgModule({
     imports: [
@@ -168,6 +169,7 @@ import {BdContentCenteredComponent} from './components/layout/bd-content/bd-cont
         BdBookmarkComponent,
         BdButtonComponent,
         BdDividerComponent,
+        BdFileComponent,
         BdExampleComponent,
         BdHighlightComponent,
         BdGalleryComponent,
@@ -271,6 +273,7 @@ import {BdContentCenteredComponent} from './components/layout/bd-content/bd-cont
         BdBookmarkComponent,
         BdButtonComponent,
         BdDividerComponent,
+        BdFileComponent,
         BdExampleComponent,
         BdHighlightComponent,
         BdGalleryComponent,

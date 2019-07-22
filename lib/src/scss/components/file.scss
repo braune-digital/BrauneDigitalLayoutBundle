@@ -1,0 +1,84 @@
+//
+// yooweedoo CSS Framework
+// ---------------------------------------------------------
+
+//
+// File
+// ---------------------------------------------------------
+
+$avatar-sizes: (
+  base: 42px,
+  xs: 30px,
+  sm: 60px,
+  md: 80px,
+  lg: 130px,
+  xl: 200px,
+  xxl: 300px,
+);
+
+.file {
+  transition: $base-animation;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-right: spacing(1);
+  margin-bottom: spacing(1);
+  border-bottom: 1px solid getColor(grey-light);
+
+  .file__initials {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    margin-right: spacing(2);
+    font-size: $avatar-size * .25;
+    text-transform: uppercase;
+    background-color: getColor(grey-light);
+    @include square($avatar-size);
+
+    span {
+      @include paddingHorizontal(spacing(.5))
+    }
+
+    @each $name, $color in $fileTypes {
+      &.file__initials--filetype--#{$name} {
+        background: $color;
+        color: color-contrast($color);
+      }
+    }
+  }
+
+  .file__content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+
+    .file__content__text {
+
+      font-size: getFontSize(md);
+
+      h4 {
+        margin: 0;
+        font-size: getFontSize(base);
+      }
+    }
+
+    .file__actions {
+      .icon {
+        font-size: getFontSize(sm);
+        color: getColor(grey-medium);
+        margin-left: spacing(1);
+
+        @include hoverState{
+          color: getColor(cyan);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
