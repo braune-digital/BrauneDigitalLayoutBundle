@@ -7,20 +7,12 @@
   <!--TODO-->
 </div>
 
-<div class="tmpl__header">
-  <div class="tmpl__header__aside" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
+<div class="tmpl__header" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
     <ng-content select="bd-header-aside"></ng-content>
-  </div>
-  <div class="tmpl__header__main" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
     <ng-content select="bd-header-main"></ng-content>
-  </div>
 </div>
 
-<div class="tmpl__header__post">
-  <div class="tmpl__header__post__aside"  [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
-    <ng-content select="bd-header-post-aside"></ng-content>
-  </div>
-  <div class="tmpl__header__post__main" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
-    <ng-content select="bd-header-post-main"></ng-content>
-  </div>
+<div class="tmpl__header__post" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
+  <ng-content select="bd-header-post-aside"></ng-content>
+  <ng-content select="bd-header-post-main"></ng-content>
 </div>
