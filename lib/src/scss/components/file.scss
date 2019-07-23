@@ -99,19 +99,49 @@ $avatar-sizes: (
     }
   }
 
+
   // File Sizes
   // -------------------------------------------
 
-  @each $name, $size in $avatar-sizes {
-    &.file--#{'' + $name} {
+  &.file--sm {
 
-      .file__initials__text {
-        font-size: $size * 0.3;
+    .file__content {
+      .file__content__text {
+        font-size: getFontSize(sm);
       }
+    }
 
-      .file__img {
-        @include square($size);
+    .file__initials {
+      margin-bottom: spacing(1);
+      @include square(spacing(5));
+    }
+  }
+
+  &.file--md {
+
+    .file__content {
+      .file__content__text {
+        font-size: getFontSize(md);
       }
+    }
+
+    .file__initials {
+      margin-bottom: spacing(2);
+      @include square(spacing(9));
+    }
+  }
+
+  &.file--lg {
+
+    .file__content {
+      .file__content__text {
+        font-size: getFontSize(base);
+      }
+    }
+
+    .file__initials {
+      margin-bottom: spacing(3);
+      @include square(spacing(13));
     }
   }
 }
