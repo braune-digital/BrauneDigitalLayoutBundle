@@ -37,6 +37,7 @@ $avatar-sizes: (
     text-transform: uppercase;
     background-color: getColor(grey-light);
     @include square($avatar-size);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
 
     span {
       @include paddingHorizontal(spacing(.5))
@@ -78,6 +79,38 @@ $avatar-sizes: (
           color: getColor(cyan);
           cursor: pointer;
         }
+      }
+    }
+  }
+
+  &.file--center {
+    flex-direction: column;
+
+    .file__content {
+      flex-direction: column;
+    }
+
+    .file__initials {
+      margin-right: 0;
+    }
+
+    .file__actions {
+      margin-left: 0;
+    }
+  }
+
+  // File Sizes
+  // -------------------------------------------
+
+  @each $name, $size in $avatar-sizes {
+    &.file--#{'' + $name} {
+
+      .file__initials__text {
+        font-size: $size * 0.3;
+      }
+
+      .file__img {
+        @include square($size);
       }
     }
   }

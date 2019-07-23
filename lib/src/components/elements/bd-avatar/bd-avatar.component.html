@@ -11,7 +11,8 @@
     </div>
     <div class="avatar__content">
 
-        <div ngClass="{{ headlineType }}" *ngIf="!hideName" [innerHTML]="user.fullname"></div>
+        <div ngClass="{{ headlineType }}" *ngIf="!hideName && user.fullname" [innerHTML]="user.fullname"></div>
+        <div ngClass="{{ headlineType }}" *ngIf="!hideName && !user.fullname" [innerHTML]="user.firstname + ' ' + user.lastname"></div>
 
         <p *ngIf="user.description && showDescription">{{ user.description }}</p>
         <div class="avatar__content__tags" *ngIf="tags">

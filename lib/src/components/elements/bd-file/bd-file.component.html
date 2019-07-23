@@ -1,4 +1,4 @@
-<div class="file" *ngIf="file">
+<ng-container *ngIf="file">
     <div ngClass="{{'file__initials file__initials--filetype--' + getFileType(file)}}">
         <span>{{ getFileType(file) }}</span>
     </div>
@@ -19,4 +19,4 @@
         </div>
     </div>
 
-</div>
+</ng-container>

@@ -38,7 +38,6 @@ import {BdLinkListComponent} from './components/elements/bd-link-list/bd-link-li
 import {BdLinkListItemComponent} from './components/elements/bd-link-list-item/bd-link-list-item.component';
 import {BdAvatarComponent} from './components/elements/bd-avatar/bd-avatar.component';
 import {BdActionGroupComponent} from './components/elements/bd-action-group/bd-action-group.component';
-import {BdActionGroupItemComponent} from './components/elements/bd-action-group-item/bd-action-group-item.component';
 import {BdIconComponent} from './components/elements/bd-icon/bd-icon.component';
 import {BdImageComponent} from './components/elements/bd-image/bd-image.component';
 import {BdBookmarkComponent} from './components/elements/bd-bookmark/bd-bookmark.component';
@@ -95,6 +94,9 @@ import {BdHeaderPostAsideComponent} from './components/layout/bd-header/bd-heade
 import {BdHeaderPostMainComponent} from './components/layout/bd-header/bd-header-post-main/bd-header-post-main.component';
 import {BdContentCenteredComponent} from './components/layout/bd-content/bd-content-centered/bd-content-centered.component';
 import {BdFileComponent} from './components/elements/bd-file/bd-file.component';
+import {BdActionGroupItemComponent} from './components/elements/bd-action-group/bd-action-group-item/bd-action-group-item.component';
+import {BdActionBarComponent} from './components/elements/bd-action-bar/bd-action-bar.component';
+import {BdActionBarGroupComponent} from './components/elements/bd-action-bar/bd-action-bar-group/bd-action-bar-group.component';
 
 @NgModule({
     imports: [
@@ -162,6 +164,8 @@ import {BdFileComponent} from './components/elements/bd-file/bd-file.component';
         // ---------------------------
         // Elements
         // ---------------------------
+        BdActionBarComponent,
+        BdActionBarGroupComponent,
         BdActionGroupComponent,
         BdActionGroupItemComponent,
         BdApprovalComponent,
@@ -266,6 +270,8 @@ import {BdFileComponent} from './components/elements/bd-file/bd-file.component';
         // ---------------------------
         // Elements
         // ---------------------------
+        BdActionBarComponent,
+        BdActionBarGroupComponent,
         BdActionGroupComponent,
         BdActionGroupItemComponent,
         BdApprovalComponent,

@@ -3,7 +3,7 @@
  * @copyright 2/5/19 4:42 PM Braune Digital GmbH
  */
 
-import {Component, HostBinding, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'bd-action-group, [bd-action-group]',

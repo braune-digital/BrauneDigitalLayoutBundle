@@ -142,7 +142,7 @@ $btn-disabled-background: getColor(grey-light) !default;
   .btn--text,
   .btn--loading,
   .btn--success {
-    display: block;
+    //display: block;
 
     transition: transform .2s ease-in-out, opacity .1s ease-in-out;
     white-space: nowrap;
@@ -176,7 +176,7 @@ $btn-disabled-background: getColor(grey-light) !default;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      display: inline-block;
+      //display: inline-block;
       line-height: $input-line-height;
 
       span {
@@ -369,7 +369,7 @@ $btn-disabled-background: getColor(grey-light) !default;
     pointer-events: none;
 
     &.btn--text, .btn__text {
-      color: getColor(grey-dark) !important;
+      color: getColor(grey-dark);
     }
 
     &:before {
