@@ -68,6 +68,14 @@ $bd-sidebar-item-border: 1px solid $color-grey-light-accent !default;
               color: $bd-sidebar-color-text-hover;
               cursor: pointer;
             }
+            @include activeState {
+              background: $bd-sidebar-color-background-hover;
+              color: $bd-sidebar-color-text-hover;
+
+              &:hover {
+                color: rgba($bd-sidebar-color-text-hover, .7);
+              }
+            }
           }
         }
       }

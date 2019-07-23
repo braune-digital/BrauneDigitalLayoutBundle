@@ -61,6 +61,11 @@ a {
     color: $base-link-color-hover;
     cursor: pointer;
   }
+
+  @include activeState {
+    text-decoration: none;
+    color: $base-link-color-hover;
+  }
 }
 
 // Ordered / Unordered Lists
