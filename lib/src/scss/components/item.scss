@@ -1,0 +1,85 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Item (Image with text)
+// ---------------------------------------------------------
+
+
+$item-size-base: 40px !default;
+$item-padding-base: spacing(1) !default;
+
+$item-sizes: (
+  sm: $item-size-base * .5,
+  md: $item-size-base * .75,
+  base: $item-size-base,
+  lg: $item-size-base * 1.25,
+  xl: $item-size-base * 1.5,
+);
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: getFontSize(md);
+  padding-right: $item-padding-base;
+
+  .item__image {
+    img  {
+      width: $item-size-base;
+    }
+  }
+
+  .item__image, .item__text {
+    padding-right: $item-padding-base;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  &.item--sm {
+    font-size: getFontSize(sm);
+
+    .item__image, .item__text {
+      padding-right: $item-padding-base * .5;
+    }
+  }
+
+  &.item--md {
+    font-size: getFontSize(md);
+
+    .item__image, .item__text {
+      padding-right: $item-padding-base;
+    }
+  }
+
+  &.item--lg {
+    font-size: getFontSize(base);
+
+    .item__image, .item__text {
+      padding-right: $item-padding-base * 1.5;
+    }
+  }
+
+  &.item--xl {
+    font-size: getFontSize(xl);
+
+    .item__image, .item__text {
+      padding-right: $item-padding-base * 2;
+    }
+  }
+
+  @each $name, $size in $item-sizes {
+
+    &.item--#{'' + $name} {
+      .item__image {
+        img {
+          width: $size;
+        }
+      }
+    }
+  }
+}

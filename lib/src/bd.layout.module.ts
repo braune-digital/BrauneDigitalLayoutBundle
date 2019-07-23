@@ -97,6 +97,7 @@ import {BdFileComponent} from './components/elements/bd-file/bd-file.component';
 import {BdActionGroupItemComponent} from './components/elements/bd-action-group/bd-action-group-item/bd-action-group-item.component';
 import {BdActionBarComponent} from './components/elements/bd-action-bar/bd-action-bar.component';
 import {BdActionBarGroupComponent} from './components/elements/bd-action-bar/bd-action-bar-group/bd-action-bar-group.component';
+import {BdItemComponent} from './components/elements/bd-item/bd-item.component';
 
 @NgModule({
     imports: [
@@ -178,6 +179,7 @@ import {BdActionBarGroupComponent} from './components/elements/bd-action-bar/bd-
         BdHighlightComponent,
         BdGalleryComponent,
         BdIconComponent,
+        BdItemComponent,
         BdImageComponent,
         BdImagePlaceholderComponent,
         BdInfoBoxComponent,
@@ -284,6 +286,7 @@ import {BdActionBarGroupComponent} from './components/elements/bd-action-bar/bd-
         BdHighlightComponent,
         BdGalleryComponent,
         BdIconComponent,
+        BdItemComponent,
         BdImageComponent,
         BdImagePlaceholderComponent,
         BdInfoBoxComponent,
