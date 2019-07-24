@@ -25,7 +25,12 @@ export class BdContentComponent implements OnInit{
 
   ngOnInit() {
     this.breakpoints = new Breakpoints();
-    this.heightString = window.innerHeight;
+    if (this.stickyAside) {
+      this.heightString = window.innerHeight.toString() + 'px';
+    } else {
+      this.heightString = 'unset';
+    }
+
     this.checkSticky();
   }
 

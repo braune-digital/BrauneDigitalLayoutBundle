@@ -27,6 +27,7 @@ $item-sizes: (
   padding-right: $item-padding-base;
 
   .item__image {
+    width: $item-size-base;
     img  {
       width: $item-size-base;
     }

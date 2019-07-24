@@ -9,14 +9,25 @@
             {{ file.name }}
         </div>
 
-        <div class="file__actions">
+        <div class="file__actions" *ngIf="enableDownload">
             <!--<a (click)="openModal(templateFileModal, 0)" tooltip="Ansehen">-->
                 <!--<ywd-icon [icon]="'eye'" tooltip="Ansehen"></ywd-icon>-->
             <!--</a>-->
             <a target="_new" [href]="file.path" download>
-                <ywd-icon [icon]="'download'" tooltip="Herunterladen" font="fas"></ywd-icon>
+                <bd-icon [icon]="'download'" tooltip="Herunterladen" font="fas"></bd-icon>
             </a>
         </div>
     </div>
-
 </ng-container>
+<ng-container *ngIf="image">
+  <div class="file__image" *ngIf="image">
+    <img [src]="image" alt="">
+  </div>
+  <div class="file__content">
+
+    <div class="file__content__text">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</ng-container>
+

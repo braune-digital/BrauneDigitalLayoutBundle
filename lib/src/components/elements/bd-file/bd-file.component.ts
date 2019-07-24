@@ -8,15 +8,24 @@ import {Bem} from '../../../utils/bem';
 export class BdFileComponent {
 
     baseClass = 'file';
-    @Input() file;
+
+    @Input()
+    file;
+
+    @Input()
+    text;
+
+    @Input()
+    image;
+
     @Input('size')
     size = 'base';
-
-    // TODO CENTER
 
     @Input('center')
     center = false;
 
+    @Input()
+    enableDownload = false;
 
     @HostBinding('class')
     get hostClasses(): string {
