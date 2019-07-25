@@ -37,6 +37,10 @@ $item-sizes: (
     padding-right: $item-padding-base;
   }
 
+  .item__icon {
+    color: getColor(grey-light-accent);
+  }
+
   &:last-child {
     padding-right: 0;
   }
