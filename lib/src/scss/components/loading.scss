@@ -7,6 +7,8 @@
 // ---------------------------------------------------------
 
 .loading {
+  @include fade();
+
   width: 200px;
   height: 20px;
   position: relative;

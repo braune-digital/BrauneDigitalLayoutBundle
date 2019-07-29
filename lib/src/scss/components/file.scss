@@ -43,8 +43,8 @@ $avatar-sizes: (
       @include paddingHorizontal(spacing(.5))
     }
 
-    @each $name, $color in $fileTypes {
-      &.file__initials--filetype--#{$name} {
+    @each $name, $color in $colorsAndStatesAndFileTypes {
+      &.file__initials--filetype--#{'' + $name} {
         background: $color;
         color: color-contrast($color);
       }

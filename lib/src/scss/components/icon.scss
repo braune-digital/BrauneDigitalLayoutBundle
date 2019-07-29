@@ -8,6 +8,8 @@
 
 
 $icon-sizes: (
+    sm: 10px,
+    md: 20px,
     lg: 30px,
     xl: 60px
 );
@@ -25,7 +27,7 @@ $icon-sizes: (
     }
   }
 
-  @each $name, $color in $colors {
+  @each $name, $color in $colorsAndStatesAndFileTypes {
     &.icon--#{'' + $name} {
       color: $color;
     }
