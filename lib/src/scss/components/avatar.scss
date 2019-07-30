@@ -49,7 +49,7 @@ $avatar-sizes: (
     justify-content: center;
     font-weight: getFontWeight(medium);
 
-    @each $name, $color in $bdColors {
+    @each $name, $color in $colorsAndStatesAndFileTypes {
       &.avatar__initials--#{'' + $name} {
         background: $color;
         color: color-contrast($color);

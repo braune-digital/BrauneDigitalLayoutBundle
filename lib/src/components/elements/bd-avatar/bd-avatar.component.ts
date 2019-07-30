@@ -54,7 +54,12 @@ export class BdAvatarComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.avatarColor = this.getRandomColor();
+        if (this.color === null) {
+          this.avatarColor = this.getRandomColor();
+        } else {
+          this.avatarColor = this.color;
+        }
+
     }
 
     getInitials(): string {
