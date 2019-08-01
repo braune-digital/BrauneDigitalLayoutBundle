@@ -21,10 +21,4 @@ export class BdContentHeaderComponent {
 
     @Input('specialClass') specialClass: string;
 
-
-    constructor(
-
-    ) {}
-
-
 }

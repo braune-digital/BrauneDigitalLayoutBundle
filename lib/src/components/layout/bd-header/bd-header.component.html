@@ -3,16 +3,16 @@
   ~ @author Felix Baltruschat <fb@braune-digital.com>
   ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
   -->
-<div class="tmpl__header__pre">
+<div class="tmpl__header__pre" id="bd-tmpl-header-pre">
   <!--TODO-->
 </div>
 
-<div class="tmpl__header" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
+<div class="tmpl__header" id="bd-tmpl-header" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
     <ng-content select="bd-header-aside"></ng-content>
     <ng-content select="bd-header-main"></ng-content>
 </div>
 
-<div class="tmpl__header__post" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
+<div class="tmpl__header__post" id="bd-tmpl-header-post"[ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
   <ng-content select="bd-header-post-aside"></ng-content>
   <ng-content select="bd-header-post-main"></ng-content>
 </div>

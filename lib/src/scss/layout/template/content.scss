@@ -65,7 +65,7 @@
 
       .tmpl__content__main,
       .tmpl__content__aside {
-        min-height: calc(100vh - (#{$tmpl-nav-height-desktop} + #{$tmpl-head-bottom-height-desktop}));
+        //min-height: calc(100vh - (#{$tmpl-nav-height-desktop} + #{$tmpl-head-bottom-height-desktop}));
       }
 
       &.tmpl__content--inline{

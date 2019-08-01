@@ -5,6 +5,7 @@
 
 import {Component, Input, OnInit} from '@angular/core';
 import {Breakpoints} from '../../../utils/breakpoints';
+import {HeightService} from '../../../services/height.service';
 
 @Component({
   selector: 'bd-header, [bd-header]',
@@ -17,8 +18,14 @@ export class BdHeaderComponent implements OnInit {
   @Input()
   fadeOut: false;
 
+  constructor(private heightService: HeightService){}
+
   ngOnInit() {
     this.breakpoints = new Breakpoints();
+
+    this.heightService.height$.next(window.document.getElementById('bd-tmpl-header-pre').offsetHeight);
+    this.heightService.height$.next(window.document.getElementById('bd-tmpl-header').offsetHeight);
+    this.heightService.height$.next(window.document.getElementById('bd-tmpl-header-post').offsetHeight);
   }
 
 

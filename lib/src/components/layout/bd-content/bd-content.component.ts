@@ -3,8 +3,10 @@
  * @copyright 2/5/19 4:42 PM Braune Digital GmbH
  */
 
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, Input, OnInit} from '@angular/core';
 import {Breakpoints} from '../../../utils/breakpoints';
+import {HeightService} from '../../../services/height.service';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
     selector: 'bd-content, [bd-content]',
@@ -23,7 +25,22 @@ export class BdContentComponent implements OnInit{
   breakpoints;
   heightString;
 
+  height = 0;
+  someHeight;
+
+  constructor(private heightSerivce: HeightService, private sanitizer: DomSanitizer) {
+
+    this.heightSerivce.height$.subscribe( height => {
+      this.height += height;
+    });
+    setTimeout( () => {
+      this.someHeight = this.sanitizer.bypassSecurityTrustStyle('calc(100vh - ' + this.height + 'px)');
+    }, 10);
+
+  }
+
   ngOnInit() {
+
     this.breakpoints = new Breakpoints();
     if (this.stickyAside) {
       this.heightString = window.innerHeight.toString() + 'px';
