@@ -2,6 +2,8 @@
 # Style Import
 you have to import manually the scss @braune-digital/layout/scss/bd-layout.bundle.scss in your project. 
 
+## You have to style your modal by your self!
+
 Basic Layout you have to use! Important, do not forget <bd-alert> outside of <bd-layout>
 
 

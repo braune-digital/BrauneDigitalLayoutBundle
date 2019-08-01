@@ -1,203 +1,203 @@
+////
+//// Braune-Digital CSS Framework
+//// ---------------------------------------------------------
 //
-// Braune-Digital CSS Framework
-// ---------------------------------------------------------
-
+////
+//// Modal
+//// ---------------------------------------------------------
 //
-// Modal
-// ---------------------------------------------------------
-
-
-$zindex-modal-backdrop: getZindex(modal) !default;
-$zindex-modal: $zindex-modal-backdrop + 10 !default;
-
-// Modals
-$modal-content-bg: #fff;
-
-$modal-backdrop-bg: #000 !default;
-$modal-backdrop-opacity: .5 !default;
-$modal-header-border-color: #000 !default;
-
-$modal-box-shadow: $base-box-shadow-large;
-
-$modal-max-width: 570px;
-$modal-lg-max-width: 800px;
-
-$modal-offset-left: (
-  base: 0px,
-  sm: 60px,
-  md: 100px,
-  lg: 200px,
-);
-
-@function calcModalOffset($key) {
-  @return calc(100vw - #{map_get($modal-offset-left, $key)}) ;
-}
-
-// Container that the modal scrolls within
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: $zindex-modal;
-  display: none;
-  width: 100%;
-  height: 100%;
-  outline: 0;
-  overflow: auto;
-  transition: $base-animation;
-
-  &.in, &.show {
-    .modal-dialog {
-      transform: translate(-100%, 0);
-    }
-  }
-
-}
-
-// Shell div to position the modal with bottom padding
-.modal-dialog {
-  position: absolute;
-  left: 100%;
-  display: flex;
-  align-items: flex-start;
-  min-height: 100%;
-  //width: 100vw;
-  background: $modal-content-bg;
-  box-shadow: $modal-box-shadow;
-  pointer-events: none;
-  transition: $base-animation;
-  width: calcModalOffset(base);
-
-
-  // Background Colors
-  // ---------------------------------------------------------
-
-  @each $name, $color in $colorsAndStates {
-    &.modal--#{'' + $name} {
-      background-color: $color;
-    }
-  }
-
-
-  @include media-breakpoint-up(sm) {
-    width: calcModalOffset(sm);
-  }
-  @include media-breakpoint-up(md) {
-    width: calcModalOffset(md);
-  }
-  @include media-breakpoint-up(lg) {
-    width: calcModalOffset(lg);
-  }
-}
-
-
-// Modal Content
-// ---------------------------------------------------------
-
-.modal-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  pointer-events: auto;
-  outline: 0;
-  padding: 100px spacing(2) spacing(4);
-  min-height: 100%;
-
-  @include media-breakpoint-up(sm) {
-    @include paddingHorizontal(spacing(4))
-  }
-
-  @include media-breakpoint-up(md) {
-    padding-top: 200px;
-    @include paddingHorizontal(spacing(5))
-  }
-
-  @include media-breakpoint-up(lg) {
-    padding-right: calc(100% - (#{$modal-max-width} + #{spacing(5)}));
-
-    &.modal--lg {
-
-      padding-right: calc(100% - (#{$modal-lg-max-width} + #{spacing(5)}));
-    }
-  }
-
-  .modal-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-
-    h3 {
-      margin-bottom: 0;
-    }
-
-    .modal-close {
-      font-size: 26px;
-      color: getColor(grey-medium);
-    }
-  }
-
-  .modal-title {
-  }
-
-  .modal-body {
-  }
-
-  .modal-footer {
-    margin-top: spacing(2);
-  }
-}
-
-.modal-dialog.modal--lg {
-  @include media-breakpoint-up(lg) {
-    .modal-content {
-      padding-right: calc(100% - (#{$modal-lg-max-width} + #{spacing(5)}));
-    }
-  }
-}
-
-// Backdrop
-// ---------------------------------------------------------
-
-.modal-backdrop {
-  position: fixed;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  z-index: $zindex-modal-backdrop;
-  width: 100vw;
-  height: 100%;
-  background: $tmpl-overlay-background;
-  transition: $base-animation;
-
-  &.fade {
-    opacity: 0;
-  }
-
-  &.in {
-    opacity: 1 !important;
-  }
-}
-
-.modal-open {
-  overflow: hidden;
-
-  .modal-dialog {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-}
-
-// Scrollbar
-// ---------------------------------------------------------
-
-// Measure scrollbar width for padding body during modal show/hide
-.modal-scrollbar-measure {
-  position: absolute;
-  top: -9999px;
-  width: 50px;
-  height: 50px;
-  overflow: scroll;
-}
+//
+//$zindex-modal-backdrop: getZindex(modal) !default;
+//$zindex-modal: $zindex-modal-backdrop + 10 !default;
+//
+//// Modals
+//$modal-content-bg: #fff;
+//
+//$modal-backdrop-bg: #000 !default;
+//$modal-backdrop-opacity: .5 !default;
+//$modal-header-border-color: #000 !default;
+//
+//$modal-box-shadow: $base-box-shadow-large;
+//
+//$modal-max-width: 570px;
+//$modal-lg-max-width: 800px;
+//
+//$modal-offset-left: (
+//  base: 0px,
+//  sm: 60px,
+//  md: 100px,
+//  lg: 200px,
+//);
+//
+//@function calcModalOffset($key) {
+//  @return calc(100vw - #{map_get($modal-offset-left, $key)}) ;
+//}
+//
+//// Container that the modal scrolls within
+//.modal {
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+//  z-index: $zindex-modal;
+//  display: none;
+//  width: 100%;
+//  height: 100%;
+//  outline: 0;
+//  overflow: auto;
+//  transition: $base-animation;
+//
+//  &.in, &.show {
+//    .modal-dialog {
+//      transform: translate(-100%, 0);
+//    }
+//  }
+//
+//}
+//
+//// Shell div to position the modal with bottom padding
+//.modal-dialog {
+//  position: absolute;
+//  left: 100%;
+//  display: flex;
+//  align-items: flex-start;
+//  min-height: 100%;
+//  //width: 100vw;
+//  background: $modal-content-bg;
+//  box-shadow: $modal-box-shadow;
+//  pointer-events: none;
+//  transition: $base-animation;
+//  width: calcModalOffset(base);
+//
+//
+//  // Background Colors
+//  // ---------------------------------------------------------
+//
+//  @each $name, $color in $colorsAndStates {
+//    &.modal--#{'' + $name} {
+//      background-color: $color;
+//    }
+//  }
+//
+//
+//  @include media-breakpoint-up(sm) {
+//    width: calcModalOffset(sm);
+//  }
+//  @include media-breakpoint-up(md) {
+//    width: calcModalOffset(md);
+//  }
+//  @include media-breakpoint-up(lg) {
+//    width: calcModalOffset(lg);
+//  }
+//}
+//
+//
+//// Modal Content
+//// ---------------------------------------------------------
+//
+//.modal-content {
+//  position: relative;
+//  display: flex;
+//  flex-direction: column;
+//  width: 100%;
+//  pointer-events: auto;
+//  outline: 0;
+//  padding: 100px spacing(2) spacing(4);
+//  min-height: 100%;
+//
+//  @include media-breakpoint-up(sm) {
+//    @include paddingHorizontal(spacing(4))
+//  }
+//
+//  @include media-breakpoint-up(md) {
+//    padding-top: 200px;
+//    @include paddingHorizontal(spacing(5))
+//  }
+//
+//  @include media-breakpoint-up(lg) {
+//    padding-right: calc(100% - (#{$modal-max-width} + #{spacing(5)}));
+//
+//    &.modal--lg {
+//
+//      padding-right: calc(100% - (#{$modal-lg-max-width} + #{spacing(5)}));
+//    }
+//  }
+//
+//  .modal-header {
+//    display: flex;
+//    flex-direction: row;
+//    justify-content: space-between;
+//    align-items: center;
+//    height: 100px;
+//
+//    h3 {
+//      margin-bottom: 0;
+//    }
+//
+//    .modal-close {
+//      font-size: 26px;
+//      color: getColor(grey-medium);
+//    }
+//  }
+//
+//  .modal-title {
+//  }
+//
+//  .modal-body {
+//  }
+//
+//  .modal-footer {
+//    margin-top: spacing(2);
+//  }
+//}
+//
+//.modal-dialog.modal--lg {
+//  @include media-breakpoint-up(lg) {
+//    .modal-content {
+//      padding-right: calc(100% - (#{$modal-lg-max-width} + #{spacing(5)}));
+//    }
+//  }
+//}
+//
+//// Backdrop
+//// ---------------------------------------------------------
+//
+//.modal-backdrop {
+//  position: fixed;
+//  opacity: 0;
+//  top: 0;
+//  left: 0;
+//  z-index: $zindex-modal-backdrop;
+//  width: 100vw;
+//  height: 100%;
+//  background: $tmpl-overlay-background;
+//  transition: $base-animation;
+//
+//  &.fade {
+//    opacity: 0;
+//  }
+//
+//  &.in {
+//    opacity: 1 !important;
+//  }
+//}
+//
+//.modal-open {
+//  overflow: hidden;
+//
+//  .modal-dialog {
+//    overflow-x: hidden;
+//    overflow-y: auto;
+//  }
+//}
+//
+//// Scrollbar
+//// ---------------------------------------------------------
+//
+//// Measure scrollbar width for padding body during modal show/hide
+//.modal-scrollbar-measure {
+//  position: absolute;
+//  top: -9999px;
+//  width: 50px;
+//  height: 50px;
+//  overflow: scroll;
+//}
