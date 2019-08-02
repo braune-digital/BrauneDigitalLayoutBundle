@@ -30,13 +30,6 @@ export class BdContentComponent implements OnInit{
 
   constructor(private heightSerivce: HeightService, private sanitizer: DomSanitizer) {
 
-    this.heightSerivce.height$.subscribe( height => {
-      this.height += height;
-    });
-    setTimeout( () => {
-      this.someHeight = this.sanitizer.bypassSecurityTrustStyle('calc(100vh - ' + this.height + 'px)');
-    }, 10);
-
   }
 
   ngOnInit() {

@@ -9,7 +9,6 @@
     </div>
     <div class="tmpl__content__content">
       <div class="tmpl__content__main"
-           [style.height]="someHeight"
            [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}"
       >
           <ng-content select="bd-content-main"></ng-content>
@@ -18,7 +17,6 @@
       <!-- sticky aside enabled-->
       <div class="tmpl__content__aside"
            *ngIf="hasAside"
-           [style.height]="someHeight"
            [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}"
       >
         <div #boundary [ngStyle]="{'height': heightString}">
