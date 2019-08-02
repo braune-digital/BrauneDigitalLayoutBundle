@@ -10,4 +10,5 @@ export interface MediaInterface {
     copyright: string;
     id: number;
     path: string;
+    original: string;
 }
