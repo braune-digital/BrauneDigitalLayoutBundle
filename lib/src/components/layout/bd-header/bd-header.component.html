@@ -8,11 +8,19 @@
 </div>
 
 <div class="tmpl__header" id="bd-tmpl-header" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
+  <div class="tmpl__header__aside">
     <ng-content select="bd-header-aside"></ng-content>
+  </div>
+  <div class="tmpl__header__main">
     <ng-content select="bd-header-main"></ng-content>
+  </div>
 </div>
 
 <div class="tmpl__header__post" id="bd-tmpl-header-post"[ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
-  <ng-content select="bd-header-post-aside"></ng-content>
-  <ng-content select="bd-header-post-main"></ng-content>
+  <div class="tmpl__header__post__aside">
+    <ng-content select="bd-header-post-aside"></ng-content>
+  </div>
+  <div class="tmpl__header__post__main">
+    <ng-content select="bd-header-post-main"></ng-content>
+  </div>
 </div>

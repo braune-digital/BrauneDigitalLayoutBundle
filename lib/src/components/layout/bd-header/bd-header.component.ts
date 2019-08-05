@@ -18,14 +18,14 @@ export class BdHeaderComponent implements OnInit {
   @Input()
   fadeOut: false;
 
-  constructor(private heightService: HeightService){}
+  constructor(){}
 
   ngOnInit() {
     this.breakpoints = new Breakpoints();
 
-    this.heightService.height$.next(window.document.getElementById('bd-tmpl-header-pre').offsetHeight);
-    this.heightService.height$.next(window.document.getElementById('bd-tmpl-header').offsetHeight);
-    this.heightService.height$.next(window.document.getElementById('bd-tmpl-header-post').offsetHeight);
+    // this.heightService.height$.next(window.document.getElementById('bd-tmpl-header-pre').offsetHeight);
+    // this.heightService.height$.next(window.document.getElementById('bd-tmpl-header').offsetHeight);
+    // this.heightService.height$.next(window.document.getElementById('bd-tmpl-header-post').offsetHeight);
   }
 
 

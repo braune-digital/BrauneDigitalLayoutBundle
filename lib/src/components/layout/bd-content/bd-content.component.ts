@@ -26,9 +26,8 @@ export class BdContentComponent implements OnInit{
   heightString;
 
   height = 0;
-  someHeight;
 
-  constructor(private heightSerivce: HeightService, private sanitizer: DomSanitizer) {
+  constructor() {
 
   }
 
