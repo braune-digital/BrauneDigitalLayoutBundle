@@ -1,0 +1,71 @@
+//
+// LOHNunion Customer Center CSS Overrides
+// ---------------------------------------------------------
+
+//
+// Templates
+// ---------------------------------------------------------
+
+// Progress Circle
+// ---------------------------------------------------------
+
+.progress-circle {
+    @include square($progress-circle-size-outer);
+    background: $progress-circle-background-outer;
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $base-box-shadow;
+
+    .progress-circle__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .mask, .fill {
+            @include square($progress-circle-size-outer);
+            position: absolute;
+            border-radius: 50%;
+        }
+        .mask {
+            clip: rect(0, $progress-circle-size-outer, $progress-circle-size-outer, ($progress-circle-size-outer / 2));
+            .fill {
+                clip: rect(0, $progress-circle-size-outer / 2, $progress-circle-size-outer, 0);
+                background: $progress-circle-background-loader;
+            }
+        }
+    }
+
+    .progress-circle__inner__content {
+        @include square($progress-circle-size-inner);
+        border-radius: 50%;
+        background: $progress-circle-background-inner;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding: spacing(2);
+
+        .progress-circle__inner__time {
+            font-size: 36px;
+            color: getColor(secondary);
+            @include paddingVertical(spacing(1));
+
+            span {
+                font-size: 22px;
+                padding-left: spacing(.5);
+            }
+        }
+        .progress-circle__inner__label {
+            font-size: getFontSize(sm);
+            line-height: getLineHeight(sm);
+            color: $progress-circle-background-outer;
+        }
+    }
+}

@@ -131,6 +131,15 @@ $progress-height:                   1rem !default;
 $progress-bar-animation-timing:     $base-animation-duration !default;
 $progress-bar-transition:           $base-animation-easing !default;
 
+// Progress Circle
+// ---------------------------------------------------------
+$progress-circle-size-inner: 127px !default;
+$progress-circle-progress-width: 15px !default;
+$progress-circle-size-outer: $progress-circle-size-inner + $progress-circle-progress-width !default;
+$progress-circle-background-outer: getColor(grey-light-accent) !default;
+$progress-circle-background-inner: getColor(white) !default;
+$progress-circle-background-loader: getColor(primary) !default;
+
 // Tables
 // ---------------------------------------------------------
 

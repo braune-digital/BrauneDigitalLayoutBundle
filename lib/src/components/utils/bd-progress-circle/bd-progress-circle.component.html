@@ -1,0 +1,18 @@
+<div class="progress-circle__inner">
+
+    <div class="mask full" [ngStyle]="applyWidth()">
+        <div class="fill" [ngStyle]="applyWidth()"></div>
+    </div>
+    <div class="mask half">
+        <div class="fill" [ngStyle]="applyWidth()"></div>
+    </div>
+
+    <div class="progress-circle__inner__content">
+        <div class="progress-circle__inner__time">
+            {{ minutesLeft }}<span>m</span>
+        </div>
+        <div class="progress-circle__inner__label">
+            {{ label | translate }}
+        </div>
+    </div>
+</div>
