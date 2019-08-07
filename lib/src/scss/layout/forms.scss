@@ -23,6 +23,7 @@ $input-background-focus: getColor(white) !default;
 $input-background-disabled: getColor(grey-light) !default;
 $input-color: getColor(black) !default;
 $input-color-disabled: getColor(grey-medium) !default;
+$input-border: 0px solid rgba(0,0,0,0) !default;
 
 $input-focus-shadow: 0 0 0 1px rgba(0,0,0,1) !default;
 $form-group-margin-bottom: spacing(2) !default;

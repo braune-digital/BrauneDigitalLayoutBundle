@@ -6,7 +6,10 @@
 // Centered Wrapper
 // ---------------------------------------------------------
 
-$tmpl-content-centered-padding: spacing(2) !default;
+
+$tmpl-content-centered-padding-top: spacing(2) !default;
+$tmpl-content-centered-padding-bottom: spacing(2) !default;
+$tmpl-content-centered-padding-x: spacing(2) !default;
 $tmpl-content-centered-background: getColor(white) !default;
 
 .tmpl__content__centered {
@@ -22,24 +25,33 @@ $tmpl-content-centered-background: getColor(white) !default;
   .tmpl__content__centered__inner {
     border-radius: $base-border-radius;
     background: $tmpl-content-centered-background;
-    padding: $tmpl-content-centered-padding;
+
+    padding-top: $tmpl-content-centered-padding-top;
+    padding-bottom: $tmpl-content-centered-padding-bottom;
+    @include paddingHorizontal($tmpl-content-centered-padding-x);
   }
 
   &.tmpl__content__centered--spacing-sm {
     .tmpl__content__centered__inner {
-      padding: $tmpl-content-centered-padding * 0.5;
+      padding-top: $tmpl-content-centered-padding-top * 0.5;
+      padding-bottom: $tmpl-content-centered-padding-bottom * 0.5;
+      @include paddingVertical($tmpl-content-centered-padding-x * 0.5);
     }
   }
 
   &.tmpl__content__centered--spacing-md {
     .tmpl__content__centered__inner {
-      padding: $tmpl-content-centered-padding * 2;
+      padding-top: $tmpl-content-centered-padding-top * 2;
+      padding-bottom: $tmpl-content-centered-padding-bottom * 2;
+      @include paddingVertical($tmpl-content-centered-padding-x * 2);
     }
   }
 
   &.tmpl__content__centered--spacing-lg {
     .tmpl__content__centered__inner {
-      padding: $tmpl-content-centered-padding * 3;
+      padding-top: $tmpl-content-centered-padding-top * 3;
+      padding-bottom: $tmpl-content-centered-padding-bottom * 3;
+      @include paddingVertical($tmpl-content-centered-padding-x * 3);
     }
   }
 
