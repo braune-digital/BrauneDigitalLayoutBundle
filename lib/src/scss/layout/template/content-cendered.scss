@@ -35,7 +35,7 @@ $tmpl-content-centered-background: getColor(white) !default;
     .tmpl__content__centered__inner {
       padding-top: $tmpl-content-centered-padding-top * 0.5;
       padding-bottom: $tmpl-content-centered-padding-bottom * 0.5;
-      @include paddingVertical($tmpl-content-centered-padding-x * 0.5);
+      @include paddingHorizontal($tmpl-content-centered-padding-x * 0.5);
     }
   }
 
@@ -43,7 +43,7 @@ $tmpl-content-centered-background: getColor(white) !default;
     .tmpl__content__centered__inner {
       padding-top: $tmpl-content-centered-padding-top * 2;
       padding-bottom: $tmpl-content-centered-padding-bottom * 2;
-      @include paddingVertical($tmpl-content-centered-padding-x * 2);
+      @include paddingHorizontal($tmpl-content-centered-padding-x * 2);
     }
   }
 
@@ -51,7 +51,7 @@ $tmpl-content-centered-background: getColor(white) !default;
     .tmpl__content__centered__inner {
       padding-top: $tmpl-content-centered-padding-top * 3;
       padding-bottom: $tmpl-content-centered-padding-bottom * 3;
-      @include paddingVertical($tmpl-content-centered-padding-x * 3);
+      @include paddingHorizontal($tmpl-content-centered-padding-x * 3);
     }
   }
 
