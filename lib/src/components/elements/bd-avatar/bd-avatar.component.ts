@@ -33,6 +33,7 @@ export class BdAvatarComponent implements OnInit {
     @Input('enableFollow') enableFollow = false;
 
     @Input('hideName') hideName = false;
+    @Input('showCompany') showCompany = false;
     @Input('showDescription') showDescription = false;
     @Input('showAuthorDescription') showAuthorDescription = false;
 

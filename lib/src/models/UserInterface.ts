@@ -8,6 +8,7 @@ import {MediaInterface} from './MediaInterface';
 
 export interface UserInterface {
     username: string;
+    company: string;
     email: string;
     enabled: boolean;
     salt: string;

@@ -69,6 +69,15 @@ $avatar-sizes: (
         margin-top: spacing();
       }
     }
+
+    p {
+      &.avatar__content__company {
+        font-size: getFontSize(md);
+        font-weight: getFontWeight(regular);
+        color: getColor(grey-light-accent);
+        margin-bottom: 0;
+      }
+    }
   }
 
   &.avatar--hover {

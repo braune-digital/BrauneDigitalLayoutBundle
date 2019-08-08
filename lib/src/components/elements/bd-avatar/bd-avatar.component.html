@@ -14,7 +14,8 @@
         <div ngClass="{{ headlineType }}" *ngIf="!hideName && user.fullname" [innerHTML]="user.fullname"></div>
         <div ngClass="{{ headlineType }}" *ngIf="!hideName && !user.fullname" [innerHTML]="user.firstname + ' ' + user.lastname"></div>
 
-        <p *ngIf="user.description && showDescription">{{ user.description }}</p>
+        <p class="avatar__content__company" *ngIf="user.company && showCompany">{{ user.company }}</p>
+        <p class="avatar__content__description" *ngIf="user.description && showDescription">{{ user.description }}</p>
         <div class="avatar__content__tags" *ngIf="tags">
             <bd-tags [tags]="tags" [inline]="true" [title]="'form.fields.interests' | translate"></bd-tags>
         </div>
