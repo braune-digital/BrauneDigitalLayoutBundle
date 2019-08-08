@@ -11,16 +11,11 @@ $tmpl-content-centered-padding-top: spacing(2) !default;
 $tmpl-content-centered-padding-bottom: spacing(2) !default;
 $tmpl-content-centered-padding-x: spacing(2) !default;
 $tmpl-content-centered-background: getColor(white) !default;
+$tmpl-content-centered-height: 100vh !default;
 
 .tmpl__content__centered {
   @include fade();
   animation: fadeIn $base-animation-duration * 2;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-
 
   .tmpl__content__centered__inner {
     border-radius: $base-border-radius;
@@ -55,4 +50,11 @@ $tmpl-content-centered-background: getColor(white) !default;
     }
   }
 
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $tmpl-content-centered-height;
+  }
 }

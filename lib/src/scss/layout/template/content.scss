@@ -17,8 +17,8 @@
   padding-bottom: $tmpl-content-padding-bottom;
 
   .tmpl__content__header {
-      @include fade();
-      order: 1;
+    @include fade();
+    order: 1;
   }
 
   .tmpl__content__content {
@@ -68,7 +68,7 @@
         //min-height: calc(100vh - (#{$tmpl-nav-height-desktop} + #{$tmpl-head-bottom-height-desktop}));
       }
 
-      &.tmpl__content--inline{
+      &.tmpl__content--inline {
         .tmpl__content__main,
         .tmpl__content__aside {
           min-height: 0;
@@ -127,7 +127,6 @@
 // Events
 // ---------------------------------------------------------
 
-
 // Fade-In Animation to hide moving elements an page load
 // ---------------------------------------------------------
 
@@ -135,7 +134,7 @@
   0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }

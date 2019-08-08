@@ -14,12 +14,20 @@
     <!--<bd-aside></bd-aside>-->
     <!--<bd-aside-registration></bd-aside-registration>-->
 
-    <div class="tmpl__layout__sidebar">
-      <ng-content select="bd-layout-sidebar"></ng-content>
+    <div class="tmpl__layout__nav">
+        <ng-content select="bd-layout-nav"></ng-content>
     </div>
-    <div class="tmpl__layout__content">
-      <ng-content select="bd-layout-content"></ng-content>
+
+
+    <div class="tmpl__layout">
+        <div class="tmpl__layout__sidebar">
+            <ng-content select="bd-layout-sidebar"></ng-content>
+        </div>
+        <div class="tmpl__layout__content">
+            <ng-content select="bd-layout-content"></ng-content>
+        </div>
     </div>
+
 
     <!--<bd-footer></bd-footer>-->
 </div>

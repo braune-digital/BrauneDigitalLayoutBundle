@@ -99,252 +99,263 @@ import {BdActionBarComponent} from './components/elements/bd-action-bar/bd-actio
 import {BdActionBarGroupComponent} from './components/elements/bd-action-bar/bd-action-bar-group/bd-action-bar-group.component';
 import {BdItemComponent} from './components/elements/bd-item/bd-item.component';
 import {BdProgressCircleComponent} from './components/utils/bd-progress-circle/bd-progress-circle.component';
+import {BdNavAsideComponent} from './components/layout/bd-nav/bd-nav-aside/bd-nav-aside.component';
+import {BdNavComponent} from './components/layout/bd-nav/bd-nav.component';
+import {BdNavMainComponent} from './components/layout/bd-nav/bd-nav-main/bd-nav-main.component';
+import {BdLayoutNavComponent} from './components/layout/bd-layout/bd-layout-nav/bd-layout-nav.component';
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    CommonModule,
-    HttpClientModule,
-    FormsModule,
-    FormUtilitiesModule,
-    ReactiveFormsModule,
-    BdFilterModule,
-    ModalModule,
-    RouterModule,
-    NgStringPipesModule,
-    NgArrayPipesModule,
-    TranslateModule,
-    TooltipModule,
-    FileUploadModule,
-    AngularStickyThingsModule,
-    BsDropdownModule.forRoot(),
+    imports: [
+        BrowserAnimationsModule,
+        CommonModule,
+        HttpClientModule,
+        FormsModule,
+        FormUtilitiesModule,
+        ReactiveFormsModule,
+        BdFilterModule,
+        ModalModule,
+        RouterModule,
+        NgStringPipesModule,
+        NgArrayPipesModule,
+        TranslateModule,
+        TooltipModule,
+        FileUploadModule,
+        AngularStickyThingsModule,
+        BsDropdownModule.forRoot(),
 
-  ],
-  declarations: [
+    ],
+    declarations: [
 
-    // ---------------------------
-    // Pipes
-    // ---------------------------
-    SafePipe,
+        // ---------------------------
+        // Pipes
+        // ---------------------------
+        SafePipe,
 
-    // ---------------------------
-    // Layout
-    // ---------------------------
-    BdAlertComponent,
-    BdBrandComponent,
-    BdContentHeaderComponent,
-    BdContentComponent,
-    BdGridComponent,
-    BdLayoutComponent,
-    BdLayoutContentComponent,
-    BdLayoutSidebarComponent,
-    BdLoadingComponent,
-    BdContentAsideComponent,
-    BdContentMainComponent,
-    BdContentCenteredComponent,
-    BdHeaderComponent,
-    BdHeaderMainComponent,
-    BdHeaderAsideComponent,
-    BdHeaderPostMainComponent,
-    BdHeaderPostAsideComponent,
-    BdSidebarComponent,
-    BdSidebarPreComponent,
-    BdSidebarMainComponent,
-    BdSidebarPostComponent,
-    BdSidebarListComponent,
-    BdSidebarListItemComponent,
+        // ---------------------------
+        // Layout
+        // ---------------------------
+        BdAlertComponent,
+        BdBrandComponent,
+        BdContentHeaderComponent,
+        BdContentComponent,
+        BdGridComponent,
+        BdLayoutComponent,
+        BdLayoutContentComponent,
+        BdLayoutSidebarComponent,
+        BdLoadingComponent,
+        BdContentAsideComponent,
+        BdContentMainComponent,
+        BdContentCenteredComponent,
+        BdHeaderComponent,
+        BdHeaderMainComponent,
+        BdHeaderAsideComponent,
+        BdHeaderPostMainComponent,
+        BdHeaderPostAsideComponent,
+        BdSidebarComponent,
+        BdSidebarPreComponent,
+        BdSidebarMainComponent,
+        BdSidebarPostComponent,
+        BdSidebarListComponent,
+        BdSidebarListItemComponent,
+        BdNavAsideComponent,
+        BdNavComponent,
+        BdNavMainComponent,
+        BdLayoutNavComponent,
+        // ---------------------------
+        // Utils
+        // ---------------------------
+        BdBadgeComponent,
+        BdColComponent,
+        BdMessageComponent,
+        BdProgressComponent,
+        BdProgressBarComponent,
+        BdProgressCircleComponent,
 
-    // ---------------------------
-    // Utils
-    // ---------------------------
-    BdBadgeComponent,
-    BdColComponent,
-    BdMessageComponent,
-    BdProgressComponent,
-    BdProgressBarComponent,
-    BdProgressCircleComponent,
+        // ---------------------------
+        // Elements
+        // ---------------------------
+        BdActionBarComponent,
+        BdActionBarGroupComponent,
+        BdActionGroupComponent,
+        BdActionGroupItemComponent,
+        BdApprovalComponent,
+        BdAvatarComponent,
+        BdBookmarkComponent,
+        BdButtonComponent,
+        BdDividerComponent,
+        BdFileComponent,
+        BdExampleComponent,
+        BdHighlightComponent,
+        BdGalleryComponent,
+        BdIconComponent,
+        BdItemComponent,
+        BdImageComponent,
+        BdImagePlaceholderComponent,
+        BdInfoBoxComponent,
+        BdLinkListComponent,
+        BdLinkListItemComponent,
+        BdMediaComponent,
+        BdMembersComponent,
+        BdSerpComponent,
+        BdSocialLinksComponent,
+        BdSocialShareComponent,
+        BdTabHeadComponent,
+        BdTagComponent,
+        BdTagsComponent,
+        BdThumbnailListComponent,
+        BdThumbnailListItemComponent,
+        BdUserProfileComponent,
+        BdVersionComponent,
 
-    // ---------------------------
-    // Elements
-    // ---------------------------
-    BdActionBarComponent,
-    BdActionBarGroupComponent,
-    BdActionGroupComponent,
-    BdActionGroupItemComponent,
-    BdApprovalComponent,
-    BdAvatarComponent,
-    BdBookmarkComponent,
-    BdButtonComponent,
-    BdDividerComponent,
-    BdFileComponent,
-    BdExampleComponent,
-    BdHighlightComponent,
-    BdGalleryComponent,
-    BdIconComponent,
-    BdItemComponent,
-    BdImageComponent,
-    BdImagePlaceholderComponent,
-    BdInfoBoxComponent,
-    BdLinkListComponent,
-    BdLinkListItemComponent,
-    BdMediaComponent,
-    BdMembersComponent,
-    BdSerpComponent,
-    BdSocialLinksComponent,
-    BdSocialShareComponent,
-    BdTabHeadComponent,
-    BdTagComponent,
-    BdTagsComponent,
-    BdThumbnailListComponent,
-    BdThumbnailListItemComponent,
-    BdUserProfileComponent,
-    BdVersionComponent,
+        // ---------------------------
+        // Content
+        // ---------------------------
+        BdContentModalComponent,
+        BdContentModalMainComponent,
+        BdContentModalFooterComponent,
 
-    // ---------------------------
-    // Content
-    // ---------------------------
-    BdContentModalComponent,
-    BdContentModalMainComponent,
-    BdContentModalFooterComponent,
+        // ---------------------------
+        // Form
+        // ---------------------------
+        BdSearchUserModalComponent,
+        BdSearchPageModalComponent,
+        BdSearchEntityComponent,
+        BdFormErrorComponent,
 
-    // ---------------------------
-    // Form
-    // ---------------------------
-    BdSearchUserModalComponent,
-    BdSearchPageModalComponent,
-    BdSearchEntityComponent,
-    BdFormErrorComponent,
+        BdOverlayComponent,
+        ContentLockComponent,
+        ContentLockContentComponent,
+        ContentLockPreviewComponent,
 
-    BdOverlayComponent,
-    ContentLockComponent,
-    ContentLockContentComponent,
-    ContentLockPreviewComponent,
+        BdUploadComponent,
 
-    BdUploadComponent,
+        // ---------------------------
+        // Directives
+        // ---------------------------
+        BdMasonryDirective,
+        BdMasonryItemDirective
+    ],
+    providers: [],
+    exports: [
+        // ---------------------------
+        // Pipes
+        // ---------------------------
+        SafePipe,
 
-    // ---------------------------
-    // Directives
-    // ---------------------------
-    BdMasonryDirective,
-    BdMasonryItemDirective
-  ],
-  providers: [],
-  exports: [
-    // ---------------------------
-    // Pipes
-    // ---------------------------
-    SafePipe,
+        // ---------------------------
+        // Layout
+        // ---------------------------
+        BdAlertComponent,
+        BdBrandComponent,
+        BdContentHeaderComponent,
+        BdContentComponent,
+        BdGridComponent,
+        BdLayoutComponent,
+        BdLayoutContentComponent,
+        BdLayoutSidebarComponent,
+        BdLoadingComponent,
+        BdContentAsideComponent,
+        BdContentMainComponent,
+        BdContentCenteredComponent,
+        BdHeaderComponent,
+        BdHeaderMainComponent,
+        BdHeaderAsideComponent,
+        BdHeaderPostMainComponent,
+        BdHeaderPostAsideComponent,
+        BdSidebarComponent,
+        BdSidebarPreComponent,
+        BdSidebarMainComponent,
+        BdSidebarPostComponent,
+        BdSidebarListComponent,
+        BdSidebarListItemComponent,
+        BdNavAsideComponent,
+        BdNavComponent,
+        BdNavMainComponent,
+        BdLayoutNavComponent,
 
-    // ---------------------------
-    // Layout
-    // ---------------------------
-    BdAlertComponent,
-    BdBrandComponent,
-    BdContentHeaderComponent,
-    BdContentComponent,
-    BdGridComponent,
-    BdLayoutComponent,
-    BdLayoutContentComponent,
-    BdLayoutSidebarComponent,
-    BdLoadingComponent,
-    BdContentAsideComponent,
-    BdContentMainComponent,
-    BdContentCenteredComponent,
-    BdHeaderComponent,
-    BdHeaderMainComponent,
-    BdHeaderAsideComponent,
-    BdHeaderPostMainComponent,
-    BdHeaderPostAsideComponent,
-    BdSidebarComponent,
-    BdSidebarPreComponent,
-    BdSidebarMainComponent,
-    BdSidebarPostComponent,
-    BdSidebarListComponent,
-    BdSidebarListItemComponent,
+        // ---------------------------
+        // Utils
+        // ---------------------------
+        BdBadgeComponent,
+        BdColComponent,
+        BdMessageComponent,
+        BdProgressComponent,
+        BdProgressBarComponent,
+        BdProgressCircleComponent,
 
-    // ---------------------------
-    // Utils
-    // ---------------------------
-    BdBadgeComponent,
-    BdColComponent,
-    BdMessageComponent,
-    BdProgressComponent,
-    BdProgressBarComponent,
-    BdProgressCircleComponent,
+        // ---------------------------
+        // Elements
+        // ---------------------------
+        BdActionBarComponent,
+        BdActionBarGroupComponent,
+        BdActionGroupComponent,
+        BdActionGroupItemComponent,
+        BdApprovalComponent,
+        BdAvatarComponent,
+        BdBookmarkComponent,
+        BdButtonComponent,
+        BdDividerComponent,
+        BdFileComponent,
+        BdExampleComponent,
+        BdHighlightComponent,
+        BdGalleryComponent,
+        BdIconComponent,
+        BdItemComponent,
+        BdImageComponent,
+        BdImagePlaceholderComponent,
+        BdInfoBoxComponent,
+        BdLinkListComponent,
+        BdLinkListItemComponent,
+        BdMediaComponent,
+        BdMembersComponent,
+        BdSerpComponent,
+        BdSocialLinksComponent,
+        BdSocialShareComponent,
+        BdTabHeadComponent,
+        BdTagComponent,
+        BdTagsComponent,
+        BdThumbnailListComponent,
+        BdThumbnailListItemComponent,
+        BdUserProfileComponent,
+        BdVersionComponent,
 
-    // ---------------------------
-    // Elements
-    // ---------------------------
-    BdActionBarComponent,
-    BdActionBarGroupComponent,
-    BdActionGroupComponent,
-    BdActionGroupItemComponent,
-    BdApprovalComponent,
-    BdAvatarComponent,
-    BdBookmarkComponent,
-    BdButtonComponent,
-    BdDividerComponent,
-    BdFileComponent,
-    BdExampleComponent,
-    BdHighlightComponent,
-    BdGalleryComponent,
-    BdIconComponent,
-    BdItemComponent,
-    BdImageComponent,
-    BdImagePlaceholderComponent,
-    BdInfoBoxComponent,
-    BdLinkListComponent,
-    BdLinkListItemComponent,
-    BdMediaComponent,
-    BdMembersComponent,
-    BdSerpComponent,
-    BdSocialLinksComponent,
-    BdSocialShareComponent,
-    BdTabHeadComponent,
-    BdTagComponent,
-    BdTagsComponent,
-    BdThumbnailListComponent,
-    BdThumbnailListItemComponent,
-    BdUserProfileComponent,
-    BdVersionComponent,
+        // ---------------------------
+        // Content
+        // ---------------------------
+        BdContentModalComponent,
+        BdContentModalMainComponent,
+        BdContentModalFooterComponent,
 
-    // ---------------------------
-    // Content
-    // ---------------------------
-    BdContentModalComponent,
-    BdContentModalMainComponent,
-    BdContentModalFooterComponent,
-
-    // ---------------------------
-    // Form
-    // ---------------------------
-    BdSearchEntityComponent,
-    BdSearchUserModalComponent,
-    BdSearchPageModalComponent,
-    BdFormErrorComponent,
-    BdSearchEntityComponent,
+        // ---------------------------
+        // Form
+        // ---------------------------
+        BdSearchEntityComponent,
+        BdSearchUserModalComponent,
+        BdSearchPageModalComponent,
+        BdFormErrorComponent,
+        BdSearchEntityComponent,
 
 
-    ContentLockComponent,
-    ContentLockContentComponent,
-    ContentLockPreviewComponent,
-    BdUploadComponent,
+        ContentLockComponent,
+        ContentLockContentComponent,
+        ContentLockPreviewComponent,
+        BdUploadComponent,
 
-    // ---------------------------
-    // Directives
-    // ---------------------------
-    BdMasonryDirective,
-    BdMasonryItemDirective
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+        // ---------------------------
+        // Directives
+        // ---------------------------
+        BdMasonryDirective,
+        BdMasonryItemDirective
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BdLayoutModule {
-  static forRoot(provider: Array<Provider> = [AlertService]): ModuleWithProviders {
-    return {
-      ngModule: BdLayoutModule,
-      providers: provider
-    };
-  }
+    static forRoot(provider: Array<Provider> = [AlertService]): ModuleWithProviders {
+        return {
+            ngModule: BdLayoutModule,
+            providers: provider
+        };
+    }
 }
 
 

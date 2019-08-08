@@ -1,0 +1,12 @@
+<div class="tmpl__nav" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
+  <div class="tmpl__nav__aside">
+    <ng-content select="bd-nav-aside"></ng-content>
+  </div>
+  <div class="tmpl__nav__main">
+      <div class="tmpl__nav__main__brand" *ngIf="brand">
+          <img [src]="brand">
+      </div>
+
+    <ng-content select="bd-nav-main"></ng-content>
+  </div>
+</div>
