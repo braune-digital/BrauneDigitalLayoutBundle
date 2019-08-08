@@ -16,7 +16,8 @@
 
 $base-link-color: getColor(primary) !default;
 $base-link-color-hover: getColor(secondary) !default;
-
+$base-text-selection-color: getColor(black) !default;
+$base-text-selection-background: getColor(secondary) !default;
 
 body {
   font-family: $base-font-family;
@@ -37,7 +38,7 @@ body {
 @import "type/helper";
 
 
-@include textSelection(getColor(black), getColor(secondary));
+@include textSelection($base-text-selection-color, $base-text-selection-background);
 
 $paragraph-margin: 1rem;
 

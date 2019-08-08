@@ -10,6 +10,9 @@
 // ---------------------------------------------------------
 
 $bd-nav-padding-vertical: spacing(4) !default;
+$bd-nav--link-padding-vertical: spacing(1.5) !default;
+$bd-nav--link-padding-horizontal: spacing(2) !default;
+
 $bd-nav-padding-horizontal: spacing(4) !default;
 $bd-nav-color: $color-grey-light !default;
 $bd-nav-color-text: $color-dark !default;
@@ -50,7 +53,7 @@ $bd-nav-logo-margin-right: spacing(4) !default;
 
   }
 
-  // Sidebar List
+  // nav List
   // ---------------------------------------------------------
 
   ul {
@@ -62,29 +65,28 @@ $bd-nav-logo-margin-right: spacing(4) !default;
 
     li {
       margin: 0;
-      padding: 0;
-      padding-left: $bd-nav-list-item-padding;
+      @include paddingHorizontal($bd-nav--link-padding-horizontal);
+      @include paddingVertical(0);
 
       a {
         display: block;
         margin: 0;
         transition: $base-animation;
-        color: $bd-sidebar-color-text;
+        color: $bd-nav-color-text;
+        @include paddingVertical($bd-nav--link-padding-vertical);
 
-        @include paddingVertical(spacing(1.5));
-        @include paddingHorizontal(spacing(2));
 
         &:hover {
-          background: $bd-sidebar-color-background-hover;
-          color: $bd-sidebar-color-text-hover;
+          background: $bd-nav-color-background-hover;
+          color: $bd-nav-color-text-hover;
           cursor: pointer;
         }
         @include activeState {
-          background: $bd-sidebar-color-background-hover;
-          color: $bd-sidebar-color-text-hover;
+          background: $bd-nav-color-background-hover;
+          color: $bd-nav-color-text-hover;
 
           &:hover {
-            color: rgba($bd-sidebar-color-text-hover, .7);
+            color: rgba($bd-nav-color-text-hover, .7);
           }
         }
       }

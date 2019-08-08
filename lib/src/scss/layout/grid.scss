@@ -102,7 +102,7 @@ $grid-gutters: (
 // Grid B (2 columns)
 // ---------------------------
 
-$grid-b-fixed-width: 200px;
+$grid-b-fixed-width: 200px !default;
 
 .grid--b,
 .grid--b-1 {
