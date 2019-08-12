@@ -11,7 +11,6 @@ export {BdProgressComponent} from './components/utils/bd-progress/bd-progress.co
 export {BdProgressBarComponent} from './components/utils/bd-progress-bar/bd-progress-bar.component';
 export {BdBadgeComponent} from './components/utils/bd-badge/bd-badge.component';
 
-export {BdLayoutComponent} from './components/layout/bd-layout/bd-layout.component';
 export {BdBrandComponent} from './components/layout/bd-brand/bd-brand.component';
 export {BdContentComponent} from './components/layout/bd-content/bd-content.component';
 export {BdColComponent} from './components/layout/bd-col/bd-col.component';
@@ -57,11 +56,6 @@ export {BdFormErrorComponent} from './components/form/form-error/bd-form-error.c
 export {BdSearchUserModalComponent} from './components/modals/bd-search-user-modal/bd-search-user-modal.component';
 export {BdSearchPageModalComponent} from './components/modals/bd-search-page-modal/bd-search-page-modal.component';
 
-export {BdMasonryDirective} from './directive/bd-masonry/bd-masonry.directive';
-export {BdMasonryItemDirective} from './directive/bd-masonry/bd-masonry-item.directive';
-export {SafePipe} from './pipes/safe.pipe';
-export {AlertService} from './services/alert.service';
-export {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 export {BdContentModalMainComponent} from './components/content/bd-content-modal-main/bd-content-modal-main.component';
 export {BdContentModalFooterComponent} from './components/content/bd-content-modal-footer/bd-content-modal-footer.component';
 export {BdHeaderComponent} from './components/layout/bd-header/bd-header.component';

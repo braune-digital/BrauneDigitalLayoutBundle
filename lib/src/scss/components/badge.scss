@@ -6,7 +6,7 @@
 // Badge
 // ---------------------------------------------------------
 
-$badge-pill-size: 10px;
+$badge-pill-size: 10px !default;
 $badge-padding-x: spacing(.7);
 $badge-padding-y: spacing(.3);
 
