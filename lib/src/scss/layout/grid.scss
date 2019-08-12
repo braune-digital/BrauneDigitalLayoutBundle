@@ -8,6 +8,11 @@
 
 $grid-col-last-width: spacing(12);
 
+$grid-media-breakpoint-sm: 'sm' !default;
+$grid-media-breakpoint-md: 'md' !default;
+$grid-media-breakpoint-lg: 'lg' !default;
+$grid-media-breakpoint-xl: 'xl' !default;
+
 $grid-gutters: (
   sm: spacing(2),
   md: spacing(4),
@@ -36,8 +41,8 @@ $grid-gutters: (
   // Responsive
   // ---------------------------------------------------------
 
-  @include media-breakpoint-up(md) {
-    @include marginHorizontal(-(getGridGutter(sm)));
+  @include media-breakpoint-up($grid-media-breakpoint-md) {
+    @include marginHorizontal(-(getGridGutter($grid-media-breakpoint-sm)));
     flex-direction: row;
 
     > .col {
@@ -47,7 +52,7 @@ $grid-gutters: (
       min-height: 1px;
       flex-basis: 0;
       flex-grow: 1;
-      @include paddingHorizontal(getGridGutter(sm));
+      @include paddingHorizontal(getGridGutter($grid-media-breakpoint-sm));
 
       &:first-child {
         margin-left: 0;
@@ -59,9 +64,9 @@ $grid-gutters: (
     // ---------------------------
 
     &.grid--gutter-lg {
-      @include marginHorizontal(-(getGridGutter(lg)));
+      @include marginHorizontal(-(getGridGutter($grid-media-breakpoint-lg)));
       > .col {
-        @include paddingHorizontal(getGridGutter(lg));
+        @include paddingHorizontal(getGridGutter($grid-media-breakpoint-lg));
       }
     }
   }
@@ -108,7 +113,7 @@ $grid-b-fixed-width: 200px !default;
 .grid--b-1 {
   min-width: 0;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up($grid-media-breakpoint-md) {
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -120,11 +125,11 @@ $grid-b-fixed-width: 200px !default;
 }
 
 .grid--b-1 {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up($grid-media-breakpoint-md) {
 
     > .col:nth-child(1) {
-      flex: 0 0 ($grid-b-fixed-width + getGridGutter(sm, true));
-      width: ($grid-b-fixed-width + getGridGutter(sm, true));
+      flex: 0 0 ($grid-b-fixed-width + getGridGutter($grid-media-breakpoint-sm, true));
+      width: ($grid-b-fixed-width + getGridGutter($grid-media-breakpoint-sm, true));
     }
 
     > .col:nth-child(2) {
@@ -136,19 +141,19 @@ $grid-b-fixed-width: 200px !default;
 
     &.grid--gutter-lg {
       > .col:nth-child(1) {
-        flex: 0 0 ($grid-b-fixed-width + getGridGutter(lg, true));
-        width: ($grid-b-fixed-width + getGridGutter(lg, true));
+        flex: 0 0 ($grid-b-fixed-width + getGridGutter($grid-media-breakpoint-lg, true));
+        width: ($grid-b-fixed-width + getGridGutter($grid-media-breakpoint-lg, true));
       }
     }
   }
 }
 
 .grid--b-2 {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up($grid-media-breakpoint-md) {
 
     > .col:nth-child(2) {
-      flex: 0 0 ($grid-b-fixed-width + getGridGutter(sm, true));
-      width: ($grid-b-fixed-width + getGridGutter(sm, true));
+      flex: 0 0 ($grid-b-fixed-width + getGridGutter($grid-media-breakpoint-sm, true));
+      width: ($grid-b-fixed-width + getGridGutter($grid-media-breakpoint-sm, true));
     }
 
     > .col:nth-child(1) {
@@ -160,8 +165,8 @@ $grid-b-fixed-width: 200px !default;
 
     &.grid--gutter-lg {
       > .col:nth-child(2) {
-        flex: 0 0 ($grid-b-fixed-width + getGridGutter(lg, true));
-        width: ($grid-b-fixed-width + getGridGutter(lg, true));
+        flex: 0 0 ($grid-b-fixed-width + getGridGutter($grid-media-breakpoint-lg, true));
+        width: ($grid-b-fixed-width + getGridGutter($grid-media-breakpoint-lg, true));
       }
     }
   }
@@ -171,7 +176,7 @@ $grid-b-fixed-width: 200px !default;
 // ---------------------------
 
 .grid--c {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up($grid-media-breakpoint-md) {
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -196,7 +201,7 @@ $grid-b-fixed-width: 200px !default;
 // ---------------------------
 
 .grid--d {
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up($grid-media-breakpoint-sm) {
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -205,7 +210,7 @@ $grid-b-fixed-width: 200px !default;
     }
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up($grid-media-breakpoint-lg) {
 
     > .col {
       flex: 0 0 25%;
@@ -217,7 +222,7 @@ $grid-b-fixed-width: 200px !default;
 // ---------------------------
 
 .grid--f {
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up($grid-media-breakpoint-sm) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -233,7 +238,7 @@ $grid-b-fixed-width: 200px !default;
 
 .grid--header {
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up($grid-media-breakpoint-sm) {
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -243,7 +248,7 @@ $grid-b-fixed-width: 200px !default;
     }
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up($grid-media-breakpoint-lg) {
 
     > .col {
       flex-basis: 25%;
