@@ -7,15 +7,16 @@
 // ---------------------------------------------------------
 
 .action-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
   margin-bottom: spacing(3);
 
-
   .action-bar__group {
+    display: flex;
+    justify-content: space-between;
 
+    filter-component {
+     width: 100%;
+    }
   }
 
   .action-group__item {
@@ -35,6 +36,19 @@
   }
 
   @include media-breakpoint-up(md) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .action-bar__group {
+      display: block;
+
+      filter-component {
+        width: unset;
+      }
+    }
+
     .form-control,
     .form-group {
       margin-bottom: 0;

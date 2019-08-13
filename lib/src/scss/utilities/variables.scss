@@ -91,37 +91,37 @@ $tmpl-box-shadow-vertical: $base-box-shadow-vertical;
 
 // Spacings, Heights and Widths
 // ---------------------------------------------------------
-$tmpl-layout-content-vertical-padding: spacing(4);
-$tmpl-head-bottom-height-mobile: spacing(5);
-$tmpl-head-bottom-height-desktop: spacing(5);
-$tmpl-aside-head-height-desktop: spacing(5);
-$tmpl-aside-bottom-height-desktop: spacing(2);
-$tmpl-head-logo-height: spacing(4);
-$tmpl-head-background-mobile: getColor(white);
-$tmpl-head-background-desktop: getColor(grey-light);
-$tmpl-head-logo-height-mobile: 14px;
-$tmpl-head-logo-height-desktop: 20px;
+$tmpl-layout-content-vertical-padding: spacing(4) !default;
+$tmpl-head-bottom-height-mobile: spacing(5) !default;
+$tmpl-head-bottom-height-desktop: spacing(5) !default;
+$tmpl-aside-head-height-desktop: spacing(5) !default;
+$tmpl-aside-bottom-height-desktop: spacing(2) !default;
+$tmpl-head-logo-height: spacing(4) !default;
+$tmpl-head-background-mobile: getColor(white) !default;
+$tmpl-head-background-desktop: getColor(grey-light) !default;
+$tmpl-head-logo-height-mobile: 14px !default;
+$tmpl-head-logo-height-desktop: 20px !default;
 
-$tmpl-nav-background: getColor(white);
-$tmpl-nav-height-desktop: spacing(12);
+$tmpl-nav-background: getColor(white) !default;
+$tmpl-nav-height-desktop: spacing(12) !default;
 
-$tmpl-content-width-lg: 1800px;
-$tmpl-content-padding-bottom: spacing(5);
+$tmpl-content-width-lg: 1800px !default;
+$tmpl-content-padding-bottom: spacing(5) !default;
 
-$tmpl-aside-background: getColor(primary);
-$tmpl-aside-registration-background: getColor(teritary);
-$tmpl-aside-icon-width-desktop: 32px;
-$tmpl-aside-right-width-desktop: 240px;
-$tmpl-aside-right-form-width-mobile: 260px;
-$tmpl-aside-left-width-desktop: spacing(6);
+$tmpl-aside-background: getColor(primary) !default;
+$tmpl-aside-registration-background: getColor(teritary) !default;
+$tmpl-aside-icon-width-desktop: 32px !default;
+$tmpl-aside-right-width-desktop: 240px !default;
+$tmpl-aside-right-form-width-mobile: 260px !default;
+$tmpl-aside-left-width-desktop: spacing(6) !default;
 
-$tmpl-overlay-background: rgba(255,255,255,.6);
+$tmpl-overlay-background: rgba(255,255,255,.6) !default;
 
 // Divider
 // ---------------------------------------------------------
 
-$base-divider-color: getColor(black);
-$base-divider-margin-y: spacing();
+$base-divider-color: getColor(black) !default;
+$base-divider-margin-y: spacing() !default;
 
 
 // Progressbar

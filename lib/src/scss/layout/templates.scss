@@ -175,8 +175,8 @@ $tmpl-background-content: getColor(white) !default;
                 .tmpl__footer,
                 .tmpl__header,
                 .tmpl__lock {
-                    padding-left: $tmpl-base-padding-horizontal * 2.5;
                     padding-right: $tmpl-base-padding-horizontal * 2 + $tmpl-base-padding-horizontal * 2;
+                    padding-left: $tmpl-base-padding-horizontal * 2.5;
                 }
 
                 &.tmpl--aside-left {
