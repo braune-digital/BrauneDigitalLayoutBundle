@@ -11,7 +11,9 @@ $bd-sidebar-item-border: 1px solid $color-grey-light-accent !default;
   width: $bd-sidebar-width;
   max-width: $bd-sidebar-width;
   background: $bd-sidebar-color;
-  min-height: 100vh;
+  height: 100%;
+
+  //min-height: 100vh;
   position: relative;
   @include paddingVertical(spacing(4));
 

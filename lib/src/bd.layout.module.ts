@@ -103,6 +103,7 @@ import {BdNavAsideComponent} from './components/layout/bd-nav/bd-nav-aside/bd-na
 import {BdNavComponent} from './components/layout/bd-nav/bd-nav.component';
 import {BdNavMainComponent} from './components/layout/bd-nav/bd-nav-main/bd-nav-main.component';
 import {BdLayoutNavComponent} from './components/layout/bd-layout/bd-layout-nav/bd-layout-nav.component';
+import {BdHeightDirective} from './directive/bd-height/bd-height.directive';
 
 @NgModule({
     imports: [
@@ -233,7 +234,8 @@ import {BdLayoutNavComponent} from './components/layout/bd-layout/bd-layout-nav/
         // Directives
         // ---------------------------
         BdMasonryDirective,
-        BdMasonryItemDirective
+        BdMasonryItemDirective,
+        BdHeightDirective
     ],
     providers: [],
     exports: [
@@ -345,7 +347,8 @@ import {BdLayoutNavComponent} from './components/layout/bd-layout/bd-layout-nav/
         // Directives
         // ---------------------------
         BdMasonryDirective,
-        BdMasonryItemDirective
+        BdMasonryItemDirective,
+        BdHeightDirective
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

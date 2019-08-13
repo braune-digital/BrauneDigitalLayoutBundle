@@ -15,10 +15,15 @@ export class BdLayoutComponent implements OnInit {
   @Input()
   sidebar = false;
 
+  contentHeight = '100vh';
+
   constructor(private metaSettings: Meta) {}
 
   ngOnInit() {
     this.metaSettings.updateTag({name: 'viewport', content: 'width=device-width, user-scalable=no'});
   }
 
+  setContentHeight(event) {
+    this.contentHeight = 'calc(100vh - ' + event + 'px)';
+  }
 }

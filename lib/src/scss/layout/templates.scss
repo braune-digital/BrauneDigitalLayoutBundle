@@ -51,7 +51,7 @@ $tmpl-background-content: getColor(white) !default;
     .tmpl__layout {
         display: flex;
         flex-direction: row;
-        height: 100vh;
+        //height: 100vh;
         background: $tmpl-background;
 
         .tmpl__layout__sidebar {
