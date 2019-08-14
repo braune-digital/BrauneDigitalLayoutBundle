@@ -11,6 +11,8 @@ export class BdHeightDirective implements OnInit {
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
-    this.getHeight.emit(this.el.nativeElement.offsetHeight);
+    setTimeout( () => {
+      this.getHeight.emit(this.el.nativeElement.offsetHeight);
+    }, 50);
   }
 }

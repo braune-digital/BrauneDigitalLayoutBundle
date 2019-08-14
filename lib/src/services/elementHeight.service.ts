@@ -4,6 +4,6 @@ import {Subject} from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class HeightService {
+export class ElementHeightService {
   height$: Subject<number> = new Subject<number>();
 }

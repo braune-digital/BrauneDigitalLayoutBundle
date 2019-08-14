@@ -5,6 +5,7 @@
 
 import {Component, Input, OnInit} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
+import {ElementHeightService} from '../../../services/elementHeight.service';
 
 @Component({
   selector: 'bd-layout, [bd-layout]',
@@ -15,11 +16,13 @@ export class BdLayoutComponent implements OnInit {
   @Input()
   sidebar = false;
 
-  contentHeight = '100vh';
+  contentHeight;
 
   constructor(private metaSettings: Meta) {}
 
   ngOnInit() {
+    this.contentHeight = '100vh';
+
     this.metaSettings.updateTag({name: 'viewport', content: 'width=device-width, user-scalable=no'});
   }
 

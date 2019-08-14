@@ -1,0 +1,9 @@
+<div class="hamburger" (click)="switchBurger()">
+  <div class="hamburger__box" [ngClass]="[burgerActive ? 'hamburger__box--active' : 'hamburger__box--inactive']">
+    <div class="hamburger__bar">
+      <span class="hamburger--first"></span>
+      <span class="hamburger--second"></span>
+      <span class="hamburger--third"></span>
+    </div>
+  </div>
+</div>

@@ -10,15 +10,15 @@
 // ---------------------------------------------------------
 
 .progress-circle {
-  @include square($progress-circle-size-outer * .50);
-  background: $progress-circle-background-outer;
+  @include square($progress-circle-size-outer * .15);
+  background: getColor(white);
   border-radius: 50%;
+  box-shadow: 0px 0px 0px 4px rgba(getColor(white),1);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: $base-box-shadow;
 
   .progress-circle__inner {
     display: flex;
@@ -27,21 +27,21 @@
     align-items: center;
 
     .mask, .fill {
-      @include square($progress-circle-size-outer  * .50);
+      @include square($progress-circle-size-outer  * .15);
       position: absolute;
       border-radius: 50%;
     }
     .mask {
-      clip: rect(0, $progress-circle-size-outer * .50, $progress-circle-size-outer * .50, ($progress-circle-size-outer * .50 / 2));
+      clip: rect(0, $progress-circle-size-outer * .15, $progress-circle-size-outer * .15, ($progress-circle-size-outer * .15 / 2));
       .fill {
-        clip: rect(0, $progress-circle-size-outer * .50 / 2, $progress-circle-size-outer * .50, 0);
+        clip: rect(0, $progress-circle-size-outer * .15 / 2, $progress-circle-size-outer * .15, 0);
         background: $progress-circle-background-loader;
       }
     }
   }
 
   .progress-circle__inner__content {
-    @include square($progress-circle-size-inner * .50);
+    @include square($progress-circle-size-inner * .1);
     border-radius: 50%;
     background: $progress-circle-background-inner;
     position: absolute;
@@ -50,22 +50,54 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: spacing(1);
     text-align: center;
 
     .progress-circle__inner__time {
-      font-size: 26px;
-      color: getColor(secondary);
-      @include paddingVertical(spacing(.2));
-
-      span {
-        font-size: 14px;
-        padding-left: spacing(.2);
-      }
+      display: none;
     }
     .progress-circle__inner__label {
       display: none;
     }
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    @include square($progress-circle-size-outer  * .5);
+    border: none;
+    box-shadow: $base-box-shadow;
+    background: $progress-circle-background-outer;
+    
+    .progress-circle__inner {
+
+      .mask, .fill {
+        @include square($progress-circle-size-outer  * .5);
+      }
+      .mask {
+        clip: rect(0, $progress-circle-size-outer  * .5, $progress-circle-size-outer  * .50, ($progress-circle-size-outer  * .5 / 2));
+        .fill {
+          clip: rect(0, $progress-circle-size-outer  * .5 / 2, $progress-circle-size-outer  * .50, 0);
+          background: $progress-circle-background-loader;
+        }
+      }
+    }
+
+    .progress-circle__inner__content {
+      padding: spacing(1);
+      @include square($progress-circle-size-inner * .5);
+
+      .progress-circle__inner__time {
+        display: block;
+        font-size: 26px;
+        color: getColor(secondary);
+        @include paddingVertical(spacing(.2));
+
+        span {
+          font-size: 14px;
+          padding-left: spacing(.2);
+        }
+      }
+    }
+
   }
 
   @include media-breakpoint-up(md) {

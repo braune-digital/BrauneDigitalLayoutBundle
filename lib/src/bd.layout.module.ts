@@ -104,6 +104,8 @@ import {BdNavComponent} from './components/layout/bd-nav/bd-nav.component';
 import {BdNavMainComponent} from './components/layout/bd-nav/bd-nav-main/bd-nav-main.component';
 import {BdLayoutNavComponent} from './components/layout/bd-layout/bd-layout-nav/bd-layout-nav.component';
 import {BdHeightDirective} from './directive/bd-height/bd-height.directive';
+import {BdHamburgerComponent} from './components/elements/bd-hamburger/bd-hamburger.component';
+import {BdNavSubComponent} from './components/layout/bd-nav/bd-nav-sub/bd-nav-sub.component';
 
 @NgModule({
     imports: [
@@ -161,6 +163,7 @@ import {BdHeightDirective} from './directive/bd-height/bd-height.directive';
         BdNavAsideComponent,
         BdNavComponent,
         BdNavMainComponent,
+        BdNavSubComponent,
         BdLayoutNavComponent,
         // ---------------------------
         // Utils
@@ -187,6 +190,7 @@ import {BdHeightDirective} from './directive/bd-height/bd-height.directive';
         BdFileComponent,
         BdExampleComponent,
         BdHighlightComponent,
+        BdHamburgerComponent,
         BdGalleryComponent,
         BdIconComponent,
         BdItemComponent,
@@ -273,6 +277,7 @@ import {BdHeightDirective} from './directive/bd-height/bd-height.directive';
         BdNavAsideComponent,
         BdNavComponent,
         BdNavMainComponent,
+        BdNavSubComponent,
         BdLayoutNavComponent,
 
         // ---------------------------
@@ -300,6 +305,7 @@ import {BdHeightDirective} from './directive/bd-height/bd-height.directive';
         BdFileComponent,
         BdExampleComponent,
         BdHighlightComponent,
+        BdHamburgerComponent,
         BdGalleryComponent,
         BdIconComponent,
         BdItemComponent,

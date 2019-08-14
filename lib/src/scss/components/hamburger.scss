@@ -4,140 +4,247 @@
 
 //
 // Hamburger
-// ---------------------------------------------------------
 
-$hamburger-height: $tmpl-head-bottom-height-mobile;
-$hamburger-layer-height: 2px;
-$hamburger-layer-width: 16px;
-$hamburger-layer-spacing: 3px;
-
-$hamburger-padding-x: 10px;
-$hamburger-padding-y: ($hamburger-height - (($hamburger-layer-spacing + $hamburger-layer-height) * 3)) / 2;
-
-$hamburger-layer-color: getColor(black);
-$hamburger-layer-border-radius: 2px;
-$hamburger-hover-opacity: 0.7;
-$hamburger-active-layer-color  : $hamburger-layer-color;
-$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+$hamburger-line-height: $base-border-width !default;
+$hamburger-color: getColor(primary) !default;
+$hamburger-width: getFontSize(xl) * 2 !default;
+$hamburger-direction: 0deg !default;
 
 .hamburger {
-  padding: $hamburger-padding-y $hamburger-padding-x;
-  display: inline-block;
-  cursor: pointer;
-
-  transition-property: opacity, filter;
-  transition-duration: $base-animation-duration;
-  transition-timing-function: linear;
-
-  // Normalize (<button>)
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  margin-left: -($hamburger-padding-x);
-  overflow: visible;
-  line-height: ($hamburger-layer-spacing + $hamburger-layer-height) * 3;
-
-
-  &:hover {
-    opacity: $hamburger-hover-opacity;
-  }
-
-  &.is-active {
-    &:hover {
-      opacity: $hamburger-active-hover-opacity;
-    }
-
-    .hamburger-inner,
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-      background-color: $hamburger-active-layer-color;
-    }
-  }
-}
-
-.hamburger-box {
-  width: $hamburger-layer-width;
-  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
-  display: inline-block;
-  position: relative;
-}
-
-.hamburger-inner {
   display: block;
-  top: 50%;
-  margin-top: $hamburger-layer-height / -2;
+  transform: rotate($hamburger-direction);
 
-  &,
-  &::before,
-  &::after {
-    width: $hamburger-layer-width;
-    height: $hamburger-layer-height;
-    background-color: $hamburger-layer-color;
-    border-radius: $hamburger-layer-border-radius;
-    position: absolute;
-    transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
+  .hamburger__box {
+    position: relative;
+    width: $hamburger-width;
+    content: '';
+
+    .hamburger__bar {
+      span {
+        &.hamburger--first, &.hamburger--third {
+          content: '';
+          width: 100%;
+          height: $hamburger-line-height;
+          margin-bottom: $hamburger-line-height;
+          display: block;
+          right: 0;
+          left: 0;
+          background: $hamburger-color;
+          transition: $base-animation;
+          text-decoration: none;
+        }
+
+        &.hamburger--second {
+          transition: $base-animation;
+          height: $hamburger-line-height;
+          margin-bottom: $hamburger-line-height;
+          display: block;
+
+          &:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: $hamburger-line-height;
+            display: block;
+            background: $hamburger-color;
+            transition: $base-animation;
+            text-decoration: none;
+            transform-origin: 50% 50%;
+          }
+
+          &:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: $hamburger-line-height;
+            display: block;
+            background: $hamburger-color;
+            transition: $base-animation;
+            text-decoration: none;
+            transform-origin: 50% 50%;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    @include activeState {
+      span {
+        &.hamburger--first {
+          animation: hamburger--first $base-animation-duration;
+          animation-fill-mode: forwards;
+        }
+
+        &.hamburger--second {
+          &:before {
+            animation: hamburger--close__left $base-animation-duration;
+            animation-fill-mode: forwards;
+          }
+
+          &:after {
+            animation: hamburger--close__right $base-animation-duration;
+            animation-fill-mode: forwards;
+          }
+        }
+
+        &.hamburger--third {
+          animation: hamburger--third $base-animation-duration;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+
+    @include inactiveState {
+      span {
+        &.hamburger--first {
+          animation: hamburger--first-reverse $base-animation-duration;
+          animation-fill-mode: forwards;
+        }
+
+        &.hamburger--second {
+          &:before {
+            animation: hamburger--close__left-reverse $base-animation-duration;
+            animation-fill-mode: forwards;
+          }
+
+          &:after {
+            animation: hamburger--close__right-reverse $base-animation-duration;
+            animation-fill-mode: forwards;
+          }
+        }
+
+        &.hamburger--third {
+          animation: hamburger--third-reverse $base-animation-duration;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
   }
 
-  &::before,
-  &::after {
-    content: "";
-    display: block;
+  @include hoverState {
+    cursor: pointer;
   }
+}
 
-  &::before {
-    top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+// Animations
+// ---------------------------------------------------------
+
+@keyframes hamburger--first {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
   }
-
-  &::after {
-    bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+  33% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
 
 
-/*
- * Spring
- */
-.hamburger--spring {
-  .hamburger-inner {
-    top: $hamburger-layer-height / 2;
-    transition: background-color 0s 0.13s linear;
-
-    &::before {
-      top: $hamburger-layer-height + $hamburger-layer-spacing;
-      transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-      transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-
-    &::after {
-      top: ($hamburger-layer-height * 2) + ($hamburger-layer-spacing * 2);
-      transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-      transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
+@keyframes hamburger--third {
+  33% {
+    opacity: 1;
+    transform: translateX(0);
   }
+  66% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
 
-  &.is-active {
-    .hamburger-inner {
-      transition-delay: 0.22s;
-      background-color: transparent !important;
+@keyframes hamburger--close__right {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+}
 
-      &::before {
-        top: 0;
-        transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-        transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-        transform: translate3d(0, $hamburger-layer-spacing + $hamburger-layer-height, 0) rotate(45deg);
-      }
+@keyframes hamburger--close__left {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+}
 
-      &::after {
-        top: 0;
-        transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-        transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-        transform: translate3d(0, $hamburger-layer-spacing + $hamburger-layer-height, 0) rotate(-45deg);
-      }
-    }
+// Animations Reverse
+// ---------------------------------------------------------
+
+@keyframes hamburger--first-reverse {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  66% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes hamburger--third-reverse {
+  33% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hamburger--close__right-reverse {
+  0% {
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes hamburger--close__left-reverse {
+  0% {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
   }
 }

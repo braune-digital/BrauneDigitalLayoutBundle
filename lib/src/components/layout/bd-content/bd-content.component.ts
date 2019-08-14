@@ -5,7 +5,6 @@
 
 import {AfterViewInit, Component, HostListener, Input, OnInit} from '@angular/core';
 import {Breakpoints} from '../../../utils/breakpoints';
-import {HeightService} from '../../../services/height.service';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({

@@ -1,12 +1,32 @@
-<div class="tmpl__nav" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut}">
+<div class="tmpl__nav" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut, 'tmpl__nav--mobile-open': mobileNavOpen}">
+
+  <div class="tmpl__nav__brand" *ngIf="brand">
+      <img [src]="brand">
+  </div>
+
+  <div class="tmpl__nav__burger">
+    <bd-hamburger (isActive)="mobileNavOpen = !mobileNavOpen"></bd-hamburger>
+  </div>
+
+  <div class="tmpl__nav__main" *ngIf="!mobileNavOpen">
+    <ng-container *ngTemplateOutlet="navigationContent"></ng-container>
+  </div>
+
   <div class="tmpl__nav__aside">
     <ng-content select="bd-nav-aside"></ng-content>
   </div>
-  <div class="tmpl__nav__main">
-      <div class="tmpl__nav__main__brand" *ngIf="brand">
-          <img [src]="brand">
-      </div>
-
-    <ng-content select="bd-nav-main"></ng-content>
-  </div>
 </div>
+
+
+<div class="tmpl__nav__sub">
+  <div class="tmpl__nav__sub__mobile" *ngIf="mobileNavOpen" [@openNav]>
+    <ng-container *ngTemplateOutlet="navigationContent"></ng-container>
+  </div>
+
+  <ng-content select="bd-nav-sub"></ng-content>
+</div>
+
+
+<ng-template #navigationContent>
+  <ng-content select="bd-nav-main"></ng-content>
+</ng-template>

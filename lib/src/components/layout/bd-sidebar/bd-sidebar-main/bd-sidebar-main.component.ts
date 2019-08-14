@@ -1,9 +1,9 @@
-import {Component, HostBinding} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {Bem} from '../../../../utils/bem';
 
 @Component({
-    selector: 'bd-sidebar-main',
-    templateUrl: './bd-sidebar-main.component.html',
+  selector: 'bd-sidebar-main',
+  templateUrl: './bd-sidebar-main.component.html',
 })
 export class BdSidebarMainComponent {
 

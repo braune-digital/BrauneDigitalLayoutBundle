@@ -5,7 +5,6 @@
 
 import {Component, Input, OnInit} from '@angular/core';
 import {Breakpoints} from '../../../utils/breakpoints';
-import {HeightService} from '../../../services/height.service';
 
 @Component({
   selector: 'bd-header, [bd-header]',
