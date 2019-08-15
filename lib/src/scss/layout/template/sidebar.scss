@@ -11,8 +11,6 @@ $bd-sidebar-item-border: 1px solid $color-grey-light-accent !default;
   width: $bd-sidebar-width;
   max-width: $bd-sidebar-width;
 
-  height: 100%;
-
   @include paddingVertical(spacing(4));
 
   display: flex;
@@ -81,6 +79,10 @@ $bd-sidebar-item-border: 1px solid $color-grey-light-accent !default;
         }
       }
     }
+  }
+
+  @include media-breakpoint-up(sm) {
+    height: 100%;
   }
 
   // Options

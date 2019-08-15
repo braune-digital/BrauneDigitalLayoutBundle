@@ -1,0 +1,86 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Dropdown
+// ---------------------------------------------------------
+
+$dropdown-background: getColor(primary) !default;
+$dropdown-color: getColor(white) !default;
+$dropdown-color-hover: getColor(secondary) !default;
+
+.dropdown {
+  position: relative;
+  .dropdown__toggle {
+    display: flex;
+
+    i {
+      transition: $base-animation;
+      transform-origin: 50%;
+    }
+
+    @include hoverState {
+      cursor: pointer;
+    }
+  }
+
+  .dropdown__content {
+    position: absolute;
+    @include paddingVertical(spacing(1));
+    @include paddingHorizontal(spacing(1.5));
+    z-index: 1200;
+    overflow: hidden;
+
+    transition: $base-animation;
+    background: $dropdown-background;
+    color: $dropdown-color;
+    font-size: getFontSize(sm);
+    border-radius: $base-border-radius;
+    box-shadow: $base-box-shadow;
+    text-align: left;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0;
+        padding: 0;
+        padding-right: spacing(3);
+        white-space: nowrap;
+
+        a {
+          transition: $base-animation;
+          color: $dropdown-color;
+
+          @include hoverState {
+            color: $dropdown-color-hover;
+          }
+        }
+      }
+    }
+  }
+
+  &.dropdown__content--right {
+    .dropdown__toggle {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .dropdown__content {
+      right: 0;
+    }
+  }
+
+  // Actions
+  // ------------------------------
+  &.dropdown--show {
+    .dropdown__toggle {
+      i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

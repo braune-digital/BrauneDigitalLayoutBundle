@@ -1,0 +1,9 @@
+<div class="dropdown" [ngClass]="[collasped ? 'dropdown--show' : '', position ? 'dropdown__content--' + position : '']">
+  <div class="dropdown__toggle" (click)="collasped = !collasped">
+    <ng-content select="bd-dropdown-toggle"></ng-content>
+  </div>
+
+  <div class="dropdown__content" *ngIf="collasped" [@openNav]>
+    <ng-content select="bd-dropdown-content"></ng-content>
+  </div>
+</div>
