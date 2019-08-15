@@ -67,10 +67,18 @@ $badge-padding-y-lg: spacing(.75);
   &.badge--md {
     @include paddingHorizontal($badge-padding-x-md);
     @include paddingVertical($badge-padding-y-md);
+
+    &.badge--pill {
+      @include square($badge-pill-size + $badge-padding-y-md * 2);
+    }
   }
 
   &.badge--lg {
     @include paddingHorizontal($badge-padding-x-lg);
     @include paddingVertical($badge-padding-y-lg);
+
+    &.badge--pill {
+      @include square($badge-pill-size + $badge-padding-y-lg * 2);
+    }
   }
 }

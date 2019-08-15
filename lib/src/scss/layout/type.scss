@@ -14,6 +14,7 @@
 // General
 // ---------------------------------------------------------
 
+$base-text-color: getColor(black) !default;
 $base-link-color: getColor(primary) !default;
 $base-link-color-hover: getColor(secondary) !default;
 $base-text-selection-color: getColor(black) !default;
@@ -24,7 +25,7 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   letter-spacing: $base-letter-spacing;
-
+  color: $base-text-color;
   @media
   only screen and (-webkit-min-device-pixel-ratio: 1.25),
   only screen and (min-device-pixel-ratio: 1.25),
