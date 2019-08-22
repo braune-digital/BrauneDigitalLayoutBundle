@@ -7,35 +7,35 @@
 // ---------------------------------------------------------
 
 
-$color-selected: #f5faff;
+$color-selected: #f5faff !default;
 
-$select-font-weight: $input-font-weight;
-$select-border-color-active: getColor(primary);
-$select-border-color-value: getColor(primary);
-$select-value-background-color: getColor(white);
-$select-value-border-color: getColor(primary);
+$select-font-weight: $input-font-weight !default;
+$select-border-color-active: getColor(primary) !default;
+$select-border-color-value: getColor(primary) !default;
+$select-value-background-color: getColor(white) !default;
+$select-value-border-color: getColor(primary) !default;
 
-$select-padding-x: $input-padding-x;
-$select-padding-y: $input-padding-y;
+$select-padding-x: $input-padding-x !default;
+$select-padding-y: $input-padding-y !default;
 
-$select-background: $input-background;
-$select-background-active: $input-background-focus;
-$select-background-disabled: $input-background-disabled;
-$select-border: none;
-$select-color: $input-color;
+$select-background: $input-background !default;
+$select-background-active: $input-background-focus !default;
+$select-background-disabled: $input-background-disabled !default;
+$select-border: none !default;
+$select-color: $input-color !default;
 
-$select-box-shadow: $input-focus-shadow;
+$select-box-shadow: $input-focus-shadow !default;
 
-$select-height: calcHeight($input-padding-y, $input-padding-y, $input-font-size, $input-line-height);
-$select-placeholder-color: $input-placeholder-color;
+$select-height: calcHeight($input-padding-y, $input-padding-y, $input-font-size, $input-line-height) !default;
+$select-placeholder-color: $input-placeholder-color !default;
 
-$select-dropdown-background: $select-background;
-$select-dropdown-background-active: getColor(primary);
+$select-dropdown-background: $select-background !default;
+$select-dropdown-background-active: getColor(primary) !default;
 
-$select-dropdown-color: $select-color;
-$select-dropdown-color-active: getColor(white);
-$select-dropdown-color-disabled: $input-color-disabled;
-$select-dropdown-font-size: getFontSize(md);
+$select-dropdown-color: $select-color !default;
+$select-dropdown-color-active: getColor(white) !default;
+$select-dropdown-color-disabled: $input-color-disabled !default;
+$select-dropdown-font-size: getFontSize(md) !default;
 
 .ng-select {
   font-weight: $select-font-weight;
