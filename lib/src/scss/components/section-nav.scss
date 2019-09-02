@@ -31,7 +31,7 @@ $section-nav-item-spacing-bottom: 1px;
     @include leftBorderStripeColor(getColor(grey-light-accent));
     padding: ($section-nav-padding-y * 2) $section-nav-padding-x;
     margin-bottom: $section-nav-item-spacing-bottom;
-    color: getColor(black);
+    color: getColor(text);
 
     // Chapter Item Topline
     // ---------------------------
@@ -95,7 +95,7 @@ $section-nav-item-spacing-bottom: 1px;
         align-items: center;
         padding: $section-nav-padding-y $section-nav-padding-x;
         background: getColor(grey-light);
-        color: getColor(black);
+        color: getColor(text);
         @include leftBorderStripe($base-border-width, $color: getColor(primary));
 
         &:after {

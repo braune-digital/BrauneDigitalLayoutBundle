@@ -33,7 +33,7 @@ $launchpad-icon-width: 40px;
     align-items: center;
 
     background: getColor(grey-light);
-    color: getColor(black);
+    color: getColor(text);
     padding: $launchpad-inner-padding;
     font-weight: getFontWeight(bold);
     transition: $base-animation;

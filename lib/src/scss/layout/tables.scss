@@ -92,7 +92,7 @@ $table-thumbnail-size: 60px;
         color: getColor(purple-light);
 
         &:hover {
-          color: getColor(black);
+          color: getColor(text);
         }
       }
     }
@@ -101,9 +101,7 @@ $table-thumbnail-size: 60px;
       margin: 0;
     }
 
-    &:last-child {
-      padding-right: 0;
-    }
+
   }
 
   th {

@@ -11,7 +11,7 @@ $tags-text-transform: $base-text-transform;
 .tags {
 
   a {
-    color: getColor(black);
+    color: getColor(text);
     text-transform: $tags-text-transform;
   }
 

@@ -26,10 +26,10 @@ $share-button-size-sm: 25px;
     list-style: none;
 
     a {
-      color: getColor(black);
+      color: getColor(text);
 
       @include hoverState {
-        color: getColor(black);
+        color: getColor(text);
       }
     }
 
@@ -41,7 +41,7 @@ $share-button-size-sm: 25px;
     .social-share__btn {
       position: relative;
       transition: $base-animation;
-      color: getColor(black);
+      color: getColor(text);
       background: transparent;
       display: flex;
       justify-content: center;
@@ -65,7 +65,7 @@ $share-button-size-sm: 25px;
 
       &:hover {
         cursor: pointer;
-        color: getColor(black);
+        color: getColor(text);
 
         &:before {
           height: $btn-background-height;

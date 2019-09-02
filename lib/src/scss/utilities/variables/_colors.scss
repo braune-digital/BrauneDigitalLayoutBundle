@@ -28,6 +28,14 @@ $color-grey-medium: #B0B0B0 !default;
 $color-grey-dark: #7E7E7E !default;
 $color-dark: #2D2D2C !default;
 $color-purple-light: #CCC7D1 !default;
+$color-text: #000 !default;
+
+$color-primary: #DA3D3B !default;
+$color-secondary: #EB983C !default;
+$color-tertiary: #4CB180 !default;
+$color-fourthly: #753E82 !default;
+
+
 
 $bdColors: (
   purple: $color-purple,
@@ -35,10 +43,10 @@ $bdColors: (
   cyan: $color-cyan,
   green: $color-green,
   red: $color-red,
-  primary: $color-green,
-  secondary: $color-red,
-  tertiary: $color-purple,
-  fourthly: $color-yellow,
+  primary: $color-primary,
+  secondary: $color-secondary,
+  tertiary: $color-tertiary,
+  fourthly: $color-fourthly,
 ) !default;
 
 // Extend Braune-Digital Main Colors with more theme colors
@@ -48,6 +56,7 @@ $colors: map-merge(
     (
       black: #000,
       white: #FFF,
+      text: $color-text,
       grey-light: #F2F2F2,
       grey-light-accent-light: #EFEFEF,
       grey-light-accent: #DFDFDF,

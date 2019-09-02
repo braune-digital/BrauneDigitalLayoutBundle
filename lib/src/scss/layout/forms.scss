@@ -21,7 +21,7 @@ $input-placeholder-font-weight: getFontWeight(light) !default;
 $input-background: getColor(grey-light) !default;
 $input-background-focus: getColor(white) !default;
 $input-background-disabled: getColor(grey-light) !default;
-$input-color: getColor(black) !default;
+$input-color: getColor(text) !default;
 $input-color-disabled: getColor(grey-medium) !default;
 $input-border: 0px solid rgba(0,0,0,0) !default;
 
@@ -43,7 +43,7 @@ $form-inner-margin: spacing(.5) !default;
 // -----------------------------
 
 $form-label-size: getFontSize(base) !default;
-$form-label-color: getColor(black) !default;
+$form-label-color: getColor(text) !default;
 $form-label-font-weight: getFontWeight(medium) !default;
 $form-label-line-height: getLineHeight(md) !default;
 
@@ -99,6 +99,7 @@ $form-required-color: getColor(error);
 @import "forms/uploader";
 @import "forms/select";
 @import "forms/rte";
+@import "forms/form-actions";
 
 
 @import "forms/utilities/form-counter";

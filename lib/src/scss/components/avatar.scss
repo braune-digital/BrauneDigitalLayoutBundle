@@ -64,6 +64,7 @@ $avatar-sizes: (
     h3, .h3,
     h4, .h4 {
       margin-bottom: 0;
+      font-size: getFontSize(md);
 
       & + p {
         margin-top: spacing();

@@ -64,7 +64,7 @@ $breadcrumb-font-weight-active: getFontWeight(regular);
         color: $breadcrumb-link-color;
 
         @include hoverState {
-          color: getColor(black);
+          color: getColor(text);
         }
       }
 

@@ -34,7 +34,7 @@ $pagination-spacing: spacing(.5);
 
       @include hoverState {
         background: getColor(fourthly);
-        color: getColor(black);
+        color: getColor(text);
       }
     }
 

@@ -68,7 +68,7 @@ $z-index: (
   base: 900,
   overlay: 900 + 1,
   popup: 900 + 10,
-  alert: $tmpl-zindex-aside - 1,
+  alert: $tmpl-zindex-popup + 1,
   search: 891,
   modal: 890,
   tooltip: 875,
@@ -120,7 +120,7 @@ $tmpl-overlay-background: rgba(255,255,255,.6) !default;
 // Divider
 // ---------------------------------------------------------
 
-$base-divider-color: getColor(black) !default;
+$base-divider-color: getColor(text) !default;
 $base-divider-margin-y: spacing() !default;
 
 

@@ -78,7 +78,7 @@
 
         a {
           font-weight: getFontWeight(regular);
-          color: getColor(black);
+          color: getColor(text);
           text-decoration: none;
           transition: $base-animation;
 
@@ -270,7 +270,7 @@
   margin-left: 0;
 
   a {
-    color: getColor(black);
+    color: getColor(text);
 
     @include hoverState {
       color: getColor(primary);
