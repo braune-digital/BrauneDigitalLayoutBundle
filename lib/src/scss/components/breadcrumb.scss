@@ -16,7 +16,7 @@ $breadcrumb-font-weight-active: getFontWeight(regular);
   align-items: center;
   font-size: getFontSize(md);
 
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
 
