@@ -28,7 +28,7 @@ $tmpl-header-margin-vertical: spacing(3);
 
   @include media-breakpoint-up(md) {
     flex-wrap: nowrap;
-    max-width: $tmpl-content-width-lg;
+    //max-width: $tmpl-content-width-lg;
 
     .tmpl__content__header__inner {
       margin-right: $tmpl-content-aside-width-md + $tmpl-content-aside-margin-md;

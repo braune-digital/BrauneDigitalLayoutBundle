@@ -14,10 +14,10 @@
 // General
 // ---------------------------------------------------------
 
-$base-text-color: getColor(black) !default;
+$base-text-color: getColor(text) !default;
 $base-link-color: getColor(primary) !default;
 $base-link-color-hover: getColor(secondary) !default;
-$base-text-selection-color: getColor(black) !default;
+$base-text-selection-color: getColor(text) !default;
 $base-text-selection-background: getColor(secondary) !default;
 
 body {
@@ -121,7 +121,7 @@ dl {
       padding: 0;
     }
     dd {
-      color: getColor(black);
+      color: getColor(text);
       font-size: getFontSize(base);
       font-weight: getFontWeight(regular);
     }

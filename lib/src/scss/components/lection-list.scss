@@ -28,7 +28,7 @@ $lection-list-icon-size-sm: 22px;
     align-items: center;
 
     a {
-      color: getColor(black);
+      color: getColor(text);
       @include hoverState{
         text-decoration: underline;
       }

@@ -61,7 +61,7 @@
     @include media-breakpoint-up(md) {
       flex-direction: row;
       flex-wrap: nowrap;
-      max-width: $tmpl-content-width-lg;
+      //max-width: $tmpl-content-width-lg;
 
       .tmpl__content__main,
       .tmpl__content__aside {

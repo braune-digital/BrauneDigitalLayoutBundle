@@ -49,13 +49,14 @@ $btn-disabled-background: getColor(grey-light) !default;
   @include btnSize($btn-padding-x, $btn-padding-y);
   transition: background-color .3s ease;
   display: inline-block;
-  color: getColor(black);
+  color: getColor(text);
   border-radius: $btn-border-radius;
   border: none;
   outline: none;
   text-align: center;
   vertical-align: middle;
   user-select: none;
+  white-space: nowrap;
 
   background: transparent;
   text-transform: $base-text-transform;
@@ -87,7 +88,8 @@ $btn-disabled-background: getColor(grey-light) !default;
 
   @include hoverState {
     cursor: pointer;
-    color: getColor(black);
+    color: getColor(text);
+    text-decoration: none;
 
     &:before {
       opacity: .8;
@@ -116,6 +118,8 @@ $btn-disabled-background: getColor(grey-light) !default;
     right: 0;
     bottom: 0;
   }
+
+
 
   // Button Icon
   // ---------------------------------------------------------
