@@ -20,12 +20,12 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class BdLoadingComponent {
 
-    @Input('isLoading') isLoading = true;
-    @Input('overlay') overlay = false;
+    @Input()
+    isLoading = true;
 
-    constructor() {
+    @Input()
+    overlay = false;
 
-    }
-
-
+    @Input()
+    text = 'global.loading';
 }

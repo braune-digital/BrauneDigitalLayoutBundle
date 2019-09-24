@@ -7,8 +7,15 @@
     <ng-container *ngIf="!overlay">
         <div class="loading">
           <label>
-            {{ 'global.loading' | translate }}
+            {{ text | translate }}
           </label>
+          <ng-content></ng-content>
+
+          <div class="loading__circles">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
     </ng-container>
     <ng-container *ngIf="overlay">
