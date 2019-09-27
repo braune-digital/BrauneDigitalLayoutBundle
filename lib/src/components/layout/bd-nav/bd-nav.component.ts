@@ -3,7 +3,7 @@
  * @copyright 2/5/19 4:42 PM Braune Digital GmbH
  */
 
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ContentChild, EventEmitter, Input, OnInit, Output, TemplateRef} from '@angular/core';
 import {Breakpoints} from '../../../utils/breakpoints';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
@@ -34,6 +34,7 @@ export class BdNavComponent implements OnInit {
   brand: string;
 
   mobileNavOpen = false;
+
 
   ngOnInit() {
     this.breakpoints = new Breakpoints();

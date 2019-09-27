@@ -1,7 +1,9 @@
 <div class="tmpl__nav" [ngClass]="{'fade-out': fadeOut, 'fade-in': !fadeOut, 'tmpl__nav--mobile-open': mobileNavOpen}">
 
   <div class="tmpl__nav__brand" *ngIf="brand">
+    <a [routerLink]="'/'">
       <img [src]="brand">
+    </a>
   </div>
 
   <div class="tmpl__nav__burger">
@@ -25,7 +27,6 @@
 
   <ng-content select="bd-nav-sub"></ng-content>
 </div>
-
 
 <ng-template #navigationContent>
   <ng-content select="bd-nav-main"></ng-content>
