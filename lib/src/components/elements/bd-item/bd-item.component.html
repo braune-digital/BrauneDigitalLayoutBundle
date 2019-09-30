@@ -1,12 +1,9 @@
-
-<div class="item">
-  <div class="item__image" *ngIf="image">
-    <img [src]="image" alt="">
-  </div>
-  <div class="item__text" *ngIf="text">
-    {{ text }}
-  </div>
-  <div class="item__icon" *ngIf="icon">
-    <bd-icon [icon]="icon" [font]="iconFont"></bd-icon>
-  </div>
+<div class="item__image" *ngIf="image">
+  <img [src]="image" alt="">
+</div>
+<div class="item__text" *ngIf="text">
+  {{ text }}
+</div>
+<div class="item__icon" *ngIf="icon">
+  <bd-icon [icon]="icon" [font]="iconFont"></bd-icon>
 </div>
