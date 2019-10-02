@@ -6,8 +6,13 @@
 // Action Bar
 // ---------------------------------------------------------
 
-$launchpad-inner-padding: spacing(2);
-$launchpad-icon-width: 40px;
+$launchpad-inner-padding: spacing(2) !default;
+$launchpad-icon-width: 40px !default;
+$launchpad-app-background: getColor(grey-light) !default;
+$launchpad-app-background-hover: getColor(secondary) !default;
+
+$launchpad-app-text: getColor(text) !default;
+$launchpad-app-text-hover: getColor(text) !default;
 
 .launchpad {
   display: flex;
@@ -32,8 +37,8 @@ $launchpad-icon-width: 40px;
     flex-direction: row;
     align-items: center;
 
-    background: getColor(grey-light);
-    color: getColor(text);
+    background: $launchpad-app-background;
+    color: $launchpad-app-text;
     padding: $launchpad-inner-padding;
     font-weight: getFontWeight(bold);
     transition: $base-animation;
@@ -46,11 +51,11 @@ $launchpad-icon-width: 40px;
     }
 
     &:hover {
-      background: getColor(secondary);
-      color: getColor(white);
+      background: $launchpad-app-background-hover;
+      color: $launchpad-app-text-hover;
 
       @include fontAwesomeClass {
-        color: getColor(white);
+        color: $launchpad-app-text-hover;
       }
     }
   }

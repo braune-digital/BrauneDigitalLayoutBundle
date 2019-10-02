@@ -3,7 +3,7 @@
   ~ @copyright 2/5/19 4:42 PM Braune Digital GmbH
   -->
 
-<bd-button type="text" color="primary" (click)="openModal(templateUserModal, 0)">
+<bd-button [color]="color" (click)="openModal(templateUserModal, 0)">
     <bd-icon icon="plus-circle" font="fas"></bd-icon> <ng-content></ng-content>
 </bd-button>
 
