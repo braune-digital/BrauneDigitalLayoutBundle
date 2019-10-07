@@ -8,5 +8,5 @@
 
 
 @function calcHeight($padding-top, $padding-bottom, $font-size: getFontSize(base), $line-height: getLineHeight(base)) {
-  @return $padding-top + $padding-bottom + ($font-size * strip-unit($line-height));
+  @return $padding-top + $padding-bottom + (strip-unit($font-size) * strip-unit($line-height));
 }
