@@ -49,7 +49,9 @@ $bd-nav-logo-margin-right: spacing(4) !default;
           color: $bd-nav-color-text-hover;
           cursor: pointer;
         }
-        @include activeState {
+      }
+      @include activeState {
+        a {
           background: $bd-nav-color-background-hover;
           color: $bd-nav-color-text-hover;
 
