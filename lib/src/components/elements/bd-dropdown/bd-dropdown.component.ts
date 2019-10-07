@@ -7,12 +7,12 @@ import {animate, style, transition, trigger} from '@angular/animations';
   animations: [
     trigger('openNav', [
       transition(':enter', [
-        style({height: '0'}),
-        animate('333ms ease-in', style({height: '*'}))
+        style({opacity: '0', height: '0'}),
+        animate('333ms ease', style({opacity: '1', height: '*'}))
       ]),
       transition(':leave', [
-        style({height: '*'}),
-        animate('333ms ease-in', style({height: '0'}))
+        style({opacity: '1', height: '*'}),
+        animate('333ms ease', style({opacity: '0', height: '0'}))
       ])
     ])
   ]
