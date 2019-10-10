@@ -13,6 +13,7 @@ export class BdMessageComponent{
 
     @Input('color') color: string;
     @Input('title') title: string = null;
+    @Input('size') size: string = null;
 
     constructor() {
 
