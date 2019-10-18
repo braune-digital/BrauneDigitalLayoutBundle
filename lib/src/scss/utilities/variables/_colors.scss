@@ -51,7 +51,8 @@ $bdColors: (
 
 // Extend Braune-Digital Main Colors with more theme colors
 // ----------------------------
-
+$colors: () !default;
+$colors:  map-merge($colors, $bdColors);
 $colors: map-merge(
     (
       black: #000,
@@ -65,14 +66,15 @@ $colors: map-merge(
       dark: #2D2D2C,
       purple-light: #CCC7D1,
     ),
-    $bdColors
-) !default;
+    $colors
+);
 
 // State Colors
 // ----------------------------
 
 $states: (
   error: #e64c44,
+  danger: #e64c44,
   success: #5cb780,
   info: #F1F1F1,
   warning: #ffee00,
