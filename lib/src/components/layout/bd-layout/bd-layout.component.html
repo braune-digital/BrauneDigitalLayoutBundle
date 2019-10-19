@@ -20,10 +20,10 @@
 
 
     <div class="tmpl__layout">
-        <div class="tmpl__layout__sidebar" [ngStyle]="{ 'height': contentHeight }">
+        <div class="tmpl__layout__sidebar">
             <ng-content select="bd-layout-sidebar"></ng-content>
         </div>
-        <div class="tmpl__layout__content" [ngStyle]="{ 'height': contentHeight }">
+        <div class="tmpl__layout__content">
             <ng-content select="bd-layout-content"></ng-content>
         </div>
     </div>
