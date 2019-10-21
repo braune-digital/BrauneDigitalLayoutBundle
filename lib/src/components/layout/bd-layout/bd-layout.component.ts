@@ -5,7 +5,6 @@
 
 import {Component, Input, OnInit} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
-import {ElementHeightService} from '../../../services/elementHeight.service';
 
 @Component({
   selector: 'bd-layout, [bd-layout]',
