@@ -35,11 +35,23 @@ $tmpl-content-aside-width-xl: 260px !default;
 $tmpl-background: getColor(grey-light) !default;
 $tmpl-background-content: getColor(white) !default;
 
-.tmpl {
 
+
+body {
+  height: 100vh;
+}
+
+.tmpl {
   animation: fadeIn $base-animation-duration * 2;
 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
   .tmpl__layout__nav {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
 
     // Navigation
     // ---------------------------------------------------------
@@ -49,6 +61,7 @@ $tmpl-background-content: getColor(white) !default;
 
   .tmpl__layout {
     display: flex;
+    flex-grow: 1;
     flex-direction: row;
     //height: 100vh;
     background: $tmpl-background;
