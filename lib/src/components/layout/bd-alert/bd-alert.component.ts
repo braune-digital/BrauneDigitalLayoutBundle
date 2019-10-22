@@ -3,7 +3,7 @@
  * @copyright 2/5/19 4:42 PM Braune Digital GmbH
  */
 
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {state, trigger, style, transition, animate} from '@angular/animations';
 import {AlertService} from '../../../services/alert.service';
 import {AlertInterface} from '../../../services/alert.abstract.service';
@@ -13,20 +13,24 @@ import {AlertInterface} from '../../../services/alert.abstract.service';
   templateUrl: './bd-alert.component.html',
   animations: [
     trigger('flash', [
-      state('void', style({
-        transform: 'translateY(0)', opacity: 0,
-      })),
+      state('void', style({transform: 'translateY(-100%)', opacity: 0})),
+
       transition('void => *', [
-        style({transform: 'translateY(-100%)', opacity: 1}),
-        animate('333ms ease'),
+        animate('333ms ease', style({transform: 'translateY(0)', opacity: 1})),
       ]),
       transition('* => void', [
-        animate('333ms ease', style({transform: 'translateY(-100%)', opacity: 1}))
+        animate('333ms ease', style({transform: 'translateY(-100%)', opacity: 0}))
       ])
     ])
   ]
 })
 export class BdAlertComponent {
+
+  @Input()
+  closeable = false;
+
+  @Input()
+  timeout = 6500;
 
   private _alerts: Array<AlertInterface> = [];
 
@@ -41,11 +45,15 @@ export class BdAlertComponent {
     });
   }
 
+  removeSingleAlert(alert) {
+    this._alerts = this._alerts.filter(obj => obj !== alert);
+  }
+
   removeAlert(_event) {
     if (_event.toState !== 'void') {
       setTimeout(() => {
         this._alerts = [];
-      }, 6500);
+      }, this.timeout);
     }
   }
 
