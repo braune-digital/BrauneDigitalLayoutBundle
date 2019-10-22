@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -23,5 +23,4 @@ export class BdDropdownComponent {
 
   @Input()
   position = 'left';
-
 }
