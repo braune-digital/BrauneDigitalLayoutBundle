@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -23,4 +23,13 @@ export class BdDropdownComponent {
 
   @Input()
   position = 'left';
+
+  constructor(private _elementRef: ElementRef) {}
+
+  // Close Dropdown on outside click
+  @HostListener('document:click', ['$event']) onClick(event: MouseEvent) {
+    if (!this._elementRef.nativeElement.contains(event.target)) {
+      this.collasped = false;
+    }
+  }
 }
