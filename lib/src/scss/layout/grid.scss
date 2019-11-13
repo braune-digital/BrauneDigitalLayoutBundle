@@ -53,11 +53,7 @@ $grid-gutters: (
       flex-basis: 0;
       flex-grow: 1;
       @include paddingHorizontal(getGridGutter($grid-media-breakpoint-sm));
-
-      &:first-child {
-        margin-left: 0;
-        padding-left: 0;
-      }
+      
     }
 
     // Gutter options
