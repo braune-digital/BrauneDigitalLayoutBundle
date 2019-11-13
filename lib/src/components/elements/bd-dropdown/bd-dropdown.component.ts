@@ -24,6 +24,9 @@ export class BdDropdownComponent {
   @Input()
   position = 'left';
 
+  @Input()
+  disabled = false;
+
   constructor(private _elementRef: ElementRef) {}
 
   // Close Dropdown on outside click
