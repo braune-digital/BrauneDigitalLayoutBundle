@@ -3,8 +3,12 @@
         <div class="alert__title" *ngIf="alert.title">
             {{ alert.title | translate }}
         </div>
-        <div class="alert_body" *ngIf="alert.message">
+        <div class="alert__body" *ngIf="alert.message">
             {{ alert.message | translate }}
         </div>
+
+      <div class="alert__close" *ngIf="closeable">
+        <bd-icon [icon]="'times'" (click)="removeSingleAlert(alert)"></bd-icon>
+      </div>
     </div>
 </ng-container>

@@ -83,4 +83,10 @@ $dropdown-color-hover: getColor(secondary) !default;
       }
     }
   }
+
+  &.dropdown--disabled {
+    .dropdown__toggle, .dropdown__content {
+      pointer-events: none;
+    }
+  }
 }

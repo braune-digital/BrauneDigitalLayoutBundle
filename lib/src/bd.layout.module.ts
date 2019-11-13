@@ -103,7 +103,6 @@ import {BdNavAsideComponent} from './components/layout/bd-nav/bd-nav-aside/bd-na
 import {BdNavComponent} from './components/layout/bd-nav/bd-nav.component';
 import {BdNavMainComponent} from './components/layout/bd-nav/bd-nav-main/bd-nav-main.component';
 import {BdLayoutNavComponent} from './components/layout/bd-layout/bd-layout-nav/bd-layout-nav.component';
-import {BdHeightDirective} from './directive/bd-height/bd-height.directive';
 import {BdHamburgerComponent} from './components/elements/bd-hamburger/bd-hamburger.component';
 import {BdNavSubComponent} from './components/layout/bd-nav/bd-nav-sub/bd-nav-sub.component';
 import {BdDropdownToggleComponent} from './components/elements/bd-dropdown/bd-dropdown-toggle/bd-dropdown-toggle.component';
@@ -244,8 +243,7 @@ import {BdDropdownComponent} from './components/elements/bd-dropdown/bd-dropdown
     // Directives
     // ---------------------------
     BdMasonryDirective,
-    BdMasonryItemDirective,
-    BdHeightDirective
+    BdMasonryItemDirective
   ],
   providers: [],
   exports: [
@@ -362,8 +360,7 @@ import {BdDropdownComponent} from './components/elements/bd-dropdown/bd-dropdown
     // Directives
     // ---------------------------
     BdMasonryDirective,
-    BdMasonryItemDirective,
-    BdHeightDirective
+    BdMasonryItemDirective
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
