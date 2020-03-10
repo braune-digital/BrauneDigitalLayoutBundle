@@ -365,7 +365,7 @@ import {BdDropdownComponent} from './components/elements/bd-dropdown/bd-dropdown
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BdLayoutModule {
-  static forRoot(provider: Array<Provider> = [AlertService]): ModuleWithProviders {
+  static forRoot(provider: Array<Provider> = [AlertService]): ModuleWithProviders<BdLayoutModule> {
     return {
       ngModule: BdLayoutModule,
       providers: provider

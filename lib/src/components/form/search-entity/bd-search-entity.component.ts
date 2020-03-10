@@ -34,7 +34,7 @@ export class BdSearchEntityComponent implements OnInit {
     @Output('add')
     onAdd: EventEmitter<any> = new EventEmitter<any>();
 
-    @ViewChild('searchFilter', {static: false})
+    @ViewChild('searchFilter', {static: true})
     searchFilter;
 
     filter: ParamFilter;
