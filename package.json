@@ -31,7 +31,7 @@
     "angular-pipes": "^10.0.0",
     "bootstrap": "^4.4.1",
     "date-fns": "^1.30.1",
-    "ng-packagr": "^9.0.0",
+    "ng-packagr": "^10.1.1",
     "ng2-file-upload": "^1.4.0",
     "ngx-bootstrap": "^5.5.0",
     "ngx-gravatar": "^8.1.0",
