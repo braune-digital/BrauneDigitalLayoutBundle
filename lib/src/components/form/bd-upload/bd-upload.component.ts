@@ -5,20 +5,24 @@
 
 import {
   ChangeDetectorRef,
-  Component, EventEmitter,
-  Input, OnChanges,
-  OnInit, Output, SimpleChanges,
-  TemplateRef
-} from '@angular/core';
-import { FileItem, FileUploader } from 'ng2-file-upload';
-import { AbstractControl } from '@angular/forms';
-import { FormControl, FormGroup } from '@angular/forms';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  TemplateRef,
+} from "@angular/core";
+import { FileItem, FileUploader } from "ng2-file-upload";
+import { AbstractControl } from "@angular/forms";
+import { FormControl, FormGroup } from "@angular/forms";
 
-import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { AlertService } from '../../../services/alert.service';
-import { HttpClient } from '@angular/common/http';
+import { Router } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
+import { AlertService } from "../../../services/alert.service";
+import { HttpClient } from "@angular/common/http";
+import { BsModalRef, BsModalService } from "ngx-bootstrap/modal";
 
 export interface UploaderClasses {
   main?: string;
@@ -40,61 +44,60 @@ export interface UploaderClasses {
 }
 
 const defaultClasses: UploaderClasses = {
-  main: 'uploader',
-  dropzone: 'uploader__dropzone',
-  dropzoneHover: 'uploader__dropzone--hover',
-  dropzoneLegend: 'uploader__dropzone__legend',
-  btn: 'uploader__button btn',
-  queue: 'uploader__queue',
-  queueItem: 'uploader__queue__item',
-  queueItemImage: 'uploader__queue__items uploader__queue__item--image',
-  queueItemProgress: 'uploader__queue__items uploader__queue__item--progress',
-  queueItemError: 'uploader__queue__item--error',
-  progress: 'uploader__progress',
-  progressBar: 'uploader__progress__bar',
-  loading: 'uploader__loading',
-  actions: 'uploader__actions',
-  action: 'uploader__action',
-  actionRemove: 'uploader__action--remove',
+  main: "uploader",
+  dropzone: "uploader__dropzone",
+  dropzoneHover: "uploader__dropzone--hover",
+  dropzoneLegend: "uploader__dropzone__legend",
+  btn: "uploader__button btn",
+  queue: "uploader__queue",
+  queueItem: "uploader__queue__item",
+  queueItemImage: "uploader__queue__items uploader__queue__item--image",
+  queueItemProgress: "uploader__queue__items uploader__queue__item--progress",
+  queueItemError: "uploader__queue__item--error",
+  progress: "uploader__progress",
+  progressBar: "uploader__progress__bar",
+  loading: "uploader__loading",
+  actions: "uploader__actions",
+  action: "uploader__action",
+  actionRemove: "uploader__action--remove",
 };
 
 @Component({
-  selector: '<bd-upload>',
-  templateUrl: './bd-upload.component.html',
-  styleUrls: ['./bd-upload.component.scss']
+  selector: "<bd-upload>",
+  templateUrl: "./bd-upload.component.html",
+  styleUrls: ["./bd-upload.component.scss"],
 })
 export class BdUploadComponent implements OnInit, OnChanges {
-
-  @Input('help')
+  @Input("help")
   help: string;
 
-  @Input('label')
+  @Input("label")
   label: string;
 
-  @Input('uploader')
+  @Input("uploader")
   uploader: FileUploader = null;
 
-  @Input('formAdditions')
+  @Input("formAdditions")
   formAdditions = {};
 
-  @Input('classNames')
+  @Input("classNames")
   classNames: UploaderClasses = {};
 
-  @Input('form')
+  @Input("form")
   form: AbstractControl;
 
-  @Input('multiple')
+  @Input("multiple")
   multiple: boolean = false;
 
-  @Input('isAudio')
+  @Input("isAudio")
   isAudio: boolean = false;
 
-  @Input('isFile')
+  @Input("isFile")
   isFile: boolean = false;
 
   @Output() fileRemoved = new EventEmitter<FileItem>();
 
-  type: string = 'single';
+  type: string = "single";
 
   classes: UploaderClasses;
   isLoading = false;
@@ -108,7 +111,7 @@ export class BdUploadComponent implements OnInit, OnChanges {
   isSendingRequest = false;
   showHelp = false;
   metaIsEmpty = false;
-  @Input('disableMeta') disableMeta = false;
+  @Input("disableMeta") disableMeta = false;
 
   // metaData to direct update in frontend after updating metadata of files
   metaData = [];
@@ -119,85 +122,95 @@ export class BdUploadComponent implements OnInit, OnChanges {
     private alert: AlertService,
     private translate: TranslateService,
     private router: Router,
-    private http: HttpClient,
-  ) {
-  }
+    private http: HttpClient
+  ) {}
 
-  ngOnInit(): void {
-  }
-
-
+  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-
     if (!this.form) {
       return;
     }
 
     this.classes = Object.assign({}, this.classNames, defaultClasses);
 
-    this.type = (!this.multiple) ? 'single' : 'multiple';
+    this.type = !this.multiple ? "single" : "multiple";
 
     if (this.form && this.form.value) {
-      if (this.type === 'single') {
-        const _file = new FileItem(this.uploader, this.form.value as any, this.uploader.options);
+      if (this.type === "single") {
+        const _file = new FileItem(
+          this.uploader,
+          this.form.value as any,
+          this.uploader.options
+        );
         _file.isUploaded = true;
         _file.isSuccess = true;
-        _file._file['isLoading'] = false;
+        _file._file["isLoading"] = false;
         this.uploader.queue.push(_file);
-        this.form.patchValue(this.form.value['id']);
+        this.form.patchValue(this.form.value["id"]);
 
         /*
-        * Modal Specific check for metaData
-        * Set metaData to detect changes when metaData is saved in modal
-        */
-        if (_file._file.hasOwnProperty('description') && _file._file.hasOwnProperty('copyright')) {
+         * Modal Specific check for metaData
+         * Set metaData to detect changes when metaData is saved in modal
+         */
+        if (
+          _file._file.hasOwnProperty("description") &&
+          _file._file.hasOwnProperty("copyright")
+        ) {
           this.metaData.push({
-            id: _file._file['id'],
-            description: _file._file['description'],
-            copyright: _file._file['copyright'],
-            name: _file._file['name']
+            id: _file._file["id"],
+            description: _file._file["description"],
+            copyright: _file._file["copyright"],
+            name: _file._file["name"],
           });
           this.metaIsEmpty = true;
-          if ((!(_file._file['copyright']) || _file._file['copyright'] === '')
-            && (!(_file._file['description']) || _file._file['description'] === '')) {
+          if (
+            (!_file._file["copyright"] || _file._file["copyright"] === "") &&
+            (!_file._file["description"] || _file._file["description"] === "")
+          ) {
             this.showHelp = true;
           }
         }
-
-      } else if (this.type === 'multiple') {
+      } else if (this.type === "multiple") {
         const values = this.form.value;
         this.form.patchValue([]);
-        values.forEach(_image => {
-          const _file = new FileItem(this.uploader, _image as any, this.uploader.options);
+        values.forEach((_image) => {
+          const _file = new FileItem(
+            this.uploader,
+            _image as any,
+            this.uploader.options
+          );
           _file.isUploaded = true;
           _file.isSuccess = true;
-          _file._file['isLoading'] = false;
+          _file._file["isLoading"] = false;
           this.uploader.queue.push(_file);
           this.form.markAsDirty();
-          this.form.value.push(_image['id']);
+          this.form.value.push(_image["id"]);
 
           /*
-          * Modal Specific check for metaData
-          * Set metaData to detect changes when metaData is saved in modal
-          */
-          if (_file._file.hasOwnProperty('description') && _file._file.hasOwnProperty('copyright')) {
+           * Modal Specific check for metaData
+           * Set metaData to detect changes when metaData is saved in modal
+           */
+          if (
+            _file._file.hasOwnProperty("description") &&
+            _file._file.hasOwnProperty("copyright")
+          ) {
             this.metaData.push({
-              id: _file._file['id'],
-              description: _file._file['description'],
-              copyright: _file._file['copyright'],
-              name: _file._file['name']
+              id: _file._file["id"],
+              description: _file._file["description"],
+              copyright: _file._file["copyright"],
+              name: _file._file["name"],
             });
             this.metaIsEmpty = true;
-            if ((!(_file._file['copyright']) || _file._file['copyright'] === '')
-              && (!(_file._file['description']) || _file._file['description'] === '')) {
+            if (
+              (!_file._file["copyright"] || _file._file["copyright"] === "") &&
+              (!_file._file["description"] || _file._file["description"] === "")
+            ) {
               this.showHelp = true;
             }
           }
         });
-
       }
-
     }
 
     // to get a real progress
@@ -205,39 +218,42 @@ export class BdUploadComponent implements OnInit, OnChanges {
 
     this.uploader.onSuccessItem = (_item, response) => {
       _item._file = JSON.parse(response);
-      _item._file['isLoading'] = false;
+      _item._file["isLoading"] = false;
       //this._alertService.alert$.next({type: 'success', message: 'bd_content.elements.image.flash.upload'});
-      if (this.type === 'single') {
-        this.form.setValue(_item._file['id']);
-      } else if (this.type === 'multiple') {
-        this.form.value.push(_item._file['id']);
+      if (this.type === "single") {
+        this.form.setValue(_item._file["id"]);
+      } else if (this.type === "multiple") {
+        this.form.value.push(_item._file["id"]);
       }
 
-
       /* Modal Specific check for metaData
-      *
-      * Set metaData to detect changes when metaData is saved in modal
-      */
-      if (_item._file.hasOwnProperty('description') && _item._file.hasOwnProperty('copyright')) {
+       *
+       * Set metaData to detect changes when metaData is saved in modal
+       */
+      if (
+        _item._file.hasOwnProperty("description") &&
+        _item._file.hasOwnProperty("copyright")
+      ) {
         this.metaData.push({
-          id: _item._file['id'],
-          description: _item._file['description'],
-          copyright: _item._file['copyright'],
-          name: _item._file['name']
+          id: _item._file["id"],
+          description: _item._file["description"],
+          copyright: _item._file["copyright"],
+          name: _item._file["name"],
         });
         this.metaIsEmpty = true;
-        if ((!(_item._file['copyright']) || _item._file['copyright'] === '')
-          && (!(_item._file['description']) || _item._file['description'] === '')) {
+        if (
+          (!_item._file["copyright"] || _item._file["copyright"] === "") &&
+          (!_item._file["description"] || _item._file["description"] === "")
+        ) {
           this.showHelp = true;
         }
       }
 
       this._changeDetector.markForCheck();
-
     };
 
-    this.uploader.onAfterAddingFile = f => {
-      if (this.uploader.queue.length > 1 && this.type === 'single') {
+    this.uploader.onAfterAddingFile = (f) => {
+      if (this.uploader.queue.length > 1 && this.type === "single") {
         this.uploader.removeFromQueue(this.uploader.queue[0]);
       }
     };
@@ -252,26 +268,26 @@ export class BdUploadComponent implements OnInit, OnChanges {
     };
   }
 
-
   onRemove(_item: FileItem): void {
-    _item._file['isLoading'] = false;
+    _item._file["isLoading"] = false;
 
     this.uploader.removeFromQueue(_item);
 
     this.fileRemoved.emit(_item);
 
-    if (this.type === 'single') {
+    if (this.type === "single") {
       this.form.patchValue(null);
-    } else if (this.type === 'multiple') {
-      const index = this.form.value.findIndex(image => image.id === _item._file['id']);
+    } else if (this.type === "multiple") {
+      const index = this.form.value.findIndex(
+        (image) => image.id === _item._file["id"]
+      );
       this.form.patchValue(this.form.value.slice(index, 1));
-
     }
   }
 
   /*
-  * For Files without image preview
-  */
+   * For Files without image preview
+   */
   checkIfFileIsImage(_file) {
     const regExp = /^.*(image).*/;
     if (_file._file.contentType && _file._file.contentType.match(regExp)) {
@@ -287,13 +303,26 @@ export class BdUploadComponent implements OnInit, OnChanges {
   }
 
   /*
-  *   Modal Specific Functions
-  */
+   *   Modal Specific Functions
+   */
   buildModalForm(_file: FileItem) {
     this.modalForm = new FormGroup({
-      'copyright': new FormControl(this.filterByProperty(this.metaData, 'id', _file._file['id'])['copyright'], []),
-      'description': new FormControl(this.filterByProperty(this.metaData, 'id', _file._file['id'])['description'], []),
-      'name': new FormControl(this.filterByProperty(this.metaData, 'id', _file._file['id'])['name'], [])
+      copyright: new FormControl(
+        this.filterByProperty(this.metaData, "id", _file._file["id"])[
+          "copyright"
+        ],
+        []
+      ),
+      description: new FormControl(
+        this.filterByProperty(this.metaData, "id", _file._file["id"])[
+          "description"
+        ],
+        []
+      ),
+      name: new FormControl(
+        this.filterByProperty(this.metaData, "id", _file._file["id"])["name"],
+        []
+      ),
     });
   }
 
@@ -306,25 +335,31 @@ export class BdUploadComponent implements OnInit, OnChanges {
 
   handleModalSubmit(_id: number): void {
     /*
-    * Set MetaData to refresh metadata directly when metadata is safed and modal closed without refreshing the whole page
-    */
-    const index = this.metaData.findIndex(_data => _data['id'] === _id);
-    this.metaData[index]['copyright'] = this.modalForm.get('copyright').value;
-    this.metaData[index]['description'] = this.modalForm.get('description').value;
-    this.metaData[index]['name'] = this.modalForm.get('name').value;
+     * Set MetaData to refresh metadata directly when metadata is safed and modal closed without refreshing the whole page
+     */
+    const index = this.metaData.findIndex((_data) => _data["id"] === _id);
+    this.metaData[index]["copyright"] = this.modalForm.get("copyright").value;
+    this.metaData[index]["description"] =
+      this.modalForm.get("description").value;
+    this.metaData[index]["name"] = this.modalForm.get("name").value;
 
     if (this.modalForm.valid) {
       this.isSendingRequest = true;
-      this.http.patch('/content/upload/' + _id, this.modalForm.getRawValue()).subscribe(
-        success => {
-          this.isSendingRequest = false;
-          this.alert.alert$.next({ type: 'success', message: this.translate.instant('form.messages.success_metaData') });
-          this.modalRef.hide();
-        },
-        error => {
-          this.isSendingRequest = false;
-        }
-      );
+      this.http
+        .patch("/content/upload/" + _id, this.modalForm.getRawValue())
+        .subscribe(
+          (success) => {
+            this.isSendingRequest = false;
+            this.alert.alert$.next({
+              type: "success",
+              message: this.translate.instant("form.messages.success_metaData"),
+            });
+            this.modalRef.hide();
+          },
+          (error) => {
+            this.isSendingRequest = false;
+          }
+        );
     }
   }
 
@@ -332,7 +367,7 @@ export class BdUploadComponent implements OnInit, OnChanges {
     let i, j, item;
     for (i = 0, j = array.length; i < j; i++) {
       item = array[i];
-      if (typeof item[key] !== 'undefined' && item[key] === value) {
+      if (typeof item[key] !== "undefined" && item[key] === value) {
         return item;
       }
     }

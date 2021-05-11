@@ -21,11 +21,10 @@
 // Mixins & Variables
 // ---------------------------------------------------------
 //
-//@import "utilities/mixins";
-//@import "utilities/functions";
-//@import "utilities/variables";
-//@import "utilities/reboot";
-
+// @import "utilities/mixins";
+// @import "utilities/functions";
+// @import "utilities/variables";
+// @import "utilities/reboot";
 
 // Layout
 // ---------------------------------------------------------
@@ -43,8 +42,7 @@
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-  0 8px 10px 1px rgba(0, 0, 0, 0.14),
-  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 .cdk-drag-placeholder {
@@ -59,7 +57,7 @@
 // ---------------------------------------------------------
 
 @import "fonts/fontawesome5/fontawesome";
-$fa-font-path: '/assets/fonts/fontawesome5';
+$fa-font-path: "/assets/fonts/fontawesome5";
 @import "fonts/fontawesome5/brands";
 @import "fonts/fontawesome5/light";
 @import "fonts/fontawesome5/regular";

@@ -3,17 +3,22 @@
  * @copyright 2/5/19 4:42 PM Braune Digital GmbH
  */
 
-import {Component, EventEmitter, Input, OnInit, Output, TemplateRef} from '@angular/core';
-import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  TemplateRef,
+} from "@angular/core";
+import { BsModalRef } from "ngx-bootstrap/modal";
 
 @Component({
-  selector: 'bd-content-modal',
-  templateUrl: './bd-content-modal.component.html',
+  selector: "bd-content-modal",
+  templateUrl: "./bd-content-modal.component.html",
 })
 export class BdContentModalComponent {
-
-    @Input('title') title: string;
-    @Input('modalRef')modalRef: BsModalRef;
-    @Output() modalClosed = new EventEmitter<boolean>();
-
+  @Input("title") title: string;
+  @Input("modalRef") modalRef: BsModalRef;
+  @Output() modalClosed = new EventEmitter<boolean>();
 }
